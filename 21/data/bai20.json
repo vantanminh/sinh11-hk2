@@ -2,11 +2,12 @@
   "meta": {
     "titleRaw": "BÀI 20: SINH TRƯỞNG VÀ PHÁT TRIỂN Ở THỰC VẬT",
     "subtitleRaw": "ÔN TẬP CK2- SINH HỌC 11-BÀI 20-26 | TRƯỜNG THPT TRẦN PHÚ",
-    "sectionRaw": "PHẦN I: CÂU HỎI TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN LỰA CHỌN BIẾT"
+    "sectionRaw": "B? ?? g?m 24 c?u tr?c nghi?m nhi?u l?a ch?n v? 3 c?u ??ng/sai."
   },
   "questions": [
     {
       "number": 1,
+      "type": "mcq",
       "question": "Sinh trưởng ở thực vật là:",
       "options": [
         "A. Sinh trưởng của thực vật là quá trình gia tăng về số lượng của cơ thể do tăng số lượng và kích thước tế bào.",
@@ -18,6 +19,7 @@
     },
     {
       "number": 2,
+      "type": "mcq",
       "question": "Mô phân sinh là:",
       "options": [
         "A. Nhóm tế bào phân hóa, không có khả năng phân chia tạo tế bào mới trong suốt đời sống thực vật.",
@@ -29,6 +31,7 @@
     },
     {
       "number": 3,
+      "type": "mcq",
       "question": "Mô phân sinh ở thực vật gồm:",
       "options": [
         "A. Mô phân sinh đỉnh, mô phân sinh bên và mô phân sinh đốt.",
@@ -40,6 +43,7 @@
     },
     {
       "number": 4,
+      "type": "mcq",
       "question": "Loại mô phân sinh nào sau đây không có ở cây Một lá mầm?",
       "options": [
         "A. Mô phân sinh bên.",
@@ -51,6 +55,7 @@
     },
     {
       "number": 5,
+      "type": "mcq",
       "question": "Thực vật Hai lá mầm có các mô phân sinh nào?",
       "options": [
         "A. Đỉnh và lóng.",
@@ -62,6 +67,7 @@
     },
     {
       "number": 6,
+      "type": "mcq",
       "question": "Sinh trưởng sơ cấp của thực vật là:",
       "options": [
         "A. Sự sinh trưởng của thân và rễ theo chiều dài do hoạt động của mô phân sinh đỉnh.",
@@ -73,6 +79,7 @@
     },
     {
       "number": 7,
+      "type": "mcq",
       "question": "Đặc điểm không có ở sinh trưởng sơ cấp là:",
       "options": [
         "A. làm tăng kích thước chiều dài của cây.",
@@ -84,6 +91,7 @@
     },
     {
       "number": 8,
+      "type": "mcq",
       "question": "Phát biểu đúng về mô phân sinh bên và mô phân sinh lóng là:",
       "options": [
         "A. mô phân sinh bên và mô phân sinh lóng có ở thân cây Một lá mầm.",
@@ -95,6 +103,7 @@
     },
     {
       "number": 9,
+      "type": "mcq",
       "question": "Kết quả của sinh trưởng thứ cấp là gì?",
       "options": [
         "A. Tạo ra các lớp gỗ thứ cấp, từ đó hình thành nên các vòng sinh trưởng.",
@@ -106,6 +115,7 @@
     },
     {
       "number": 10,
+      "type": "mcq",
       "question": "Sinh trưởng thứ cấp của cây thân gỗ nhờ hoạt động của:",
       "options": [
         "A. mô phân sinh bên.",
@@ -117,6 +127,7 @@
     },
     {
       "number": 11,
+      "type": "mcq",
       "question": "Hormone ở thực vật là:",
       "options": [
         "A. các chất hữu cơ do cơ thể thực vật tiết ra có tác dụng điều tiết hoạt động sống của cây.",
@@ -128,6 +139,7 @@
     },
     {
       "number": 12,
+      "type": "mcq",
       "question": "Nhóm hormone kích thích ở thực vật gồm:",
       "options": [
         "A. Auxin, GA và methylen.",
@@ -139,6 +151,7 @@
     },
     {
       "number": 13,
+      "type": "mcq",
       "question": "Loại hormone nào sau đây có tác dụng ức chế sự sinh trưởng tự nhiên của thực vật?",
       "options": [
         "A. GA.",
@@ -150,6 +163,7 @@
     },
     {
       "number": 14,
+      "type": "mcq",
       "question": "Hormone nào làm chậm sự lão hóa (hóa già) của cây?",
       "options": [
         "A. Ethylene.",
@@ -161,6 +175,7 @@
     },
     {
       "number": 15,
+      "type": "mcq",
       "question": "Auxin được sử dụng nhiều trong sản xuất nông nghiệp. Tuy nhiên, nếu sử dụng auxin để phun lên rau, củ thì có thể sẽ gây độc cho cơ thể người khi sử dụng. Nguyên nhân là vì:",
       "options": [
         "A. Auxin nhân tạo làm gia tăng vi sinh vật gây bệnh.",
@@ -172,6 +187,7 @@
     },
     {
       "number": 16,
+      "type": "mcq",
       "question": "Hiện tượng xuân hóa là gì?",
       "options": [
         "A. Hiện tượng ra hoa của cây phụ thuộc vào nhiệt độ thấp.",
@@ -183,6 +199,7 @@
     },
     {
       "number": 17,
+      "type": "mcq",
       "question": "Có bao nhiêu phát biểu sau đây đúng về đặc điểm sinh trưởng và phát triển ở thực vật?\n(I). Xảy ra tại một số vị trí, cơ quan trên cơ thể thực vật, nơi có các mô phân sinh.\n(II). Chỉ diễn ra trong một giai đoạn nhất định của đời sống của thực vật.\n(III). Đây là hình thức sinh trưởng có giới hạn.\n(IV). Biểu hiện bằng sự gia tăng kích thước, sự xuất hiện và thay mới của các cơ quan như cành, lá, rễ, hoa, quả, ...",
       "options": [
         "A. 1.",
@@ -194,6 +211,7 @@
     },
     {
       "number": 18,
+      "type": "mcq",
       "question": "Có bao nhiêu phát biểu sau đây đúng về các yếu tố ảnh hưởng đến sinh trưởng và phát triển ở thực vật?\n(I). Chịu ảnh hưởng của yếu tố bên ngoài và bên trong cơ thể.\n(II). Yếu tố bên trong ảnh hưởng đến sinh trưởng và phát triển ở thực vật như là gene và hormone thực vật.\n(III). Nước ảnh hưởng đến sinh trưởng và phát triển ở thực do nước là nguồn nguyên liệu cung cấp cho quá trình quang hợp và các hoạt động trao đổi chất khác của cây.\n(IV). Tất cả các loài thực vật đều có nhu cầu nước giống nhau.",
       "options": [
         "A. 1.",
@@ -205,6 +223,7 @@
     },
     {
       "number": 19,
+      "type": "mcq",
       "question": "Có bao nhiêu phát biểu sau đây đúng về mô phân sinh ở thực vật?\n(I). Tất cả thực vật đều có mô phân sinh đỉnh, mô phân sinh bên, mô phân sinh lóng.\n(II). Mô phân sinh đỉnh nằm ở ngọn cây, đỉnh cành và chóp rễ của cây Một lá mầm và Hai lá mầm.\n(III). Mô phân sinh lóng ở thực vật Hai lá mầm giúp cho thân dài và cao lên.\n(IV). Mô phân sinh là nhóm các tế bào chưa phân hoá, có khả năng phân chia tạo tế bào mới trong suốt đời sống của thực vật.",
       "options": [
         "A. 1.",
@@ -216,6 +235,7 @@
     },
     {
       "number": 20,
+      "type": "mcq",
       "question": "Có bao nhiêu phát biểu sau đây đúng về hormone ở thực vật?\n(I). Hormone thực vật là các chất hữu cơ sản sinh ra ở đâu chỉ gây tác động sinh lý ở nơi đó.\n(II). Hormone thực vật tham gia điều khiển các đáp ứng của thực vật với các kích thích đến từ môi trường.\n(III). Có thể ức chế sự sinh trưởng, đẩy nhanh sự lão hoá (già hoá) ở cây qua các phản ứng ngủ của hạt, rụng lá, rụng quả, ... .\n(IV). Có thể thúc đẩy quá trình sinh trưởng, phát triển ở thực vật như: sinh trưởng của chồi ngọn, nảy mầm của hạt, chín của quả, ... .",
       "options": [
         "A. 1.",
@@ -227,6 +247,7 @@
     },
     {
       "number": 21,
+      "type": "mcq",
       "question": "Có bao nhiêu phát biểu sau đây đúng về tương quan của hormone ở thực vật?\n(I). Trong hạt nảy mầm: GA cao còn AAB thấp.\n(II). Trong hạt khô: GA thấp còn AAB cao.\n(III). Tương quan giữa Auxin/Cytokinin điều tiết sự phát triển của mô sẹo: Auxin/Cytokinin thấp → kích thích tạo chồi bên.\n(IV). Tương quan giữa Auxin/Cytokinin điều tiết sự phát triển của mô sẹo: Auxin/Cytokinin cao → kích thích tạo rễ.",
       "options": [
         "A. 1.",
@@ -238,6 +259,7 @@
     },
     {
       "number": 22,
+      "type": "mcq",
       "question": "Có bao nhiêu phát biểu sau đây đúng về nhân tố chi phối quá trình phát triển của thực vật có hoa?\n(I). Nhiều loài cây để tạo hoa cần có tác động của nhiệt độ thấp gọi là xuân hóa.\n(II). Nhiều loài thực vật đến tuổi nhưng để ra hoa cần có thời gian chiếu sáng trong ngày thích hợp. Hiện tượng đó gọi là tính quang chu kì tác động đến sự ra hoa.\n(III). Cây đêm dài (ngày ngắn) ra hoa trong điều kiện chiếu sáng ít hơn đêm.\n(IV). Cây trung tính là cây ra hoa không phụ thuộc vào độ dài thời gian chiếu sáng trong ngày.",
       "options": [
         "A. 1.",
@@ -249,6 +271,7 @@
     },
     {
       "number": 23,
+      "type": "mcq",
       "question": "Khi nói về vai trò của hormone thực vật, phát biểu nào sau đây là sai?",
       "options": [
         "A. Gibberellin kích thích sinh trưởng chiều cao của cây.",
@@ -260,54 +283,103 @@
     },
     {
       "number": 24,
+      "type": "mcq",
       "question": "Dựa trên hình và kiến thức về mô phân sinh ở thực vật. Có bao nhiêu phát biểu sau đây đúng?\n1. Mô phân sinh bên: nằm ở phần vỏ và trụ của thân, rễ của cây Hai lá mầm.\n2. Mô phân sinh đỉnh có ở đầu ngọn thân, ngọn cành, chồi nách, chóp rễ của cây Một lá mầm. Cây Hai lá mầm không có.\n3. Mô phân sinh lóng nằm ở gốc của lóng.\n4. Sự hoạt động của mô phân sinh bên giúp cây Hai lá mầm tăng trưởng theo đường kính của cây.",
-      "images": [
-        {
-          "src": "images/q24.png",
-          "alt": "Sơ đồ các loại mô phân sinh ở thực vật",
-          "caption": "Mô phân sinh đỉnh, mô phân sinh lóng, mô phân sinh bên"
-        }
-      ],
       "options": [
         "A. 1.",
         "B. 2.",
         "C. 3.",
         "D. 4."
       ],
-      "answer": "C"
+      "answer": "C",
+      "images": [
+        {
+          "src": "images/q24.png",
+          "alt": "Sơ đồ các loại mô phân sinh ở thực vật",
+          "caption": "Mô phân sinh đỉnh, mô phân sinh lóng, mô phân sinh bên"
+        }
+      ]
     },
     {
       "number": 25,
-      "question": "PHẦN II: CÂU HỎI TRẮC NGHIỆM ĐÚNG SAI\nCâu 1: Sinh trưởng và phát triển của thực vật chịu ảnh hưởng của các yếu tố như đặc điểm di truyền, giai đoạn sinh trưởng và các yếu tố môi trường như nhiệt độ, nước, ánh sáng, dinh dưỡng khoáng. Mỗi nhận định sau đây là Đúng hay Sai về các yếu tố ảnh hưởng đến quá trình sinh trưởng và phát triển của thực vật?",
-      "options": [
-        "a) Ánh sáng điều tiết quá trình ra hoa, ảnh hưởng đến tỉ lệ nảy mầm của hạt nhưng không tác động đến quá trình phát sinh hình thái của thực vật.",
-        "b) Nước ảnh hưởng đến tốc độ sinh trưởng của thực vật: chiều cao cây, diện tích lá và ảnh hưởng đến quá trình nảy mầm của hạt.",
-        "c) Nhiệt độ tác động đến quá trình nảy mầm của hạt theo tỷ lệ thuận.",
-        "d) Chất khoáng ảnh hưởng đến tốc độ sinh trưởng, phát triển của thực vật; màu sắc, hình thái,... của các cơ quan, bộ phận thực vật."
-      ],
-      "answer": "Các ý đúng: b, d"
+      "type": "true_false",
+      "question": "Sinh trưởng và phát triển của thực vật chịu ảnh hưởng của các yếu tố như đặc điểm di truyền, giai đoạn sinh trưởng và các yếu tố môi trường như nhiệt độ, nước, ánh sáng, dinh dưỡng khoáng. Mỗi nhận định sau đây là Đúng hay Sai về các yếu tố ảnh hưởng đến quá trình sinh trưởng và phát triển của thực vật?",
+      "statements": [
+        {
+          "key": "a",
+          "text": "Ánh sáng điều tiết quá trình ra hoa, ảnh hưởng đến tỉ lệ nảy mầm của hạt nhưng không tác động đến quá trình phát sinh hình thái của thực vật.",
+          "answer": false
+        },
+        {
+          "key": "b",
+          "text": "Nước ảnh hưởng đến tốc độ sinh trưởng của thực vật: chiều cao cây, diện tích lá và ảnh hưởng đến quá trình nảy mầm của hạt.",
+          "answer": true
+        },
+        {
+          "key": "c",
+          "text": "Nhiệt độ tác động đến quá trình nảy mầm của hạt theo tỷ lệ thuận.",
+          "answer": false
+        },
+        {
+          "key": "d",
+          "text": "Chất khoáng ảnh hưởng đến tốc độ sinh trưởng, phát triển của thực vật; màu sắc, hình thái,... của các cơ quan, bộ phận thực vật.",
+          "answer": true
+        }
+      ]
     },
     {
       "number": 26,
-      "question": "Câu 2: Sinh trưởng sơ cấp do hoạt động của mô phân sinh đỉnh, mô phân sinh lóng làm cho thân, rễ, lóng dài ra; gặp ở cả cây Một lá mầm và Hai lá mầm. Sinh trưởng thứ cấp do hoạt động của mô phân sinh bên (tầng phát sinh vỏ và tầng phát sinh trụ) làm cho thân, rễ to ra theo đường kính; gặp ở cây Hai lá mầm. Mỗi nhận định sau đây là Đúng hay Sai về 2 quá trình này?",
-      "options": [
-        "a) Thực vật có sinh trưởng thứ cấp thường có thời gian sống một năm.",
-        "b) Sự hoạt động của mô phân sinh bên giúp cây một lá mầm tăng trưởng theo đường kính của cây.",
-        "c) Cây một lá mầm và cây hai lá mầm thân thảo chỉ có sinh trưởng sơ cấp.",
-        "d) Sự hoạt động của mô phân sinh lóng giúp lóng cây dài ra và sẽ ngừng hoạt động khi lóng đạt đến kích thước tối đa."
-      ],
-      "answer": "Các ý đúng: c, d"
+      "type": "true_false",
+      "question": "Sinh trưởng sơ cấp do hoạt động của mô phân sinh đỉnh, mô phân sinh lóng làm cho thân, rễ, lóng dài ra; gặp ở cả cây Một lá mầm và Hai lá mầm. Sinh trưởng thứ cấp do hoạt động của mô phân sinh bên (tầng phát sinh vỏ và tầng phát sinh trụ) làm cho thân, rễ to ra theo đường kính; gặp ở cây Hai lá mầm. Mỗi nhận định sau đây là Đúng hay Sai về 2 quá trình này?",
+      "statements": [
+        {
+          "key": "a",
+          "text": "Thực vật có sinh trưởng thứ cấp thường có thời gian sống một năm.",
+          "answer": false
+        },
+        {
+          "key": "b",
+          "text": "Sự hoạt động của mô phân sinh bên giúp cây một lá mầm tăng trưởng theo đường kính của cây.",
+          "answer": false
+        },
+        {
+          "key": "c",
+          "text": "Cây một lá mầm và cây hai lá mầm thân thảo chỉ có sinh trưởng sơ cấp.",
+          "answer": true
+        },
+        {
+          "key": "d",
+          "text": "Sự hoạt động của mô phân sinh lóng giúp lóng cây dài ra và sẽ ngừng hoạt động khi lóng đạt đến kích thước tối đa.",
+          "answer": true
+        }
+      ]
     },
     {
       "number": 27,
-      "question": "Câu 3: Hormone thực vật là phân tử hữu cơ do thực vật tổng hợp, có vai trò điều chỉnh quá trình sinh lí, sinh trưởng, phát triển của cây, gồm có nhóm hormone kích thích (auxin, cytokinin, gibberellin,...) và ức chế (abscisic acid, ethylene,...). Mỗi nhận định sau đây là Đúng hay Sai về ứng dụng của hormone thực vật trong thực tiễn",
-      "options": [
-        "a) Nếu được xử lí gibberellin ở nho không hạt đang ra quả thì quả sẽ lớn hơn, cuống và chùm nho dài hơn.",
-        "b) Xử lý gibberellin tạo quả không hạt ở cam, dưa hấu.......",
-        "c) Sử dụng hormone (abscisic acid, ethylene) hay các chất ức chế sinh trưởng để duy trì trạng thái ngủ, ức chế sự nảy mầm của hạt, củ giống trong bảo quản.",
-        "d) Đặt xen lẫn các quả chín ít với các quả chín nhiều sẽ làm nhanh quá trình chín của quả."
-      ],
-      "answer": "Các ý đúng: a, b, c, d"
+      "type": "true_false",
+      "question": "Hormone thực vật là phân tử hữu cơ do thực vật tổng hợp, có vai trò điều chỉnh quá trình sinh lí, sinh trưởng, phát triển của cây, gồm có nhóm hormone kích thích (auxin, cytokinin, gibberellin,...) và ức chế (abscisic acid, ethylene,...). Mỗi nhận định sau đây là Đúng hay Sai về ứng dụng của hormone thực vật trong thực tiễn",
+      "statements": [
+        {
+          "key": "a",
+          "text": "Nếu được xử lí gibberellin ở nho không hạt đang ra quả thì quả sẽ lớn hơn, cuống và chùm nho dài hơn.",
+          "answer": true
+        },
+        {
+          "key": "b",
+          "text": "Xử lý gibberellin tạo quả không hạt ở cam, dưa hấu.......",
+          "answer": true
+        },
+        {
+          "key": "c",
+          "text": "Sử dụng hormone (abscisic acid, ethylene) hay các chất ức chế sinh trưởng để duy trì trạng thái ngủ, ức chế sự nảy mầm của hạt, củ giống trong bảo quản.",
+          "answer": true
+        },
+        {
+          "key": "d",
+          "text": "Đặt xen lẫn các quả chín ít với các quả chín nhiều sẽ làm nhanh quá trình chín của quả.",
+          "answer": true
+        }
+      ]
     }
   ]
 }

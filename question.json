@@ -1,402 +1,382 @@
 {
   "meta": {
-    "titleRaw": "Ôn tập Tin học 11 - Học kì 2",
-    "subtitleRaw": "Bộ đề thử nghiệm hỗn hợp",
-    "sectionRaw": "Dùng để test đầy đủ logic, giao diện và trạng thái làm bài của cả hai dạng câu hỏi."
+    "titleRaw": "BÀI 20: SINH TRƯỞNG VÀ PHÁT TRIỂN Ở THỰC VẬT",
+    "subtitleRaw": "ÔN TẬP CK2- SINH HỌC 11-BÀI 20-26 | TRƯỜNG THPT TRẦN PHÚ",
+    "sectionRaw": "B? ?? g?m 24 c?u tr?c nghi?m nhi?u l?a ch?n v? 3 c?u ??ng/sai."
   },
   "questions": [
     {
       "number": 1,
       "type": "mcq",
-      "question": "Trong Python, cấu trúc dữ liệu thường dùng để biểu diễn mảng một chiều là",
+      "question": "Sinh trưởng ở thực vật là:",
       "options": [
-        "A. tuple",
-        "B. set",
-        "C. list",
-        "D. dictionary"
+        "A. Sinh trưởng của thực vật là quá trình gia tăng về số lượng của cơ thể do tăng số lượng và kích thước tế bào.",
+        "B. Sinh trưởng của thực vật là quá trình gia tăng về kích thước của cơ thể do tăng số lượng, khối lượng và kích thước tế bào.",
+        "C. Sinh trưởng của thực vật là quá trình gia tăng về kích thước của cơ thể do giảm số lượng và kích thước tế bào.",
+        "D. Sinh trưởng của thực vật là quá trình gia tăng về kích thước của cơ thể do tăng kích thước tế bào."
       ],
-      "answer": "C"
+      "answer": "B"
     },
     {
       "number": 2,
-      "type": "true_false",
-      "question": "Xét đoạn chương trình sau.",
-      "code": "A = [2, 4, 6]\nA.append(8)\nA.insert(1, 3)\nA.remove(4)",
-      "statements": [
-        {
-          "key": "a",
-          "text": "Sau lệnh append(8), danh sách có 4 phần tử.",
-          "answer": true
-        },
-        {
-          "key": "b",
-          "text": "Sau lệnh insert(1, 3), số 3 đứng ở chỉ số 1.",
-          "answer": true
-        },
-        {
-          "key": "c",
-          "text": "Sau lệnh remove(4), danh sách vẫn còn số 4.",
-          "answer": false
-        },
-        {
-          "key": "d",
-          "text": "Kết quả cuối cùng của A là [2, 3, 6, 8].",
-          "answer": true
-        }
-      ]
+      "type": "mcq",
+      "question": "Mô phân sinh là:",
+      "options": [
+        "A. Nhóm tế bào phân hóa, không có khả năng phân chia tạo tế bào mới trong suốt đời sống thực vật.",
+        "B. Nhóm tế bào chưa phân hóa, có khả năng phân chia tạo tế bào mới trong suốt đời sống thực vật.",
+        "C. Nhóm tế bào chưa phân hóa, không có khả năng phân chia tạo tế bào mới trong suốt đời sống thực vật.",
+        "D. Nhóm tế bào chưa phân hóa, có khả năng kết hợp tạo tế bào mới trong suốt đời sống thực vật."
+      ],
+      "answer": "B"
     },
     {
       "number": 3,
       "type": "mcq",
-      "question": "Cho A = [1, 3, 5, 7, 9]. Lệnh nào dùng để kiểm tra xem giá trị 7 có nằm trong A hay không?",
+      "question": "Mô phân sinh ở thực vật gồm:",
       "options": [
-        "A. 7 in A",
-        "B. A.has(7)",
-        "C. A.contains(7)",
-        "D. A.search(7)"
+        "A. Mô phân sinh đỉnh, mô phân sinh bên và mô phân sinh đốt.",
+        "B. Mô phân sinh đỉnh, mô phân sinh bên và mô phân sinh lóng.",
+        "C. Mô phân sinh chồi, mô phân sinh bên và mô phân sinh lóng.",
+        "D. Mô phân sinh đốt, mô phân sinh đỉnh và mô phân sinh chồi."
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 4,
+      "type": "mcq",
+      "question": "Loại mô phân sinh nào sau đây không có ở cây Một lá mầm?",
+      "options": [
+        "A. Mô phân sinh bên.",
+        "B. Mô phân sinh đỉnh cây.",
+        "C. Mô phân sinh lóng.",
+        "D. Mô phân sinh đỉnh rễ."
       ],
       "answer": "A"
     },
     {
-      "number": 4,
-      "type": "true_false",
-      "question": "Cho ma trận hai chiều sau.",
-      "code": "A = [[1, 2, 3],\n     [4, 5, 6],\n     [7, 8, 9]]",
-      "statements": [
-        {
-          "key": "a",
-          "text": "A[1][2] cho kết quả 6.",
-          "answer": true
-        },
-        {
-          "key": "b",
-          "text": "A[0] là hàng đầu tiên của ma trận.",
-          "answer": true
-        },
-        {
-          "key": "c",
-          "text": "A[2][0] cho kết quả 8.",
-          "answer": false
-        },
-        {
-          "key": "d",
-          "text": "Ma trận A có 3 hàng và 3 cột.",
-          "answer": true
-        }
-      ]
-    },
-    {
       "number": 5,
       "type": "mcq",
-      "question": "Lệnh nào sau đây mở tệp data.txt để ghi thêm dữ liệu mà vẫn giữ nguyên nội dung cũ?",
+      "question": "Thực vật Hai lá mầm có các mô phân sinh nào?",
       "options": [
-        "A. open(\"data.txt\", \"r\", encoding=\"utf-8\")",
-        "B. open(\"data.txt\", \"w\", encoding=\"utf-8\")",
-        "C. open(\"data.txt\", \"a\", encoding=\"utf-8\")",
-        "D. open(\"data.txt\", \"x\", encoding=\"utf-8\")"
+        "A. Đỉnh và lóng.",
+        "B. Đỉnh và bên.",
+        "C. Đỉnh thân và rễ.",
+        "D. Lóng và bên."
       ],
-      "answer": "C"
+      "answer": "B"
     },
     {
       "number": 6,
-      "type": "true_false",
-      "question": "Xét đoạn mã ghi dữ liệu vào tệp.",
-      "code": "with open(\"diem.txt\", \"w\", encoding=\"utf-8\") as f:\n    print(\"An 8.5\", file=f)\n    print(\"Bình 9.0\", file=f)",
-      "statements": [
-        {
-          "key": "a",
-          "text": "Tệp diem.txt được mở ở chế độ ghi.",
-          "answer": true
-        },
-        {
-          "key": "b",
-          "text": "Sau hai lệnh print, tệp có hai dòng dữ liệu.",
-          "answer": true
-        },
-        {
-          "key": "c",
-          "text": "file=f làm dữ liệu in ra màn hình thay vì ghi vào tệp.",
-          "answer": false
-        },
-        {
-          "key": "d",
-          "text": "Nếu tệp đã tồn tại, chế độ \"w\" sẽ ghi đè nội dung cũ.",
-          "answer": true
-        }
-      ]
+      "type": "mcq",
+      "question": "Sinh trưởng sơ cấp của thực vật là:",
+      "options": [
+        "A. Sự sinh trưởng của thân và rễ theo chiều dài do hoạt động của mô phân sinh đỉnh.",
+        "B. Sự tăng trưởng chiều dài của cây do hoạt động phân hoá của mô phân sinh đỉnh thân và đỉnh rễ ở cây Một lá mầm và cây Hai lá mầm.",
+        "C. Sự tăng trưởng chiều dài của cây do hoạt động nguyên phân của mô phân sinh đỉnh thân và đỉnh rễ và chỉ có ở cây cây Hai lá mầm.",
+        "D. Sự tăng trưởng chiều dài của cây do hoạt động nguyên phân của mô phân sinh đỉnh thân và đỉnh rễ và chỉ có ở cây cây Một lá mầm."
+      ],
+      "answer": "A"
     },
     {
       "number": 7,
       "type": "mcq",
-      "question": "Trong tìm kiếm tuần tự, trường hợp tốt nhất xảy ra khi nào?",
+      "question": "Đặc điểm không có ở sinh trưởng sơ cấp là:",
       "options": [
-        "A. Phần tử cần tìm nằm ở giữa danh sách",
-        "B. Phần tử cần tìm không có trong danh sách",
-        "C. Phần tử cần tìm nằm ở cuối danh sách",
-        "D. Phần tử cần tìm nằm ở đầu danh sách"
+        "A. làm tăng kích thước chiều dài của cây.",
+        "B. diễn ra do hoạt động của tầng sinh bần.",
+        "C. diễn ra cả ở cây Một lá mầm và cây Hai lá mầm.",
+        "D. diễn ra do hoạt động của mô phân sinh đỉnh."
       ],
-      "answer": "D"
+      "answer": "B"
     },
     {
       "number": 8,
-      "type": "true_false",
-      "question": "Xét hai thuật toán tìm kiếm trong danh sách số nguyên.",
-      "statements": [
-        {
-          "key": "a",
-          "text": "Tìm kiếm tuần tự có thể áp dụng cho danh sách chưa sắp xếp.",
-          "answer": true
-        },
-        {
-          "key": "b",
-          "text": "Tìm kiếm nhị phân cần danh sách đã được sắp xếp trước.",
-          "answer": true
-        },
-        {
-          "key": "c",
-          "text": "Trong tìm kiếm nhị phân, mỗi bước luôn kiểm tra phần tử đầu tiên của danh sách.",
-          "answer": false
-        },
-        {
-          "key": "d",
-          "text": "Với danh sách lớn đã sắp xếp, tìm kiếm nhị phân thường nhanh hơn tìm kiếm tuần tự.",
-          "answer": true
-        }
-      ]
+      "type": "mcq",
+      "question": "Phát biểu đúng về mô phân sinh bên và mô phân sinh lóng là:",
+      "options": [
+        "A. mô phân sinh bên và mô phân sinh lóng có ở thân cây Một lá mầm.",
+        "B. mô phân sinh bên có ở thân cây Một lá mầm, còn mô phân sinh lóng có ở thân cây Hai lá mầm.",
+        "C. mô phân sinh bên có ở thân cây Hai lá mầm, còn mô phân sinh lóng có ở thân cây Một lá mầm.",
+        "D. mô phân sinh bên và mô phân sinh lóng có ở thân cây Hai lá mầm."
+      ],
+      "answer": "C"
     },
     {
       "number": 9,
       "type": "mcq",
-      "question": "Trong thuật toán tìm kiếm nhị phân, chỉ số giữa mid thường được tính bằng công thức nào?",
+      "question": "Kết quả của sinh trưởng thứ cấp là gì?",
       "options": [
-        "A. mid = (left + right) // 2",
-        "B. mid = (left + right) % 2",
-        "C. mid = left + right",
-        "D. mid = (left + right) / 10"
+        "A. Tạo ra các lớp gỗ thứ cấp, từ đó hình thành nên các vòng sinh trưởng.",
+        "B. Làm cho thân, rễ cây dài ra do hoạt động của mô phân sinh đỉnh.",
+        "C. Tạo lóng do hoạt động của mô phân sinh lóng.",
+        "D. Tạo biểu bì, tầng sinh bần, mạch gỗ sơ cấp và mạch rây sơ cấp."
       ],
       "answer": "A"
     },
     {
       "number": 10,
-      "type": "true_false",
-      "question": "Xét thuật toán sắp xếp chèn (insertion sort).",
-      "statements": [
-        {
-          "key": "a",
-          "text": "Sau mỗi vòng lặp ngoài, đoạn đầu của danh sách đã được sắp xếp.",
-          "answer": true
-        },
-        {
-          "key": "b",
-          "text": "Insertion sort hoạt động bằng cách đổi chỗ mọi cặp phần tử liền kề trong toàn bộ danh sách như bubble sort.",
-          "answer": false
-        },
-        {
-          "key": "c",
-          "text": "Insertion sort thường chạy khá tốt khi dữ liệu gần như đã có thứ tự.",
-          "answer": true
-        },
-        {
-          "key": "d",
-          "text": "Insertion sort là thuật toán chia để trị.",
-          "answer": false
-        }
-      ]
+      "type": "mcq",
+      "question": "Sinh trưởng thứ cấp của cây thân gỗ nhờ hoạt động của:",
+      "options": [
+        "A. mô phân sinh bên.",
+        "B. mô phân sinh đỉnh.",
+        "C. mô phân sinh lóng.",
+        "D. phần gỗ và vỏ."
+      ],
+      "answer": "A"
     },
     {
       "number": 11,
       "type": "mcq",
-      "question": "Cho đoạn mã sau, kết quả in ra là gì?",
-      "code": "A = [10, 20, 30, 40]\nprint(A[-1])",
+      "question": "Hormone ở thực vật là:",
       "options": [
-        "A. 10",
-        "B. 20",
-        "C. 30",
-        "D. 40"
+        "A. các chất hữu cơ do cơ thể thực vật tiết ra có tác dụng điều tiết hoạt động sống của cây.",
+        "B. các chất hữu cơ do cơ thể thực vật nhận từ ngoài vào có tác dụng điều tiết hoạt động sống của cây.",
+        "C. các chất hữu cơ do môi trường ngoài thực vật tiết ra có tác dụng điều tiết hoạt động sống của cây.",
+        "D. các chất vô cơ do thực vật tiết ra để điều tiết hoạt động sống."
       ],
-      "answer": "D"
+      "answer": "A"
     },
     {
       "number": 12,
-      "type": "true_false",
-      "question": "Xét thuật toán sắp xếp chọn dùng để sắp xếp giảm dần.",
-      "statements": [
-        {
-          "key": "a",
-          "text": "Mỗi vòng lặp có thể chọn phần tử lớn nhất trong đoạn chưa sắp xếp.",
-          "answer": true
-        },
-        {
-          "key": "b",
-          "text": "Sau vòng lặp đầu tiên, phần tử lớn nhất sẽ nằm ở đầu danh sách.",
-          "answer": true
-        },
-        {
-          "key": "c",
-          "text": "Biến Max thường dùng để lưu chỉ số của phần tử lớn nhất đang xét.",
-          "answer": true
-        },
-        {
-          "key": "d",
-          "text": "Selection sort không cần so sánh các phần tử với nhau.",
-          "answer": false
-        }
-      ]
+      "type": "mcq",
+      "question": "Nhóm hormone kích thích ở thực vật gồm:",
+      "options": [
+        "A. Auxin, GA và methylen.",
+        "B. Auxin, GA và cytokinin.",
+        "C. Auxin, ABA và cytokinin.",
+        "D. Auxin, ABA và methylen."
+      ],
+      "answer": "B"
     },
     {
       "number": 13,
       "type": "mcq",
-      "question": "Khi dùng lệnh f.readlines(), Python sẽ trả về kết quả nào?",
+      "question": "Loại hormone nào sau đây có tác dụng ức chế sự sinh trưởng tự nhiên của thực vật?",
       "options": [
-        "A. Một chuỗi chứa toàn bộ nội dung tệp",
-        "B. Một danh sách các dòng trong tệp",
-        "C. Một số nguyên là số dòng trong tệp",
-        "D. Một kí tự đầu tiên của tệp"
+        "A. GA.",
+        "B. Abscisic acid.",
+        "C. Cytokinin.",
+        "D. Auxin."
       ],
       "answer": "B"
     },
     {
       "number": 14,
-      "type": "true_false",
-      "question": "Xét hoạt động kiểm thử chương trình.",
-      "statements": [
-        {
-          "key": "a",
-          "text": "Dùng nhiều bộ dữ liệu kiểm thử giúp tăng độ tin cậy của chương trình.",
-          "answer": true
-        },
-        {
-          "key": "b",
-          "text": "Kiểm thử với vài ví dụ đúng có thể chứng minh thuật toán đúng với mọi trường hợp.",
-          "answer": false
-        },
-        {
-          "key": "c",
-          "text": "Dữ liệu biên như danh sách rỗng hoặc chỉ có 1 phần tử là cần thiết khi kiểm thử.",
-          "answer": true
-        },
-        {
-          "key": "d",
-          "text": "Một chương trình chạy đúng với dữ liệu mẫu vẫn có thể sai ở trường hợp khác.",
-          "answer": true
-        }
-      ]
+      "type": "mcq",
+      "question": "Hormone nào làm chậm sự lão hóa (hóa già) của cây?",
+      "options": [
+        "A. Ethylene.",
+        "B. Cytokinin.",
+        "C. Gibberellin (GA).",
+        "D. Abscisic acid."
+      ],
+      "answer": "B"
     },
     {
       "number": 15,
       "type": "mcq",
-      "question": "Nếu danh sách đã sắp xếp giảm dần, muốn tiếp tục dùng tìm kiếm nhị phân thì cần làm gì?",
+      "question": "Auxin được sử dụng nhiều trong sản xuất nông nghiệp. Tuy nhiên, nếu sử dụng auxin để phun lên rau, củ thì có thể sẽ gây độc cho cơ thể người khi sử dụng. Nguyên nhân là vì:",
       "options": [
-        "A. Không thể áp dụng tìm kiếm nhị phân",
-        "B. Điều chỉnh điều kiện so sánh cho phù hợp với thứ tự giảm dần",
-        "C. Chuyển sang tìm kiếm tuần tự vì nhanh hơn",
-        "D. Luôn lấy mid bằng chỉ số cuối cùng"
+        "A. Auxin nhân tạo làm gia tăng vi sinh vật gây bệnh.",
+        "B. Thực vật không có enzyme phân giải auxin nhân tạo.",
+        "C. Auxin nhân tạo làm ảnh hưởng đến hoạt động hô hấp của cơ thể.",
+        "D. Auxin nhân tạo sẽ làm rối loạn chuyển hóa trong tế bào."
       ],
       "answer": "B"
     },
     {
       "number": 16,
-      "type": "true_false",
-      "question": "Cho đoạn mã sau.",
-      "code": "numbers = [4, 7, 1, 8]\ntong = sum(numbers)\nso_luong = len(numbers)",
-      "statements": [
-        {
-          "key": "a",
-          "text": "Biến tong nhận giá trị 20.",
-          "answer": true
-        },
-        {
-          "key": "b",
-          "text": "Biến so_luong nhận giá trị 4.",
-          "answer": true
-        },
-        {
-          "key": "c",
-          "text": "sum(numbers) trả về phần tử lớn nhất của danh sách.",
-          "answer": false
-        },
-        {
-          "key": "d",
-          "text": "Có thể tính trung bình bằng biểu thức tong / so_luong.",
-          "answer": true
-        }
-      ]
+      "type": "mcq",
+      "question": "Hiện tượng xuân hóa là gì?",
+      "options": [
+        "A. Hiện tượng ra hoa của cây phụ thuộc vào nhiệt độ thấp.",
+        "B. Hiện tượng ra hoa của cây phụ thuộc vào nhiệt độ cao.",
+        "C. Hiện tượng ra hoa của cây phụ thuộc vào tuổi của cây.",
+        "D. Hiện tượng ra hoa của cây phụ thuộc vào quang chu kì."
+      ],
+      "answer": "A"
     },
     {
       "number": 17,
       "type": "mcq",
-      "question": "Lệnh nào sau đây vừa xóa vừa trả về phần tử ở vị trí chỉ số 2 của danh sách A?",
+      "question": "Có bao nhiêu phát biểu sau đây đúng về đặc điểm sinh trưởng và phát triển ở thực vật?\n(I). Xảy ra tại một số vị trí, cơ quan trên cơ thể thực vật, nơi có các mô phân sinh.\n(II). Chỉ diễn ra trong một giai đoạn nhất định của đời sống của thực vật.\n(III). Đây là hình thức sinh trưởng có giới hạn.\n(IV). Biểu hiện bằng sự gia tăng kích thước, sự xuất hiện và thay mới của các cơ quan như cành, lá, rễ, hoa, quả, ...",
       "options": [
-        "A. A.remove(2)",
-        "B. A.pop(2)",
-        "C. A.clear(2)",
-        "D. A.append(2)"
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
       ],
       "answer": "B"
     },
     {
       "number": 18,
+      "type": "mcq",
+      "question": "Có bao nhiêu phát biểu sau đây đúng về các yếu tố ảnh hưởng đến sinh trưởng và phát triển ở thực vật?\n(I). Chịu ảnh hưởng của yếu tố bên ngoài và bên trong cơ thể.\n(II). Yếu tố bên trong ảnh hưởng đến sinh trưởng và phát triển ở thực vật như là gene và hormone thực vật.\n(III). Nước ảnh hưởng đến sinh trưởng và phát triển ở thực do nước là nguồn nguyên liệu cung cấp cho quá trình quang hợp và các hoạt động trao đổi chất khác của cây.\n(IV). Tất cả các loài thực vật đều có nhu cầu nước giống nhau.",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 19,
+      "type": "mcq",
+      "question": "Có bao nhiêu phát biểu sau đây đúng về mô phân sinh ở thực vật?\n(I). Tất cả thực vật đều có mô phân sinh đỉnh, mô phân sinh bên, mô phân sinh lóng.\n(II). Mô phân sinh đỉnh nằm ở ngọn cây, đỉnh cành và chóp rễ của cây Một lá mầm và Hai lá mầm.\n(III). Mô phân sinh lóng ở thực vật Hai lá mầm giúp cho thân dài và cao lên.\n(IV). Mô phân sinh là nhóm các tế bào chưa phân hoá, có khả năng phân chia tạo tế bào mới trong suốt đời sống của thực vật.",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 20,
+      "type": "mcq",
+      "question": "Có bao nhiêu phát biểu sau đây đúng về hormone ở thực vật?\n(I). Hormone thực vật là các chất hữu cơ sản sinh ra ở đâu chỉ gây tác động sinh lý ở nơi đó.\n(II). Hormone thực vật tham gia điều khiển các đáp ứng của thực vật với các kích thích đến từ môi trường.\n(III). Có thể ức chế sự sinh trưởng, đẩy nhanh sự lão hoá (già hoá) ở cây qua các phản ứng ngủ của hạt, rụng lá, rụng quả, ... .\n(IV). Có thể thúc đẩy quá trình sinh trưởng, phát triển ở thực vật như: sinh trưởng của chồi ngọn, nảy mầm của hạt, chín của quả, ... .",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 21,
+      "type": "mcq",
+      "question": "Có bao nhiêu phát biểu sau đây đúng về tương quan của hormone ở thực vật?\n(I). Trong hạt nảy mầm: GA cao còn AAB thấp.\n(II). Trong hạt khô: GA thấp còn AAB cao.\n(III). Tương quan giữa Auxin/Cytokinin điều tiết sự phát triển của mô sẹo: Auxin/Cytokinin thấp → kích thích tạo chồi bên.\n(IV). Tương quan giữa Auxin/Cytokinin điều tiết sự phát triển của mô sẹo: Auxin/Cytokinin cao → kích thích tạo rễ.",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 22,
+      "type": "mcq",
+      "question": "Có bao nhiêu phát biểu sau đây đúng về nhân tố chi phối quá trình phát triển của thực vật có hoa?\n(I). Nhiều loài cây để tạo hoa cần có tác động của nhiệt độ thấp gọi là xuân hóa.\n(II). Nhiều loài thực vật đến tuổi nhưng để ra hoa cần có thời gian chiếu sáng trong ngày thích hợp. Hiện tượng đó gọi là tính quang chu kì tác động đến sự ra hoa.\n(III). Cây đêm dài (ngày ngắn) ra hoa trong điều kiện chiếu sáng ít hơn đêm.\n(IV). Cây trung tính là cây ra hoa không phụ thuộc vào độ dài thời gian chiếu sáng trong ngày.",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 23,
+      "type": "mcq",
+      "question": "Khi nói về vai trò của hormone thực vật, phát biểu nào sau đây là sai?",
+      "options": [
+        "A. Gibberellin kích thích sinh trưởng chiều cao của cây.",
+        "B. Ethylene thúc quả chóng chín, rụng lá.",
+        "C. Auxin kích thích ra rễ phụ và tạo ưu thế đỉnh.",
+        "D. Abscisic acid kích thích sự phân chia tế bào."
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 24,
+      "type": "mcq",
+      "question": "Dựa trên hình và kiến thức về mô phân sinh ở thực vật. Có bao nhiêu phát biểu sau đây đúng?\n1. Mô phân sinh bên: nằm ở phần vỏ và trụ của thân, rễ của cây Hai lá mầm.\n2. Mô phân sinh đỉnh có ở đầu ngọn thân, ngọn cành, chồi nách, chóp rễ của cây Một lá mầm. Cây Hai lá mầm không có.\n3. Mô phân sinh lóng nằm ở gốc của lóng.\n4. Sự hoạt động của mô phân sinh bên giúp cây Hai lá mầm tăng trưởng theo đường kính của cây.",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
+      ],
+      "answer": "C",
+      "images": [
+        {
+          "src": "images/q24.png",
+          "alt": "Sơ đồ các loại mô phân sinh ở thực vật",
+          "caption": "Mô phân sinh đỉnh, mô phân sinh lóng, mô phân sinh bên"
+        }
+      ]
+    },
+    {
+      "number": 25,
       "type": "true_false",
-      "question": "Cho danh sách A = [1, 4, 7, 9, 12, 18, 25] và tìm K = 12 bằng thuật toán tìm kiếm nhị phân.",
+      "question": "Sinh trưởng và phát triển của thực vật chịu ảnh hưởng của các yếu tố như đặc điểm di truyền, giai đoạn sinh trưởng và các yếu tố môi trường như nhiệt độ, nước, ánh sáng, dinh dưỡng khoáng. Mỗi nhận định sau đây là Đúng hay Sai về các yếu tố ảnh hưởng đến quá trình sinh trưởng và phát triển của thực vật?",
       "statements": [
         {
           "key": "a",
-          "text": "Ở bước đầu tiên, mid bằng 3.",
-          "answer": true
+          "text": "Ánh sáng điều tiết quá trình ra hoa, ảnh hưởng đến tỉ lệ nảy mầm của hạt nhưng không tác động đến quá trình phát sinh hình thái của thực vật.",
+          "answer": false
         },
         {
           "key": "b",
-          "text": "Ở bước đầu tiên, A[mid] bằng 9.",
+          "text": "Nước ảnh hưởng đến tốc độ sinh trưởng của thực vật: chiều cao cây, diện tích lá và ảnh hưởng đến quá trình nảy mầm của hạt.",
           "answer": true
         },
         {
           "key": "c",
-          "text": "Sau bước đầu tiên, thuật toán tiếp tục tìm ở nửa bên trái của danh sách.",
+          "text": "Nhiệt độ tác động đến quá trình nảy mầm của hạt theo tỷ lệ thuận.",
           "answer": false
         },
         {
           "key": "d",
-          "text": "Thuật toán sẽ tìm thấy 12 sau đúng 3 lần tính mid.",
+          "text": "Chất khoáng ảnh hưởng đến tốc độ sinh trưởng, phát triển của thực vật; màu sắc, hình thái,... của các cơ quan, bộ phận thực vật.",
           "answer": true
         }
       ]
     },
     {
-      "number": 19,
-      "type": "mcq",
-      "question": "Phương pháp nào giúp chứng minh tính đúng đắn của thuật toán một cách chặt chẽ hơn kiểm thử thông thường?",
-      "options": [
-        "A. Chạy chương trình nhiều lần với cùng một bộ dữ liệu",
-        "B. Đo thời gian thực thi trên máy mạnh hơn",
-        "C. Chứng minh bằng lập luận logic hoặc quy nạp toán học",
-        "D. In thêm thông báo để dễ quan sát kết quả"
-      ],
-      "answer": "C"
-    },
-    {
-      "number": 20,
+      "number": 26,
       "type": "true_false",
-      "question": "Xét đoạn xử lý dữ liệu đọc từ tệp.",
-      "code": "line = \"Lan 8.75\"\nparts = line.split()\nten = parts[0]\ndiem = float(parts[1])",
+      "question": "Sinh trưởng sơ cấp do hoạt động của mô phân sinh đỉnh, mô phân sinh lóng làm cho thân, rễ, lóng dài ra; gặp ở cả cây Một lá mầm và Hai lá mầm. Sinh trưởng thứ cấp do hoạt động của mô phân sinh bên (tầng phát sinh vỏ và tầng phát sinh trụ) làm cho thân, rễ to ra theo đường kính; gặp ở cây Hai lá mầm. Mỗi nhận định sau đây là Đúng hay Sai về 2 quá trình này?",
       "statements": [
         {
           "key": "a",
-          "text": "Biến parts là một danh sách gồm 2 phần tử.",
+          "text": "Thực vật có sinh trưởng thứ cấp thường có thời gian sống một năm.",
+          "answer": false
+        },
+        {
+          "key": "b",
+          "text": "Sự hoạt động của mô phân sinh bên giúp cây một lá mầm tăng trưởng theo đường kính của cây.",
+          "answer": false
+        },
+        {
+          "key": "c",
+          "text": "Cây một lá mầm và cây hai lá mầm thân thảo chỉ có sinh trưởng sơ cấp.",
+          "answer": true
+        },
+        {
+          "key": "d",
+          "text": "Sự hoạt động của mô phân sinh lóng giúp lóng cây dài ra và sẽ ngừng hoạt động khi lóng đạt đến kích thước tối đa.",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "number": 27,
+      "type": "true_false",
+      "question": "Hormone thực vật là phân tử hữu cơ do thực vật tổng hợp, có vai trò điều chỉnh quá trình sinh lí, sinh trưởng, phát triển của cây, gồm có nhóm hormone kích thích (auxin, cytokinin, gibberellin,...) và ức chế (abscisic acid, ethylene,...). Mỗi nhận định sau đây là Đúng hay Sai về ứng dụng của hormone thực vật trong thực tiễn",
+      "statements": [
+        {
+          "key": "a",
+          "text": "Nếu được xử lí gibberellin ở nho không hạt đang ra quả thì quả sẽ lớn hơn, cuống và chùm nho dài hơn.",
           "answer": true
         },
         {
           "key": "b",
-          "text": "Biến ten nhận giá trị \"Lan\".",
+          "text": "Xử lý gibberellin tạo quả không hạt ở cam, dưa hấu.......",
           "answer": true
         },
         {
           "key": "c",
-          "text": "float(parts[1]) cho kết quả chuỗi \"8.75\".",
-          "answer": false
+          "text": "Sử dụng hormone (abscisic acid, ethylene) hay các chất ức chế sinh trưởng để duy trì trạng thái ngủ, ức chế sự nảy mầm của hạt, củ giống trong bảo quản.",
+          "answer": true
         },
         {
           "key": "d",
-          "text": "Sau đoạn mã, biến diem có kiểu số thực.",
+          "text": "Đặt xen lẫn các quả chín ít với các quả chín nhiều sẽ làm nhanh quá trình chín của quả.",
           "answer": true
         }
       ]

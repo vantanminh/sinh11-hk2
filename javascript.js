@@ -1,6 +1,12 @@
 "use strict";
 
-const STORAGE_KEY = "tin11_hk2_quiz_v2";
+const DATA_URL = "21/data/bai20.json";
+const DATA_BASE_PATH = (() => {
+  const normalized = DATA_URL.replace(/\\/g, "/");
+  const lastSlashIndex = normalized.lastIndexOf("/");
+  return lastSlashIndex >= 0 ? normalized.slice(0, lastSlashIndex + 1) : "";
+})();
+const STORAGE_KEY = "sinh11_bai20_quiz_v1";
 const DISPLAY_KEYS = ["A", "B", "C", "D", "E", "F"];
 const STATEMENT_KEYS = ["a", "b", "c", "d", "e", "f"];
 const TRUE_FALSE_CHOICES = [
@@ -81,20 +87,17 @@ const els = {
   qTypeBadge: document.getElementById("qTypeBadge"),
   answerChip: document.getElementById("answerChip"),
   questionText: document.getElementById("questionText"),
+  questionMedia: document.getElementById("questionMedia"),
   options: document.getElementById("options"),
   prevBtn: document.getElementById("prevBtn"),
   clearBtn: document.getElementById("clearBtn"),
-  nextBtn: document.getElementById("nextBtn"),
-  explainBtn: document.getElementById("explainBtn"),
-  explainBox: document.getElementById("explainBox")
+  nextBtn: document.getElementById("nextBtn")
 };
 
 let data = null;
-let explainData = {};
 let sourceQuestions = [];
 let questions = [];
 let questionIndexByNumber = new Map();
-let showExplain = false;
 
 const state = {
   current: 0,
@@ -343,6 +346,46 @@ function createQuestionCodeBlock(code) {
   return pre;
 }
 
+function resolveAssetUrl(assetPath) {
+  const source = String(assetPath || "").trim();
+  if (!source) return "";
+
+  if (/^(?:https?:|data:|blob:|\/)/i.test(source)) {
+    return source;
+  }
+
+  return `${DATA_BASE_PATH}${source}`.replace(/\\/g, "/");
+}
+
+function normalizeQuestionImages(rawImages, questionNumber) {
+  const images = Array.isArray(rawImages) ? rawImages : [];
+  const fallbackAlt = `Hình minh họa câu ${questionNumber}`;
+
+  return images
+    .map((image, index) => {
+      if (typeof image === "string") {
+        const src = resolveAssetUrl(image);
+        if (!src) return null;
+
+        return {
+          src,
+          alt: `${fallbackAlt} (${index + 1})`,
+          caption: ""
+        };
+      }
+
+      const src = resolveAssetUrl(image?.src || "");
+      if (!src) return null;
+
+      return {
+        src,
+        alt: String(image?.alt || `${fallbackAlt} (${index + 1})`).trim(),
+        caption: String(image?.caption || "").trim()
+      };
+    })
+    .filter(Boolean);
+}
+
 function shuffled(items) {
   const next = [...items];
 
@@ -429,6 +472,7 @@ function statementText(statementRaw) {
 }
 
 function parseMultipleChoiceQuestion(rawQuestion, index) {
+  const number = Number(rawQuestion?.number) || index + 1;
   const options = Array.isArray(rawQuestion?.options) ? rawQuestion.options : [];
   const normalizedOptions = options.map((option, optionIndex) => ({
     key: optionKey(option) || DISPLAY_KEYS[optionIndex] || String(optionIndex + 1),
@@ -442,17 +486,18 @@ function parseMultipleChoiceQuestion(rawQuestion, index) {
     : normalizedOptions[0]?.key || "";
 
   return {
-    number: Number(rawQuestion?.number) || index + 1,
+    number,
     type: "mcq",
     question: String(rawQuestion?.question || ""),
     code: String(rawQuestion?.code || ""),
-    explanation: String(rawQuestion?.explanation || ""),
+    images: normalizeQuestionImages(rawQuestion?.images, number),
     options: normalizedOptions,
     answer
   };
 }
 
 function parseTrueFalseQuestion(rawQuestion, index) {
+  const number = Number(rawQuestion?.number) || index + 1;
   const statements = Array.isArray(rawQuestion?.statements) ? rawQuestion.statements : [];
   const normalizedStatements = statements
     .map((statement, statementIndex) => {
@@ -472,11 +517,11 @@ function parseTrueFalseQuestion(rawQuestion, index) {
     .filter(Boolean);
 
   return {
-    number: Number(rawQuestion?.number) || index + 1,
+    number,
     type: "true_false",
     question: String(rawQuestion?.question || ""),
     code: String(rawQuestion?.code || ""),
-    explanation: String(rawQuestion?.explanation || ""),
+    images: normalizeQuestionImages(rawQuestion?.images, number),
     statements: normalizedStatements
   };
 }
@@ -761,24 +806,19 @@ function answerDisplayKey(question) {
   return DISPLAY_KEYS[answerIndex] || question.answer;
 }
 
-function currentExplanationText(question) {
-  if (!question) return "";
-
-  if (question.explanation) return String(question.explanation);
-  return String(explainData[String(question.number)] || "");
-}
-
 function renderHeader() {
-  const title = data?.meta?.subtitleRaw || data?.meta?.titleRaw || "Ôn tập";
+  const title = data?.meta?.titleRaw || data?.meta?.subtitleRaw || "Ôn tập";
+  const subtitle = data?.meta?.subtitleRaw || "";
   const section = data?.meta?.sectionRaw || "";
   const breakdown = buildTypeBreakdown();
-  const sectionParts = [section, breakdown].filter(Boolean);
+  const sectionParts = [subtitle, section, breakdown].filter(Boolean);
   const counts = getCounts();
   const total = counts.totalQuestions;
   const showScore = state.revealMode === "instant" || state.submitted;
 
   els.examTitle.textContent = title;
   els.examSection.textContent = sectionParts.join(" · ");
+  document.title = subtitle ? `${title} | ${subtitle}` : title;
 
   els.openPaletteBtn.textContent = total > 0 ? `1-${total}` : "0";
 
@@ -930,6 +970,48 @@ function renderQuestionStem(question) {
   els.questionText.scrollTop = 0;
 }
 
+function renderQuestionMedia(question) {
+  els.questionMedia.innerHTML = "";
+
+  const images = Array.isArray(question?.images) ? question.images : [];
+  if (!images.length) {
+    els.questionMedia.hidden = true;
+    return;
+  }
+
+  images.forEach((image, index) => {
+    const figure = document.createElement("figure");
+    const img = document.createElement("img");
+
+    figure.className = "question-figure";
+
+    img.className = "question-image";
+    img.src = image.src;
+    img.alt = image.alt || `Hình minh họa câu ${question.number} (${index + 1})`;
+    img.loading = "lazy";
+    img.decoding = "async";
+    img.addEventListener("error", () => {
+      figure.remove();
+      if (!els.questionMedia.children.length) {
+        els.questionMedia.hidden = true;
+      }
+    });
+
+    figure.appendChild(img);
+
+    if (image.caption) {
+      const figcaption = document.createElement("figcaption");
+      figcaption.className = "question-caption";
+      figcaption.textContent = image.caption;
+      figure.appendChild(figcaption);
+    }
+
+    els.questionMedia.appendChild(figure);
+  });
+
+  els.questionMedia.hidden = !els.questionMedia.children.length;
+}
+
 function renderMcqOptions(question) {
   const selected = selectedOptionKey(question);
   const revealed = questionIsFullyEvaluated(question);
@@ -1079,6 +1161,8 @@ function renderQuestion() {
     els.qTypeBadge.hidden = true;
     els.answerChip.hidden = true;
     els.questionText.textContent = "Không có dữ liệu để hiển thị.";
+    els.questionMedia.innerHTML = "";
+    els.questionMedia.hidden = true;
     els.options.innerHTML = "";
     els.prevBtn.disabled = true;
     els.nextBtn.disabled = true;
@@ -1099,6 +1183,7 @@ function renderQuestion() {
   els.options.dataset.type = question.type;
 
   renderQuestionStem(question);
+  renderQuestionMedia(question);
 
   if (question.type === "true_false") {
     renderTrueFalseOptions(question);
@@ -1111,41 +1196,10 @@ function renderQuestion() {
   els.clearBtn.disabled = !progress.started;
 }
 
-function renderExplainBox() {
-  const question = questions[state.current];
-  const text = currentExplanationText(question);
-
-  if (!text) {
-    showExplain = false;
-  }
-
-  els.explainBtn.disabled = !text;
-  els.explainBtn.classList.toggle("active", showExplain && !!text);
-  els.explainBtn.title = text ? "Xem giải thích" : "Câu này chưa có giải thích";
-
-  if (!showExplain || !text) {
-    els.explainBox.hidden = true;
-    return;
-  }
-
-  els.explainBox.hidden = false;
-  els.explainBox.innerHTML =
-    `<div class="explain-label">Giải thích</div><div class="explain-content">${formatInlineCode(text)}</div>`;
-}
-
-function toggleExplain() {
-  const question = questions[state.current];
-  if (!currentExplanationText(question)) return;
-
-  showExplain = !showExplain;
-  renderExplainBox();
-}
-
 function render() {
   renderHeader();
   renderPalette();
   renderQuestion();
-  renderExplainBox();
 }
 
 function goTo(index) {
@@ -1294,7 +1348,6 @@ function bindEvents() {
 
   els.openPaletteBtn.addEventListener("click", openOverlay);
   els.closePaletteBtn.addEventListener("click", closeOverlay);
-  els.explainBtn.addEventListener("click", toggleExplain);
 
   [els.paletteDesktop, els.paletteMobile].forEach((container) => {
     container.addEventListener("click", (event) => {
@@ -1375,19 +1428,15 @@ function resetAll() {
   state.answers = {};
   state.current = 0;
   state.submitted = false;
-  showExplain = false;
   saveState();
   render();
 }
 
 async function init() {
   try {
-    const [questionRes, explainRes] = await Promise.all([
-      fetch("question.json", { cache: "no-store" }),
-      fetch("explain.json", { cache: "no-store" }).catch(() => null)
-    ]);
+    const questionRes = await fetch(DATA_URL, { cache: "no-store" });
 
-    if (!questionRes.ok) throw new Error("Không tải được question.json");
+    if (!questionRes.ok) throw new Error(`Không tải được ${DATA_URL}`);
 
     data = await questionRes.json();
     sourceQuestions = Array.isArray(data.questions)
@@ -1400,11 +1449,6 @@ async function init() {
         })
       : [];
 
-    if (explainRes && explainRes.ok) {
-      const explainJson = await explainRes.json();
-      explainData = explainJson.explanations || {};
-    }
-
     loadState();
     normalizeState();
     bindEvents();
@@ -1414,7 +1458,9 @@ async function init() {
     els.examTitle.textContent = "Không tải được dữ liệu";
     els.examSection.textContent = "Hãy mở bằng localhost hoặc Live Server.";
     els.summary.textContent = "Lỗi";
-    els.questionText.textContent = "Không tải được question.json";
+    els.questionText.textContent = `Không tải được ${DATA_URL}`;
+    els.questionMedia.innerHTML = "";
+    els.questionMedia.hidden = true;
     els.options.innerHTML = "";
   }
 }
