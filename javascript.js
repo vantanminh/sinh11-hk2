@@ -1203,8 +1203,22 @@ function render() {
 }
 
 function goTo(index) {
-  state.current = Math.max(0, Math.min(index, questions.length - 1));
+  const nextIndex = Math.max(0, Math.min(index, questions.length - 1));
+  if (nextIndex === state.current) return;
+
+  state.current = nextIndex;
   saveState();
+
+  const body = document.querySelector(".viewer-body");
+  if (body) {
+    body.classList.remove("transitioning");
+    void body.offsetWidth;
+    body.classList.add("transitioning");
+    body.addEventListener("animationend", () => {
+      body.classList.remove("transitioning");
+    }, { once: true });
+  }
+
   render();
 }
 
@@ -1280,11 +1294,11 @@ function setShuffleOptions(enabled) {
 }
 
 function openOverlay() {
-  els.overlay.hidden = false;
+  els.overlay.classList.add("open");
 }
 
 function closeOverlay() {
-  els.overlay.hidden = true;
+  els.overlay.classList.remove("open");
 }
 
 function selectDisplayedOption(question, displayKey) {
@@ -1368,8 +1382,36 @@ function bindEvents() {
     if (window.innerWidth > 900) closeOverlay();
   });
 
+  let swipeStartX = 0;
+  let swipeStartY = 0;
+  const viewer = document.querySelector(".viewer");
+
+  if (viewer) {
+    viewer.addEventListener("touchstart", (event) => {
+      const touch = event.changedTouches[0];
+      swipeStartX = touch.clientX;
+      swipeStartY = touch.clientY;
+    }, { passive: true });
+
+    viewer.addEventListener("touchend", (event) => {
+      const touch = event.changedTouches[0];
+      const dx = touch.clientX - swipeStartX;
+      const dy = touch.clientY - swipeStartY;
+      const absDx = Math.abs(dx);
+      const absDy = Math.abs(dy);
+
+      if (absDx > 50 && absDx > absDy * 1.8) {
+        if (dx > 0) {
+          goTo(state.current - 1);
+        } else {
+          goTo(state.current + 1);
+        }
+      }
+    }, { passive: true });
+  }
+
   document.addEventListener("keydown", (event) => {
-    if (!els.overlay.hidden && event.key === "Escape") {
+    if (els.overlay.classList.contains("open") && event.key === "Escape") {
       closeOverlay();
       return;
     }

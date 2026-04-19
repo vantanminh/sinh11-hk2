@@ -56,6 +56,10 @@ button {
 .app {
   height: 100dvh;
   padding: 12px;
+  padding-top: max(12px, env(safe-area-inset-top));
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+  padding-left: max(12px, env(safe-area-inset-left));
+  padding-right: max(12px, env(safe-area-inset-right));
   display: grid;
   grid-template-rows: auto 1fr;
   gap: 12px;
@@ -152,6 +156,13 @@ button {
 .nav-btn:hover {
   border-color: var(--line-strong);
   background: #f8fbff;
+}
+
+.tool-btn:active,
+.nav-btn:active {
+  transform: scale(0.95);
+  background: #eef3fa;
+  transition-duration: 0.06s;
 }
 
 .tool-btn.active {
@@ -295,6 +306,11 @@ button {
 .q-btn:hover {
   border-color: var(--line-strong);
   background: #f8fbff;
+}
+
+.q-btn:active {
+  transform: scale(0.93);
+  transition-duration: 0.06s;
 }
 
 .q-btn-number {
@@ -605,6 +621,11 @@ button {
   background: #f8fbff;
 }
 
+.option-btn:active {
+  transform: scale(0.98);
+  transition-duration: 0.06s;
+}
+
 .option-btn.selected {
   border-color: var(--accent);
   background: var(--accent-soft);
@@ -763,6 +784,11 @@ button {
   background: #eef5ff;
 }
 
+.tf-choice-btn:active {
+  transform: scale(0.95);
+  transition-duration: 0.06s;
+}
+
 .tf-choice-btn.selected {
   border-color: var(--accent);
   background: var(--accent-soft);
@@ -807,8 +833,19 @@ button {
   position: fixed;
   inset: 0;
   z-index: 50;
-  background: rgba(15, 23, 42, 0.42);
+  background: rgba(15, 23, 42, 0);
   padding: 10px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.28s ease, visibility 0.28s ease, background-color 0.28s ease;
+}
+
+.overlay.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  background: rgba(15, 23, 42, 0.42);
 }
 
 .overlay-panel {
@@ -823,6 +860,12 @@ button {
   gap: 10px;
   padding: 12px;
   overflow: hidden;
+  transform: translateY(24px);
+  transition: transform 0.28s ease;
+}
+
+.overlay.open .overlay-panel {
+  transform: translateY(0);
 }
 
 .overlay-head {
@@ -845,7 +888,7 @@ button {
   display: none;
 }
 
-[hidden] {
+[hidden]:not(.overlay) {
   display: none !important;
 }
 
@@ -859,8 +902,8 @@ button {
 }
 
 *::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 *::-webkit-scrollbar-track {
@@ -875,8 +918,27 @@ button {
 }
 
 @media (max-width: 900px) {
+  *::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    border: 0;
+  }
+}
+
+@media (pointer: coarse) {
+  .options {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (max-width: 900px) {
   .app {
     padding: 8px;
+    padding-top: max(8px, env(safe-area-inset-top));
+    padding-bottom: max(8px, env(safe-area-inset-bottom));
     gap: 8px;
   }
 
@@ -905,7 +967,7 @@ button {
   .tools {
     width: 100%;
     display: grid;
-    grid-template-columns: auto minmax(0, 1fr) minmax(0, 1fr) auto;
+    grid-template-columns: auto minmax(0, 1fr) auto auto;
     justify-content: stretch;
     align-items: stretch;
     gap: 6px;
@@ -920,18 +982,18 @@ button {
   .tool-field,
   .toggle-chip,
   .summary {
-    min-height: 36px;
+    min-height: 40px;
   }
 
   .tool-btn,
   .summary {
-    padding: 0 10px;
+    padding: 0 12px;
     font-size: 12.5px;
     border-radius: 12px;
   }
 
   .tool-field {
-    padding: 0 8px;
+    padding: 0 10px;
     gap: 6px;
   }
 
@@ -959,11 +1021,16 @@ button {
   }
 
   .mode-field {
-    grid-column: 2 / 4;
+    grid-column: 2;
     grid-row: 1;
   }
 
   #submitBtn {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  #resetBtn {
     grid-column: 4;
     grid-row: 1;
   }
@@ -974,19 +1041,14 @@ button {
     justify-content: flex-start;
   }
 
-  #shuffleQuestionsToggle {
+  label[for="shuffleQuestionsToggle"] {
     grid-column: 3;
     grid-row: 2;
   }
 
-  #shuffleOptionsToggle {
+  label[for="shuffleOptionsToggle"] {
     grid-column: 4;
     grid-row: 2;
-  }
-
-  #resetBtn {
-    grid-column: 1 / 5;
-    grid-row: 3;
   }
 
   .viewer-head {
@@ -1010,7 +1072,7 @@ button {
   .question-text {
     padding: 13px;
     font-size: 14.5px;
-    line-height: 1.55;
+    line-height: 1.6;
   }
 
   .question-image {
@@ -1022,14 +1084,14 @@ button {
   }
 
   .option-btn {
-    padding: 12px;
-    font-size: 13.5px;
+    padding: 13px 14px;
+    font-size: 14px;
     gap: 10px;
   }
 
   .option-label {
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
   }
 
   .tf-card {
@@ -1047,6 +1109,7 @@ button {
 
   .tf-choice-btn {
     flex: 1 1 120px;
+    min-height: 42px;
   }
 
   .answer-chip {
@@ -1054,12 +1117,32 @@ button {
   }
 
   .viewer-foot {
-    grid-template-columns: 68px 1fr 68px;
+    grid-template-columns: 1fr auto 1fr;
     padding: 10px 12px;
   }
 
+  .viewer-foot .nav-btn:first-child {
+    justify-self: start;
+  }
+
+  .viewer-foot .nav-btn:last-child {
+    justify-self: end;
+  }
+
+  .nav-btn {
+    min-width: 72px;
+    min-height: 42px;
+    padding: 0 16px;
+    font-size: 14px;
+  }
+
   .palette {
-    grid-template-columns: repeat(auto-fill, minmax(56px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 6px;
+  }
+
+  .q-btn {
+    min-height: 56px;
   }
 }
 
@@ -1074,6 +1157,71 @@ button {
 
   .q-type-badge {
     font-size: 11px;
+  }
+
+  .viewer-head {
+    padding: 10px 12px;
+  }
+
+  .q-position {
+    font-size: 12px;
+  }
+
+  .q-number {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .app {
+    padding: 6px;
+    gap: 6px;
+  }
+
+  .topbar {
+    padding: 8px 10px;
+    border-radius: 16px;
+  }
+
+  .tools {
+    gap: 5px;
+  }
+
+  .tool-btn,
+  .tool-field,
+  .toggle-chip,
+  .summary {
+    min-height: 38px;
+  }
+
+  .tool-btn,
+  .summary {
+    padding: 0 8px;
+    font-size: 11.5px;
+  }
+
+  .toggle-chip {
+    font-size: 11px;
+    padding: 0 8px;
+  }
+
+  .viewer {
+    border-radius: 16px;
+  }
+
+  .question-text {
+    padding: 10px;
+    border-radius: 14px;
+  }
+
+  .option-btn {
+    padding: 11px 12px;
+    border-radius: 14px;
+  }
+
+  .tf-card {
+    padding: 10px;
+    border-radius: 14px;
   }
 }
 
@@ -1095,5 +1243,39 @@ button {
 
   .q-btn {
     min-height: 50px;
+  }
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.viewer-body.transitioning {
+  animation: fadeSlideIn 0.2s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .viewer-body.transitioning {
+    animation: none;
+  }
+
+  .overlay,
+  .overlay-panel {
+    transition: none;
+  }
+
+  .tool-btn:active,
+  .nav-btn:active,
+  .q-btn:active,
+  .option-btn:active,
+  .tf-choice-btn:active {
+    transform: none;
   }
 }
