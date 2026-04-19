@@ -125,13 +125,18 @@ button {
   overflow: hidden;
 }
 
+.tools-host {
+  flex: 1 1 520px;
+  min-width: 0;
+}
+
 .tools {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 8px;
   flex-wrap: wrap;
-  flex: 1 1 520px;
+  width: 100%;
   min-width: 0;
 }
 
@@ -961,6 +966,31 @@ button {
   background: rgba(15, 23, 42, 0.42);
 }
 
+.tools-overlay-panel {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: max(10px, env(safe-area-inset-bottom));
+  max-height: min(76dvh, 560px);
+  padding: 14px;
+  border: 1px solid rgba(219, 230, 243, 0.92);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+  transform: translateY(24px);
+  transition: transform 0.28s ease;
+  overflow: auto;
+}
+
+.tools-backdrop.open .tools-overlay-panel {
+  transform: translateY(0);
+}
+
+.tools-sheet-shell {
+  min-height: 0;
+}
+
 [hidden]:not(.overlay) {
   display: none !important;
 }
@@ -1068,38 +1098,23 @@ button {
     white-space: nowrap;
   }
 
+  .tools-host {
+    display: none;
+  }
+
   .tools {
-    position: fixed;
-    left: 8px;
-    right: 8px;
-    bottom: max(8px, env(safe-area-inset-bottom));
-    z-index: 55;
-    width: auto;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     justify-content: initial;
     align-items: stretch;
     gap: 8px;
-    max-height: min(76dvh, 560px);
-    padding: 14px;
-    overflow: auto;
-    border: 1px solid rgba(219, 230, 243, 0.92);
-    border-radius: 22px;
-    background: rgba(255, 255, 255, 0.94);
-    box-shadow: var(--shadow);
-    backdrop-filter: blur(18px);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transform: translateY(24px);
-    transition: opacity 0.28s ease, visibility 0.28s ease, transform 0.28s ease;
+    width: 100%;
   }
 
-  .tools.open {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: translateY(0);
+  .tools-overlay-panel {
+    left: 8px;
+    right: 8px;
+    bottom: max(8px, env(safe-area-inset-bottom));
   }
 
   .title {

@@ -36,7 +36,8 @@
         <div class="subtitle" id="examSection"></div>
       </div>
 
-      <div class="tools">
+      <div class="tools-host" id="toolsDesktopMount">
+      <div class="tools" id="toolsPanel">
         <div class="tools-sheet-head mobile-only">
           <div class="tools-sheet-title">Menu chỉnh sâu</div>
           <button class="tool-btn" id="closeToolsBtn" type="button">Đóng</button>
@@ -60,6 +61,7 @@
         </label>
         <div class="summary" id="summary">0/0</div>
         <button class="tool-btn danger" id="resetBtn" type="button" title="Xóa toàn bộ lựa chọn">Làm lại</button>
+      </div>
       </div>
     </header>
 
@@ -97,7 +99,11 @@
     </main>
   </div>
 
-  <div class="tools-backdrop" id="toolsBackdrop"></div>
+  <div class="tools-backdrop" id="toolsBackdrop">
+    <div class="tools-overlay-panel">
+      <div class="tools-sheet-shell" id="toolsSheetShell"></div>
+    </div>
+  </div>
 
   <div class="overlay" id="overlay">
     <div class="overlay-panel">

@@ -87,7 +87,9 @@ const els = {
   paletteDesktop: document.getElementById("paletteDesktop"),
   paletteMobile: document.getElementById("paletteMobile"),
   toolsBackdrop: document.getElementById("toolsBackdrop"),
-  toolsPanel: document.querySelector(".tools"),
+  toolsDesktopMount: document.getElementById("toolsDesktopMount"),
+  toolsSheetShell: document.getElementById("toolsSheetShell"),
+  toolsPanel: document.getElementById("toolsPanel"),
   overlay: document.getElementById("overlay"),
   qPosition: document.getElementById("qPosition"),
   qNumber: document.getElementById("qNumber"),
@@ -686,6 +688,17 @@ function summaryTitleForCounts(counts, showScore) {
     : `${counts.startedQuestions}/${counts.totalQuestions} câu đã bắt đầu làm`;
 }
 
+function isMobileViewport() {
+  return window.innerWidth <= 900;
+}
+
+function syncToolsMount() {
+  const target = isMobileViewport() ? els.toolsSheetShell : els.toolsDesktopMount;
+  if (!target || !els.toolsPanel) return;
+  if (els.toolsPanel.parentElement === target) return;
+  target.appendChild(els.toolsPanel);
+}
+
 function buildQuestionOrder() {
   return shuffled(sourceQuestions.map((question) => question.number));
 }
@@ -845,7 +858,7 @@ function answerDisplayKey(question) {
   return DISPLAY_KEYS[answerIndex] || question.answer;
 }
 
-function renderHeader() {
+function renderHeaderLegacy() {
   const title = data?.meta?.titleRaw || data?.meta?.subtitleRaw || "Ôn tập";
   const subtitle = data?.meta?.subtitleRaw || "";
   const section = data?.meta?.sectionRaw || "";
@@ -1385,7 +1398,7 @@ function setShuffleOptions(enabled) {
 }
 
 function toolsMenuOpen() {
-  return Boolean(els.toolsPanel?.classList.contains("open"));
+  return els.toolsBackdrop.classList.contains("open");
 }
 
 function syncMenuButtons() {
@@ -1399,14 +1412,14 @@ function syncMenuButtons() {
 }
 
 function openToolsMenu() {
+  if (!isMobileViewport()) return;
   closeOverlay();
-  els.toolsPanel.classList.add("open");
+  syncToolsMount();
   els.toolsBackdrop.classList.add("open");
   syncMenuButtons();
 }
 
 function closeToolsMenu() {
-  els.toolsPanel.classList.remove("open");
   els.toolsBackdrop.classList.remove("open");
   syncMenuButtons();
 }
@@ -1497,7 +1510,11 @@ function bindEvents() {
 
   els.openToolsBtn.addEventListener("click", toggleToolsMenu);
   els.closeToolsBtn.addEventListener("click", closeToolsMenu);
-  els.toolsBackdrop.addEventListener("click", closeToolsMenu);
+  els.toolsBackdrop.addEventListener("click", (event) => {
+    if (event.target === els.toolsBackdrop) {
+      closeToolsMenu();
+    }
+  });
 
   [els.paletteDesktop, els.paletteMobile].forEach((container) => {
     container.addEventListener("click", (event) => {
@@ -1515,6 +1532,7 @@ function bindEvents() {
   });
 
   window.addEventListener("resize", () => {
+    syncToolsMount();
     if (window.innerWidth > 900) {
       closeOverlay();
       closeToolsMenu();
@@ -1643,6 +1661,7 @@ async function init() {
 
     loadState();
     normalizeState();
+    syncToolsMount();
     bindEvents();
     render();
   } catch (error) {
