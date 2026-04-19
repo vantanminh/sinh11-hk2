@@ -1039,10 +1039,10 @@ button {
 
 @media (max-width: 900px) {
   .app {
-    padding: 8px;
-    padding-top: max(8px, env(safe-area-inset-top));
-    padding-bottom: max(8px, env(safe-area-inset-bottom));
-    gap: 8px;
+    padding: 6px;
+    padding-top: max(6px, env(safe-area-inset-top));
+    padding-bottom: max(6px, env(safe-area-inset-bottom));
+    gap: 6px;
   }
 
   .main {
@@ -1077,9 +1077,9 @@ button {
     align-items: center;
     justify-content: flex-start;
     flex-wrap: nowrap;
-    gap: 8px;
-    padding: 10px 12px;
-    border-radius: 18px;
+    gap: 6px;
+    padding: 8px 10px;
+    border-radius: 16px;
   }
 
   .titlebox {
@@ -1088,13 +1088,14 @@ button {
   }
 
   .mobile-menu-btn {
-    width: 44px;
-    min-width: 44px;
+    width: 40px;
+    min-width: 40px;
     justify-content: center;
   }
 
   .mobile-palette-trigger {
-    max-width: 112px;
+    max-width: 92px;
+    padding-inline: 10px;
     white-space: nowrap;
   }
 
@@ -1112,13 +1113,16 @@ button {
   }
 
   .tools-overlay-panel {
-    left: 8px;
-    right: 8px;
-    bottom: max(8px, env(safe-area-inset-bottom));
+    left: 6px;
+    right: 6px;
+    bottom: max(6px, env(safe-area-inset-bottom));
+    max-height: min(82dvh, 560px);
+    padding: 12px;
+    border-radius: 18px;
   }
 
   .title {
-    font-size: 15px;
+    font-size: 14px;
     -webkit-line-clamp: 1;
   }
 
@@ -1126,19 +1130,19 @@ button {
   .tool-field,
   .toggle-chip,
   .summary {
-    min-height: 40px;
+    min-height: 38px;
   }
 
   .tool-btn,
   .summary {
-    padding: 0 12px;
-    font-size: 12.5px;
+    padding: 0 10px;
+    font-size: 12px;
     border-radius: 12px;
   }
 
   .tool-field {
-    padding: 0 10px;
-    gap: 6px;
+    padding: 0 9px;
+    gap: 5px;
   }
 
   .tool-label {
@@ -1174,7 +1178,7 @@ button {
     grid-column: 1 / -1;
     justify-content: flex-start;
     min-height: auto;
-    padding: 10px 12px;
+    padding: 8px 10px;
     white-space: normal;
   }
 
@@ -1183,73 +1187,129 @@ button {
   }
 
   .viewer-head {
-    padding: 12px 14px;
-    flex-direction: column;
-  }
-
-  .viewer-head-right {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .q-number {
-    font-size: 18px;
-  }
-
-  .viewer-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 8px 10px;
     padding: 10px 12px;
   }
 
+  .viewer-head-right {
+    width: auto;
+    justify-content: flex-end;
+  }
+
+  .q-number {
+    font-size: 17px;
+  }
+
+  .viewer-body {
+    gap: 8px;
+    padding: 8px 10px;
+  }
+
   .question-text {
-    padding: 13px;
-    font-size: 14.5px;
-    line-height: 1.6;
+    gap: 10px;
+    padding: 11px;
+    border-radius: 14px;
+    font-size: 14px;
+    line-height: 1.5;
   }
 
   .question-image {
-    max-height: min(34vh, 300px);
+    max-height: min(28vh, 240px);
   }
 
   .question-code code {
-    font-size: 12.5px;
+    padding: 12px 13px;
+    font-size: 12px;
+    line-height: 1.45;
   }
 
   .option-btn {
-    padding: 13px 14px;
-    font-size: 14px;
-    gap: 10px;
+    padding: 10px 12px;
+    gap: 9px;
+    border-radius: 14px;
+    font-size: 13.5px;
+    line-height: 1.48;
   }
 
   .option-label {
-    width: 34px;
-    height: 34px;
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .options {
+    gap: 8px;
+  }
+
+  .options[data-type="true_false"] {
+    gap: 8px;
+  }
+
+  .tf-intro {
+    padding: 8px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+  }
+
+  .tf-intro-badge {
+    padding: 3px 8px;
+    font-size: 10px;
   }
 
   .tf-card {
-    grid-template-columns: 38px minmax(0, 1fr);
-    gap: 10px;
-    padding: 12px;
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 8px;
+    padding: 10px;
+    border-radius: 14px;
   }
 
   .tf-marker {
-    width: 38px;
-    height: 38px;
-    border-radius: 12px;
-    font-size: 14px;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    font-size: 12.5px;
+  }
+
+  .tf-body {
+    gap: 8px;
+  }
+
+  .tf-text {
+    font-size: 13.5px;
+    line-height: 1.48;
+  }
+
+  .tf-choice-row {
+    gap: 6px;
   }
 
   .tf-choice-btn {
-    flex: 1 1 120px;
-    min-height: 42px;
+    flex: 1 1 96px;
+    min-height: 36px;
+    padding: 0 12px;
+    border-radius: 10px;
+    font-size: 12.5px;
+  }
+
+  .tf-feedback {
+    font-size: 12px;
   }
 
   .answer-chip {
     max-width: none;
+    padding: 6px 9px;
+    border-radius: 12px;
+    font-size: 11.5px;
+    line-height: 1.35;
   }
 
   .viewer-foot {
-    grid-template-columns: 1fr auto 1fr;
-    padding: 10px 12px;
+    grid-template-columns: 64px 1fr 64px;
+    gap: 8px;
+    padding: 8px 10px;
   }
 
   .viewer-foot .nav-btn:first-child {
@@ -1261,19 +1321,30 @@ button {
   }
 
   .nav-btn {
-    min-width: 72px;
-    min-height: 42px;
-    padding: 0 16px;
-    font-size: 14px;
+    min-width: 64px;
+    min-height: 38px;
+    padding: 0 12px;
+    font-size: 13px;
+    border-radius: 12px;
   }
 
   .palette {
-    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-    gap: 6px;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap: 5px;
   }
 
   .q-btn {
-    min-height: 56px;
+    min-height: 46px;
+    padding: 6px 4px;
+    border-radius: 12px;
+  }
+
+  .q-btn-number {
+    font-size: 12px;
+  }
+
+  .q-btn-meta {
+    font-size: 9px;
   }
 }
 
@@ -1287,31 +1358,104 @@ button {
   }
 
   .q-type-badge {
-    font-size: 11px;
+    padding: 4px 7px;
+    font-size: 10.5px;
   }
 
   .viewer-head {
-    padding: 10px 12px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+    padding: 8px 10px;
   }
 
   .q-position {
-    font-size: 12px;
+    font-size: 11.5px;
   }
 
   .q-number {
-    font-size: 16px;
+    font-size: 15px;
+  }
+
+  .q-title-row {
+    gap: 6px;
+  }
+
+  .viewer-head-right {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .answer-chip {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+
+  .question-text {
+    padding: 10px;
+    font-size: 13.5px;
+    line-height: 1.45;
+  }
+
+  .option-btn {
+    padding: 9px 10px;
+    gap: 8px;
+    font-size: 13px;
+    line-height: 1.42;
+  }
+
+  .option-label {
+    width: 28px;
+    height: 28px;
+    font-size: 11px;
+  }
+
+  .tf-card {
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 7px;
+    padding: 9px;
+  }
+
+  .tf-marker {
+    width: 30px;
+    height: 30px;
+    font-size: 11.5px;
+    border-radius: 9px;
+  }
+
+  .tf-choice-btn {
+    min-height: 34px;
+    padding: 0 10px;
+    font-size: 12px;
+  }
+
+  .viewer-foot {
+    grid-template-columns: 56px 1fr 56px;
+    gap: 6px;
+    padding: 7px 8px;
+  }
+
+  .nav-btn {
+    min-width: 56px;
+    min-height: 36px;
+    padding: 0 10px;
+    font-size: 12.5px;
+  }
+
+  .palette {
+    grid-template-columns: repeat(auto-fill, minmax(46px, 1fr));
   }
 }
 
 @media (max-width: 380px) {
   .app {
-    padding: 6px;
-    gap: 6px;
+    padding: 4px;
+    gap: 4px;
   }
 
   .topbar {
-    padding: 8px 10px;
-    border-radius: 16px;
+    gap: 5px;
+    padding: 7px 8px;
+    border-radius: 14px;
   }
 
   .tools {
@@ -1322,7 +1466,7 @@ button {
   .tool-field,
   .toggle-chip,
   .summary {
-    min-height: 38px;
+    min-height: 36px;
   }
 
   .tool-btn,
@@ -1337,26 +1481,63 @@ button {
   }
 
   .viewer {
-    border-radius: 16px;
+    border-radius: 14px;
   }
 
   .question-text {
-    padding: 10px;
-    border-radius: 14px;
+    padding: 9px;
+    border-radius: 12px;
+    font-size: 13.25px;
   }
 
   .option-btn {
-    padding: 11px 12px;
-    border-radius: 14px;
+    padding: 8px 9px;
+    border-radius: 12px;
   }
 
   .tf-card {
-    padding: 10px;
-    border-radius: 14px;
+    padding: 8px;
+    border-radius: 12px;
+  }
+
+  .viewer-foot {
+    padding: 6px 7px;
+  }
+
+  .nav-btn {
+    min-width: 52px;
   }
 }
 
-@media (max-height: 720px) {
+@media (max-width: 900px) and (max-height: 720px) {
+  .topbar {
+    padding-block: 7px;
+  }
+
+  .viewer-head {
+    padding-block: 8px;
+  }
+
+  .viewer-body {
+    gap: 6px;
+    padding-block: 7px;
+  }
+
+  .question-text {
+    font-size: 13.5px;
+    line-height: 1.42;
+  }
+
+  .question-image {
+    max-height: min(22vh, 190px);
+  }
+
+  .viewer-foot {
+    padding-block: 6px;
+  }
+}
+
+@media (min-width: 901px) and (max-height: 720px) {
   .question-text {
     font-size: 14px;
     line-height: 1.48;
