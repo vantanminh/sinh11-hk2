@@ -9,12 +9,38 @@
 <body>
   <div class="app">
     <header class="topbar">
+      <button
+        class="tool-btn mobile-only mobile-menu-btn"
+        id="openToolsBtn"
+        type="button"
+        aria-label="Mở menu chỉnh sâu"
+        aria-expanded="false"
+      >
+        <span class="hamburger-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+      <button
+        class="tool-btn mobile-only mobile-palette-trigger"
+        id="mobilePaletteBtn"
+        type="button"
+        aria-expanded="false"
+      >
+        Câu
+      </button>
       <div class="titlebox">
         <div class="title" id="examTitle">Đang tải...</div>
+        <div class="mobile-title" id="mobileExamTitle">Đang tải...</div>
         <div class="subtitle" id="examSection"></div>
       </div>
 
       <div class="tools">
+        <div class="tools-sheet-head mobile-only">
+          <div class="tools-sheet-title">Menu chỉnh sâu</div>
+          <button class="tool-btn" id="closeToolsBtn" type="button">Đóng</button>
+        </div>
         <button class="tool-btn mobile-only" id="openPaletteBtn" type="button">Câu</button>
         <label class="tool-field mode-field" for="revealModeSelect">
           <span class="tool-label">Hiện đáp án</span>
@@ -71,12 +97,15 @@
     </main>
   </div>
 
+  <div class="tools-backdrop" id="toolsBackdrop"></div>
+
   <div class="overlay" id="overlay">
     <div class="overlay-panel">
       <div class="overlay-head">
         <div class="overlay-title">Chọn câu</div>
         <button class="tool-btn" id="closePaletteBtn" type="button">Đóng</button>
       </div>
+      <div class="overlay-subtitle" id="paletteSummary"></div>
       <div class="palette mobile-palette" id="paletteMobile"></div>
     </div>
   </div>

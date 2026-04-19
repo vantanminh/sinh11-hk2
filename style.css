@@ -87,6 +87,9 @@ button {
 .titlebox {
   flex: 1;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .title {
@@ -98,6 +101,16 @@ button {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
+}
+
+.mobile-title {
+  display: none;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .subtitle {
@@ -120,6 +133,37 @@ button {
   flex-wrap: wrap;
   flex: 1 1 520px;
   min-width: 0;
+}
+
+.tools-sheet-head {
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.tools-sheet-title {
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.mobile-menu-btn {
+  padding: 0;
+}
+
+.hamburger-icon {
+  width: 18px;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hamburger-icon span {
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
 }
 
 .tool-btn,
@@ -880,12 +924,41 @@ button {
   font-weight: 800;
 }
 
+.overlay-subtitle {
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+.overlay-subtitle:empty {
+  display: none;
+}
+
 .mobile-palette {
   overflow: auto;
 }
 
 .mobile-only {
   display: none;
+}
+
+.tools-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 54;
+  background: rgba(15, 23, 42, 0);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.28s ease, visibility 0.28s ease, background-color 0.28s ease;
+}
+
+.tools-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  background: rgba(15, 23, 42, 0.42);
 }
 
 [hidden]:not(.overlay) {
@@ -954,23 +1027,79 @@ button {
     display: inline-flex;
   }
 
+  .tools-sheet-head.mobile-only {
+    display: flex;
+  }
+
+  #examTitle {
+    display: none;
+  }
+
+  .mobile-title {
+    display: block;
+  }
+
   .subtitle {
     display: none;
   }
 
   .topbar {
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
     gap: 8px;
     padding: 10px 12px;
     border-radius: 18px;
   }
 
+  .titlebox {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .mobile-menu-btn {
+    width: 44px;
+    min-width: 44px;
+    justify-content: center;
+  }
+
+  .mobile-palette-trigger {
+    max-width: 112px;
+    white-space: nowrap;
+  }
+
   .tools {
-    width: 100%;
+    position: fixed;
+    left: 8px;
+    right: 8px;
+    bottom: max(8px, env(safe-area-inset-bottom));
+    z-index: 55;
+    width: auto;
     display: grid;
-    grid-template-columns: auto minmax(0, 1fr) auto auto;
-    justify-content: stretch;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: initial;
     align-items: stretch;
-    gap: 6px;
+    gap: 8px;
+    max-height: min(76dvh, 560px);
+    padding: 14px;
+    overflow: auto;
+    border: 1px solid rgba(219, 230, 243, 0.92);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(18px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(24px);
+    transition: opacity 0.28s ease, visibility 0.28s ease, transform 0.28s ease;
+  }
+
+  .tools.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
   }
 
   .title {
@@ -1015,40 +1144,27 @@ button {
   }
 
   #openPaletteBtn {
-    grid-column: 1;
-    grid-row: 1;
-    justify-content: center;
+    display: none;
   }
 
   .mode-field {
-    grid-column: 2;
-    grid-row: 1;
+    grid-column: 1 / -1;
   }
 
-  #submitBtn {
-    grid-column: 3;
-    grid-row: 1;
-  }
-
-  #resetBtn {
-    grid-column: 4;
-    grid-row: 1;
+  .tools-sheet-head {
+    grid-column: 1 / -1;
   }
 
   #summary {
-    grid-column: 1 / 3;
-    grid-row: 2;
+    grid-column: 1 / -1;
     justify-content: flex-start;
+    min-height: auto;
+    padding: 10px 12px;
+    white-space: normal;
   }
 
-  label[for="shuffleQuestionsToggle"] {
-    grid-column: 3;
-    grid-row: 2;
-  }
-
-  label[for="shuffleOptionsToggle"] {
-    grid-column: 4;
-    grid-row: 2;
+  .tools .tool-label {
+    font-size: 11px;
   }
 
   .viewer-head {

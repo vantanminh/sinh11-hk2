@@ -70,6 +70,7 @@ const INLINE_CODE_PATTERNS = [
 
 const els = {
   examTitle: document.getElementById("examTitle"),
+  mobileExamTitle: document.getElementById("mobileExamTitle"),
   examSection: document.getElementById("examSection"),
   summary: document.getElementById("summary"),
   revealModeSelect: document.getElementById("revealModeSelect"),
@@ -77,10 +78,16 @@ const els = {
   shuffleQuestionsToggle: document.getElementById("shuffleQuestionsToggle"),
   shuffleOptionsToggle: document.getElementById("shuffleOptionsToggle"),
   resetBtn: document.getElementById("resetBtn"),
+  openToolsBtn: document.getElementById("openToolsBtn"),
+  closeToolsBtn: document.getElementById("closeToolsBtn"),
+  mobilePaletteBtn: document.getElementById("mobilePaletteBtn"),
   openPaletteBtn: document.getElementById("openPaletteBtn"),
   closePaletteBtn: document.getElementById("closePaletteBtn"),
+  paletteSummary: document.getElementById("paletteSummary"),
   paletteDesktop: document.getElementById("paletteDesktop"),
   paletteMobile: document.getElementById("paletteMobile"),
+  toolsBackdrop: document.getElementById("toolsBackdrop"),
+  toolsPanel: document.querySelector(".tools"),
   overlay: document.getElementById("overlay"),
   qPosition: document.getElementById("qPosition"),
   qNumber: document.getElementById("qNumber"),
@@ -647,6 +654,38 @@ function buildTypeBreakdown() {
   return parts.join(" · ");
 }
 
+function buildShortExamTitle() {
+  const filename = String(DATA_URL || "")
+    .replace(/\\/g, "/")
+    .split("/")
+    .pop()
+    ?.replace(/\.[^.]+$/, "") || "";
+  const lessonMatch = filename.match(/bai[\s_-]*(\d+)/i);
+
+  if (lessonMatch) {
+    return `Bài ${Number(lessonMatch[1])}`;
+  }
+
+  const fallback = filename
+    .replace(/[-_]+/g, " ")
+    .trim()
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+
+  return fallback || data?.meta?.titleRaw || data?.meta?.subtitleRaw || "Ôn tập";
+}
+
+function summaryTextForCounts(counts, showScore) {
+  return showScore
+    ? `${counts.completeQuestions}/${counts.totalQuestions} câu · ${counts.correctUnits}/${counts.totalUnits} ý đúng`
+    : `${counts.completeQuestions}/${counts.totalQuestions} câu · ${counts.answeredUnits}/${counts.totalUnits} ý đã chọn`;
+}
+
+function summaryTitleForCounts(counts, showScore) {
+  return showScore
+    ? `${counts.correctQuestions}/${counts.totalQuestions} câu làm đúng hoàn toàn`
+    : `${counts.startedQuestions}/${counts.totalQuestions} câu đã bắt đầu làm`;
+}
+
 function buildQuestionOrder() {
   return shuffled(sourceQuestions.map((question) => question.number));
 }
@@ -841,6 +880,58 @@ function renderHeader() {
   els.submitBtn.title = state.submitted
     ? "Đáp án đang hiển thị cho toàn bộ bài."
     : "Hiện đáp án cho toàn bộ bài khi nộp.";
+}
+
+function renderHeader() {
+  const title = data?.meta?.titleRaw || data?.meta?.subtitleRaw || "Ôn tập";
+  const subtitle = data?.meta?.subtitleRaw || "";
+  const section = data?.meta?.sectionRaw || "";
+  const breakdown = buildTypeBreakdown();
+  const sectionParts = [subtitle, section, breakdown].filter(Boolean);
+  const counts = getCounts();
+  const total = counts.totalQuestions;
+  const showScore = state.revealMode === "instant" || state.submitted;
+  const summaryText = summaryTextForCounts(counts, showScore);
+  const summaryTitle = summaryTitleForCounts(counts, showScore);
+  const currentQuestion = questions[state.current];
+  const paletteLabel = total > 0 && currentQuestion ? `Câu ${currentQuestion.number}` : "Câu";
+  const paletteTitle = total > 0 && currentQuestion
+    ? `${paletteLabel} · ${summaryTitle}`
+    : "Chưa có dữ liệu câu hỏi.";
+
+  els.examTitle.textContent = title;
+  els.mobileExamTitle.textContent = buildShortExamTitle();
+  els.examSection.textContent = sectionParts.join(" · ");
+  document.title = subtitle ? `${title} | ${subtitle}` : title;
+
+  els.openPaletteBtn.textContent = paletteLabel;
+  els.openPaletteBtn.title = paletteTitle;
+  els.openPaletteBtn.disabled = total === 0;
+  els.openPaletteBtn.setAttribute("aria-expanded", String(els.overlay.classList.contains("open")));
+
+  els.mobilePaletteBtn.textContent = paletteLabel;
+  els.mobilePaletteBtn.title = paletteTitle;
+  els.mobilePaletteBtn.disabled = total === 0;
+  els.mobilePaletteBtn.setAttribute("aria-expanded", String(els.overlay.classList.contains("open")));
+
+  els.paletteSummary.textContent = total > 0 ? `${summaryText} · ${summaryTitle}` : "Chưa có dữ liệu câu hỏi.";
+
+  els.summary.textContent = summaryText;
+  els.summary.title = summaryTitle;
+
+  els.revealModeSelect.value = state.revealMode;
+  els.shuffleQuestionsToggle.checked = state.shuffleQuestions;
+  els.shuffleOptionsToggle.checked = state.shuffleOptions;
+
+  els.submitBtn.hidden = state.revealMode !== "submit";
+  els.submitBtn.disabled = total === 0;
+  els.submitBtn.textContent = state.submitted ? "Đã nộp" : "Nộp bài";
+  els.submitBtn.classList.toggle("active", state.submitted);
+  els.submitBtn.setAttribute("aria-pressed", String(state.submitted));
+  els.submitBtn.title = state.submitted
+    ? "Đáp án đang hiển thị cho toàn bộ bài."
+    : "Hiện đáp án cho toàn bộ bài khi nộp.";
+  syncMenuButtons();
 }
 
 function classForPaletteButton(question) {
@@ -1293,12 +1384,51 @@ function setShuffleOptions(enabled) {
   render();
 }
 
+function toolsMenuOpen() {
+  return Boolean(els.toolsPanel?.classList.contains("open"));
+}
+
+function syncMenuButtons() {
+  const overlayOpen = els.overlay.classList.contains("open");
+  const toolsOpen = toolsMenuOpen();
+
+  els.openToolsBtn.classList.toggle("active", toolsOpen);
+  els.openToolsBtn.setAttribute("aria-expanded", String(toolsOpen));
+  els.openPaletteBtn.setAttribute("aria-expanded", String(overlayOpen));
+  els.mobilePaletteBtn.setAttribute("aria-expanded", String(overlayOpen));
+}
+
+function openToolsMenu() {
+  closeOverlay();
+  els.toolsPanel.classList.add("open");
+  els.toolsBackdrop.classList.add("open");
+  syncMenuButtons();
+}
+
+function closeToolsMenu() {
+  els.toolsPanel.classList.remove("open");
+  els.toolsBackdrop.classList.remove("open");
+  syncMenuButtons();
+}
+
+function toggleToolsMenu() {
+  if (toolsMenuOpen()) {
+    closeToolsMenu();
+    return;
+  }
+
+  openToolsMenu();
+}
+
 function openOverlay() {
+  closeToolsMenu();
   els.overlay.classList.add("open");
+  syncMenuButtons();
 }
 
 function closeOverlay() {
   els.overlay.classList.remove("open");
+  syncMenuButtons();
 }
 
 function selectDisplayedOption(question, displayKey) {
@@ -1360,8 +1490,14 @@ function bindEvents() {
   els.nextBtn.addEventListener("click", () => goTo(state.current + 1));
   els.clearBtn.addEventListener("click", clearCurrent);
 
-  els.openPaletteBtn.addEventListener("click", openOverlay);
+  [els.openPaletteBtn, els.mobilePaletteBtn].forEach((button) => {
+    button.addEventListener("click", openOverlay);
+  });
   els.closePaletteBtn.addEventListener("click", closeOverlay);
+
+  els.openToolsBtn.addEventListener("click", toggleToolsMenu);
+  els.closeToolsBtn.addEventListener("click", closeToolsMenu);
+  els.toolsBackdrop.addEventListener("click", closeToolsMenu);
 
   [els.paletteDesktop, els.paletteMobile].forEach((container) => {
     container.addEventListener("click", (event) => {
@@ -1379,7 +1515,10 @@ function bindEvents() {
   });
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 900) closeOverlay();
+    if (window.innerWidth > 900) {
+      closeOverlay();
+      closeToolsMenu();
+    }
   });
 
   let swipeStartX = 0;
@@ -1411,10 +1550,19 @@ function bindEvents() {
   }
 
   document.addEventListener("keydown", (event) => {
-    if (els.overlay.classList.contains("open") && event.key === "Escape") {
-      closeOverlay();
-      return;
+    if (event.key === "Escape") {
+      if (els.overlay.classList.contains("open")) {
+        closeOverlay();
+        return;
+      }
+
+      if (toolsMenuOpen()) {
+        closeToolsMenu();
+        return;
+      }
     }
+
+    if (els.overlay.classList.contains("open") || toolsMenuOpen()) return;
 
     const tag = document.activeElement?.tagName;
     if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
@@ -1462,6 +1610,8 @@ function bindEvents() {
     event.preventDefault();
     selectDisplayedOption(question, displayKey);
   });
+
+  syncMenuButtons();
 }
 
 function resetAll() {
@@ -1497,6 +1647,7 @@ async function init() {
     render();
   } catch (error) {
     console.error(error);
+    els.mobileExamTitle.textContent = "Lỗi tải bài";
     els.examTitle.textContent = "Không tải được dữ liệu";
     els.examSection.textContent = "Hãy mở bằng localhost hoặc Live Server.";
     els.summary.textContent = "Lỗi";
