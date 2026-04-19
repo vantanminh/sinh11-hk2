@@ -1209,11 +1209,16 @@ button {
   }
 
   .question-text {
+    flex: 1 1 0;
     gap: 10px;
-    padding: 11px;
+    padding: 12px;
     border-radius: 14px;
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 14.5px;
+    line-height: 1.56;
+  }
+
+  .question-media {
+    gap: 8px;
   }
 
   .question-image {
@@ -1241,11 +1246,15 @@ button {
   }
 
   .options {
+    min-height: 0;
+    max-height: 46%;
     gap: 8px;
+    align-content: start;
   }
 
   .options[data-type="true_false"] {
     gap: 8px;
+    max-height: 50%;
   }
 
   .tf-intro {
@@ -1278,8 +1287,8 @@ button {
   }
 
   .tf-text {
-    font-size: 13.5px;
-    line-height: 1.48;
+    font-size: 13.75px;
+    line-height: 1.52;
   }
 
   .tf-choice-row {
@@ -1391,9 +1400,9 @@ button {
   }
 
   .question-text {
-    padding: 10px;
-    font-size: 13.5px;
-    line-height: 1.45;
+    padding: 11px;
+    font-size: 14px;
+    line-height: 1.5;
   }
 
   .option-btn {
@@ -1407,6 +1416,10 @@ button {
     width: 28px;
     height: 28px;
     font-size: 11px;
+  }
+
+  .options {
+    max-height: 48%;
   }
 
   .tf-card {
@@ -1485,9 +1498,13 @@ button {
   }
 
   .question-text {
-    padding: 9px;
+    padding: 10px;
     border-radius: 12px;
-    font-size: 13.25px;
+    font-size: 13.75px;
+  }
+
+  .options {
+    max-height: 50%;
   }
 
   .option-btn {
@@ -1524,12 +1541,16 @@ button {
   }
 
   .question-text {
-    font-size: 13.5px;
-    line-height: 1.42;
+    font-size: 14px;
+    line-height: 1.48;
   }
 
   .question-image {
     max-height: min(22vh, 190px);
+  }
+
+  .options {
+    max-height: 50%;
   }
 
   .viewer-foot {
