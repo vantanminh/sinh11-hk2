@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Ôn tập Tin 11 HK2 - trắc nghiệm</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="titlebox">
+        <div class="title" id="examTitle">Đang tải…</div>
+        <div class="subtitle" id="examSection"></div>
+      </div>
+
+      <div class="tools">
+        <button class="tool-btn mobile-only" id="openPaletteBtn" type="button">Câu</button>
+        <label class="tool-field mode-field" for="revealModeSelect">
+          <span class="tool-label">Hiện đáp án</span>
+          <select class="tool-select" id="revealModeSelect">
+            <option value="submit">Cuối bài</option>
+            <option value="instant">Chọn xong</option>
+          </select>
+        </label>
+        <button class="tool-btn accent" id="submitBtn" type="button">Nộp bài</button>
+        <label class="toggle-chip" for="shuffleQuestionsToggle">
+          <input id="shuffleQuestionsToggle" type="checkbox" />
+          <span>Đảo câu</span>
+        </label>
+        <label class="toggle-chip" for="shuffleOptionsToggle">
+          <input id="shuffleOptionsToggle" type="checkbox" />
+          <span>Đảo đáp án</span>
+        </label>
+        <div class="summary" id="summary">0/0</div>
+        <button class="tool-btn danger" id="resetBtn" type="button" title="Xóa toàn bộ lựa chọn">Làm lại</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <aside class="sidebar card">
+        <div class="palette" id="paletteDesktop"></div>
+      </aside>
+
+      <section class="viewer card">
+        <div class="viewer-head">
+          <div>
+            <div class="q-position" id="qPosition">0/0</div>
+            <div class="q-number" id="qNumber">Câu 1</div>
+          </div>
+          <div class="viewer-head-right">
+            <button class="bulb-btn" id="explainBtn" type="button" title="Xem giải thích">💡</button>
+            <div class="answer-chip" id="answerChip" hidden>Đáp án: A</div>
+          </div>
+        </div>
+
+        <div class="viewer-body">
+          <div class="question-text" id="questionText">Đang tải…</div>
+          <div class="explain-box" id="explainBox" hidden></div>
+          <div class="options" id="options"></div>
+        </div>
+
+        <div class="viewer-foot">
+          <button class="nav-btn" id="prevBtn" type="button">←</button>
+          <button class="nav-btn" id="clearBtn" type="button">Bỏ chọn</button>
+          <button class="nav-btn" id="nextBtn" type="button">→</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="overlay" id="overlay" hidden>
+    <div class="overlay-panel">
+      <div class="overlay-head">
+        <div class="overlay-title">Chọn câu</div>
+        <button class="tool-btn" id="closePaletteBtn" type="button">Đóng</button>
+      </div>
+      <div class="palette mobile-palette" id="paletteMobile"></div>
+    </div>
+  </div>
+
+  <script src="javascript.js"></script>
+</body>
+</html>

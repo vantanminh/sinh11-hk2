@@ -1,0 +1,821 @@
+{
+  "meta": {
+    "titleRaw": "ĐỀ CƯƠNG ÔN TIN HỌC 11 – HỌC KỲ 2\t\t\t\t\t\t  GV: Hà Thị Kim Anh",
+    "subtitleRaw": "ĐỀ CƯƠNG ÔN TẬP HỌC KỲ 2 - TIN HỌC 11",
+    "sectionRaw": "PHẦN I:(3 điểm) Câu trắc nghiệm nhiều phương án lựa chọn."
+  },
+  "questions": [
+    {
+      "number": 1,
+      "question": "Câu 1. Trong Python, các phần tử của mảng cách nhau bởi dấu",
+      "options": ["A. dấu chấm (.).", "B. dấu phẩy (,).", "C. dấu cách ( ).", "D. dấu trừ (-)."],
+      "answer": "B"
+    },
+    {
+      "number": 2,
+      "question": "Câu 2. Trong Python, chỉ số của mảng bắt đầu từ số?",
+      "options": ["A. 0.", "B. 1.", "C. 2.", "D. 3."],
+      "answer": "A"
+    },
+    {
+      "number": 3,
+      "question": "Câu 3. Trong Python, để kiểm tra một đối tượng có nằm trong mảng hay không ta dùng toán tử nào?",
+      "options": ["A. not.", "B. or.", "C. in.", "D. and."],
+      "answer": "C"
+    },
+    {
+      "number": 4,
+      "question": "Câu 4. Trong Python, kiểu mảng là",
+      "options": ["A. array.", "B. float.", "C. str.", "D. list."],
+      "answer": "D"
+    },
+    {
+      "number": 5,
+      "question": "Câu 5. Trong Python, để bổ sung phần tử có giá trị bằng m vào cuối mảng A, ta dùng lệnh nào?",
+      "options": ["A. A.insert(m).", "B. m.insert(A).", "C. A.append(m).", "D. m.append(A)."],
+      "answer": "C"
+    },
+    {
+      "number": 6,
+      "question": "Câu 6. Trong Python, để xóa toàn bộ các phần tử của mảng B ta dùng lệnh?",
+      "options": ["A. B.append( ).", "B. B.remove( ).", "C. B.insert( ).", "D. B.clear( )."],
+      "answer": "D"
+    },
+    {
+      "number": 7,
+      "question": "Câu 7. Trong Python, để biết số phần tử của mảng A dùng lệnh?",
+      "options": ["A. append(A).", "B. len(A).", "C. str(A).", "D. del(A)."],
+      "answer": "B"
+    },
+    {
+      "number": 8,
+      "question": "Câu 8. Trong Python, để bổ sung phần tử vào vị trí bất kì của mảng arr ta dùng lệnh?",
+      "options": ["A. arr.append( ).", "B. arr.remove( ).", "C. arr.insert( ).", "D. arr.clear()."],
+      "answer": "C"
+    },
+    {
+      "number": 9,
+      "question": "Câu 9. Trong Python, chọn lệnh khởi tạo mảng A gồm 03 phần tử có giá trị 1, 3 và 5?",
+      "options": ["A. A = (1, 3, 5).", "B. A = {1, 3, 5}.", "C. A = [1, 3, 5].", "D. A = [1; 3; 5]."],
+      "answer": "C"
+    },
+    {
+      "number": 10,
+      "question": "Câu 10. Trong Python, để tham chiếu đến phần tử thứ ba của mảng arr ta dùng lệnh?",
+      "options": ["A. arr[2].", "B. arr[1].", "C. arr[0].", "D. arr[-1]."],
+      "answer": "A"
+    },
+    {
+      "number": 11,
+      "question": "Câu 11. Trong Python, để truy cập phần tử cuối cùng của một mảng, bạn sử dụng chỉ số nào?",
+      "options": ["A. -1.", "B. 0.", "C. 1.", "D. không xác định."],
+      "answer": "A"
+    },
+    {
+      "number": 12,
+      "question": "Câu 12. Trong Python, lệnh nào sau đây để lấy ra phần tử cuối cùng trong danh sách A?",
+      "options": ["A. pop(A).", "B. A.pop().", "C. pop(len(A)) .", "D. pop()."],
+      "answer": "B"
+    },
+    {
+      "number": 13,
+      "question": "Câu 13. Trong Python, để xuất phần tử kế phần tử cuối cùng  trong danh sách A, phương án nào sau đây đúng?",
+      "options": ["A. print(len(A) - 2).", "B. print(A[len(A) – 2]).", "C. print(A[len(A) - 1]).", "D. print(A[len(A)]) ."],
+      "answer": "B"
+    },
+    {
+      "number": 14,
+      "question": "Câu 14. Trong Python, cho một mảng numbers = [3, 7, 9, 2, 5], giá trị của numbers[2] là g?",
+      "options": ["A. 3.", "B. 7.", "C. 9.", "D. 2."],
+      "answer": "C"
+    },
+    {
+      "number": 15,
+      "question": "Câu 15. Trong Python, cho một mảng colors = [‘red’, ‘blue’, ‘green’, ‘yellow’], cách để truy cập phần tử ‘green’ là?",
+      "options": ["A. colors[0].", "B. colors[1].", "C. colors[2].", "D. colors[3]."],
+      "answer": "C"
+    },
+    {
+      "number": 16,
+      "question": "Câu 16. Trong Python, cho một mảng numbers = [1, 2, 3, 4, 5], cách để thêm phần tử 6 vào cuối mảng là?",
+      "options": ["A. numbers.add(6).", "B. numbers.insert(6).", "C. numbers.push(6).", "D. numbers.append(6)."],
+      "answer": "D"
+    },
+    {
+      "number": 17,
+      "question": "Câu 17. Cho một mảng numbers = [2, 4, 6, 8, 10], giá trị phần tử numbers[2] trong mảng là?",
+      "options": ["A. 4.", "B. 2.", "C. 3.", "D. 6."],
+      "answer": "D"
+    },
+    {
+      "number": 18,
+      "question": "Câu 18. Cho một mảng numbers = [2, 4, 6, 8, 10], cách để tính tổng các phần tử trong mảng là?",
+      "options": ["A. total(numbers).", "B. add(numbers) .", "C. sum(numbers).", "D. . calculate(numbers)."],
+      "answer": "C"
+    },
+    {
+      "number": 19,
+      "question": "Câu 19. Cho một mảng numbers = [5, 2, 8, 3, 9], cách để tìm giá trị lớn nhất trong mảng là?",
+      "options": ["A. largest(numbers).", "B. max(numbers).", "C. maximum(numbers).", "D. find_max(numbers)."],
+      "answer": "B"
+    },
+    {
+      "number": 20,
+      "question": "Câu 20. Trong Python, cho đoạn lệnh sau, sau khi thực hiện thì được dãy số A nào?\nA= [7, 3, 26, 48, 9, 22, 35, 46]\nA.remove(3)\nA.append(5)\nA.append(9)\nA.append(83)\nA.remove(22)",
+      "options": ["A. [7, 26, 48, 9, 35, 46, 5, 9, 83].", "B. [7, 26, 48, 9, 22, 35, 5, 9, 82].", "C. [7, 3, 26, 48, 9, 22, 46, 5, 9, 83] .", "D. D. [7, 26, 48, 9, 22, 35, 46, 9, 83]."],
+      "answer": "A"
+    },
+    {
+      "number": 21,
+      "question": "Câu 21. Để xuất phần tử  phần tử cuối cùng  trong danh sách A, phương án nào sau đây đúng?",
+      "options": ["A. print(A[len(A) - 1]).", "B. print(A[len(A)])", "C. print(A[len(A) – 2]).", "D. print(len(A) - 1)."],
+      "answer": "A"
+    },
+    {
+      "number": 22,
+      "question": "Câu 22. Cho đoạn lệnh sau, dãy số Arr thu được là dãy số nào?\nArr = [5, 7, 3, 4, 1]\nArr.insert(2,9)",
+      "options": ["A. [5, 9, 7, 3, 4, 1].", "B. [5, 7, 9, 3, 4, 1].", "C. [5 ,7, 3, 4, 1, 2, 9].", "D. [5, 7, 3, 4, 1, 2]."],
+      "answer": "B"
+    },
+    {
+      "number": 23,
+      "question": "Câu 23. Cho một mảng 2 chiều: \nA = [[42, 76, 92], [11, 45, 20], [65, 38, 57], [19, 96, 45], [92, 88, 191]]\nVậy giá trị của phần tử tại hàng 3 cột 1 là bao nhiêu ?",
+      "options": ["A. 11.", "B. 96.", "C. 92.", "D. 65."],
+      "answer": "D"
+    },
+    {
+      "number": 24,
+      "question": "Câu 24. Cho một mảng 2 chiều: arr = [[10, 20, 30], [40, 50, 60], [70, 80, 90]]. Để in ra hàng thứ 2 của mảng trên, bạn sử dụng câu lệnh nào?",
+      "options": ["A. print(arr[:,-1]).", "B. print(arr[2]).", "C. print(arr[2, :]).", "D. print(arr[1])."],
+      "answer": "D"
+    },
+    {
+      "number": 25,
+      "question": "Câu 25. Tạo trực tiếp mảng hai chiều, cho các câu sau, câu nào đúng?",
+      "options": ["A. A = [1, 2, 3, 4].", "B. B = [“Hà”; “Quang”; “Lan”].", "C. D = [[1,3,5], [2,5,9], [5,9,20]].", "D. C = [1,3,5],[2,5,9],[5,9,20]."],
+      "answer": "C"
+    },
+    {
+      "number": 26,
+      "question": "Câu 26. Cho các câu sau thao tác với mảng một chiều A, chọn câu sai?",
+      "options": ["A. A.append( ): bổ sung phần tử vào cuối A.", "B. A.remove( ): xóa một phần tử trong A.", "C. A. remove( ): xóa toàn bộ phần tử trong A .", "D. A.clear( ): xóa toàn phần tử trong A."],
+      "answer": "C"
+    },
+    {
+      "number": 27,
+      "question": "Câu 27. Để xóa 3 phần tử đầu tiên trong danh sách a, phương án nào sau đây đúng?",
+      "options": ["A. del(a[3]).", "B. del(a[0:3]).", "C. del(a[0:2]).", "D. del(a[1:3])."],
+      "answer": "B"
+    },
+    {
+      "number": 28,
+      "question": "Câu 28. Cho đoạn lệnh sau, danh sách A thu được sau khi chạy đoạn lệnh là\nA = [7, 3, 8, 1, 9]\ndel(A[3])",
+      "options": ["A. [7, 3, 1, 9].", "B. [7, 3, 8, 9].", "C. [7,8,1,9].", "D. [7,3,8,1]."],
+      "answer": "B"
+    },
+    {
+      "number": 29,
+      "question": "Câu 29. Cho các câu sau, chọn câu đúng?",
+      "options": ["A. Xuất mảng theo hàng ngang, mỗi số cách nhau dấu cách:  for   m  in   B:   print(m , end = \" \").", "B. Xuất mảng theo hàng dọc:  for  m  in  B: print(m, end = \" \")", "C. C = [1, 3, 5], [2, 5, 9], [5, 9, 20] là mảng hai chiều", "D. Xuất mảng B theo chiều ngược lại: for m in B[:  :  1]:  print(m, end = \" \")"],
+      "answer": "A"
+    },
+    {
+      "number": 30,
+      "question": "Câu 30. : Dùng lệnh nào sau đây để xóa phần tử cuối cùng trong danh sách A?",
+      "options": ["A. pop(A).", "B. A.remove(A[-1]).", "C. A.pop(A[len(A)].", "D. pop(len(A))."],
+      "answer": "B"
+    },
+    {
+      "number": 31,
+      "question": "Câu 31. Thuật toán tìm kiếm nào dưới đây yêu cầu mảng đã được sắp xếp trước khi thực hiện?",
+      "options": ["A. Tìm kiếm tuần tự.", "B. Tìm kiếm nội suy.", "C.Tìm kiếm nhị phân.", "D. Tìm kiếm trong cây."],
+      "answer": "C"
+    },
+    {
+      "number": 32,
+      "question": "Câu 32. Trong thuật toán tìm kiếm nhị phân, mảng được chia nhỏ mỗi lần tìm kiếm dựa trên?",
+      "options": ["A. Giá trị của phần tử đầu tiên.", "B. Giá trị trung bình của mảng.", "C. Giá trị nhỏ nhất của mảng.", "D. Giá trị tại chỉ số trung tâm của mảng."],
+      "answer": "D"
+    },
+    {
+      "number": 33,
+      "question": "Câu 33. Chọn câu diễn đạt đúng hoạt động của thuật toán tìm kiếm tuần tự?",
+      "options": ["A. Tìm trên danh sách đã sắp xếp, bắt đầu từ đầu danh sách, chừng nào chưa tìm thấy hoặc chưa tìm hết thì còn tìm tiếp.", "B. Tìm trên danh sách đã sắp xếp, bắt đầu từ giữa danh sách, chừng nào chưa tìm thấy hoặc chưa tìm hết thì còn tìm tiếp.", "C. Tìm trên danh sách bắt kì, bắt đầu từ giữa danh sách, chừng nào chưa tìm thấy hoặc chưa tìm hết thì còn tìm tiếp.", "D. Tìm trên danh sách bất kì, bắt đầu từ đầu danh sách, chừng nào chưa tìm thấy hoặc chưa tìm hết thì còn tìm tiếp."],
+      "answer": "D"
+    },
+    {
+      "number": 34,
+      "question": "Câu 34. Trong tìm kiếm tuần tự thì điều kiện cần kiểm tra để dừng vòng lặp là gì?",
+      "options": ["A. Tìm thấy vị trí i của phần tử K.", "B. Đã duyệt hết các phần tử khi tìm thấy vị trí của K.", "C. Tìm thấy vị trí i của phần tử K hoặc duyệt đến phần tử cuối cùng mà vẫn chưa thấy vị trí có giá trị bằng phần tử K.", "D. Duyệt lần lượt các phần tử từ đầu đến cuối dãy."],
+      "answer": "C"
+    },
+    {
+      "number": 35,
+      "question": "Câu 35. Trong tìm kiếm tuần tự thì có mấy điều kiện cần kiểm tra để dừng vòng lặp?",
+      "options": ["A. 1.", "B. 2.", "C. 3.", "D. 4."],
+      "answer": "B"
+    },
+    {
+      "number": 36,
+      "question": "Câu 36. Trong thuật toán tìm kiếm nhị phân, chỉ số mid được tính theo công thức nào?",
+      "options": ["A. mid = (left + right) // 2.", "B. mid = (left + right) % 2.", "C. mid = (left + right) / 2.", "D. mid = (left + right // 3."],
+      "answer": "A"
+    },
+    {
+      "number": 37,
+      "question": "Câu 37. Thuật toán tìm kiếm tuần tự cần bao nhiêu bước để tìm thấy số 7 trong danh sách A = [1, 4, 8, 7, 10, 28]?",
+      "options": ["A. 2.", "B. 3.", "C. 4.", "D. 5."],
+      "answer": "C"
+    },
+    {
+      "number": 38,
+      "question": "Câu 38. Thuật toán tìm kiếm tuần tự cần bao nhiêu bước để tìm thấy số 25 trong danh sách B = [3, 5, 41, 7, 11, 46, 58, 79, 93, 25]?",
+      "options": ["A. 9.", "B. 10.", "C. 11.", "D. 8."],
+      "answer": "B"
+    },
+    {
+      "number": 39,
+      "question": "Câu 39. Cho các câu sau, chọn câu SAI?\nA = [1, 4, 5, 8, 11, 12, 18, 21]\nK = int(input(“Moi nhap K:”))",
+      "options": ["A. Với K = 11, thuật toán tìm kiếm tuần tự sẽ thực hiện 5 bước chạy.", "B. Với K = 8, thuật toán tìm kiếm tuần tự thì chỉ số của K trong mảng A là 3.", "C. Với K = 12, thuật toán tìm kiếm nhị phân sẽ thực hiện 4 bước chạy.", "D. Với K = 11, thuật toán nhị phân sau khi chạy xong bước 1 thì phạm vi tìm kiếm được giới hạn thành [11, 12, 18, 21]."],
+      "answer": "C"
+    },
+    {
+      "number": 40,
+      "question": "Câu 40. Thuật toán tìm kiếm nhị phân cần bao nhiêu bước để tìm thấy số 34 trong danh sách dãy gồm các số sau: A = [ 0, 4, 9, 10, 12, 14, 17, 18, 20, 31, 34, 67 ]?",
+      "options": ["A. 3.", "B. 4.", "C. 5.", "D. 6."],
+      "answer": "A"
+    },
+    {
+      "number": 41,
+      "question": "Câu 41. Cho dãy số A = [ 1,  5,  8, 11, 16, 22, 34, 46, 57, 61, 83, 94, 102, 305, 457, 633, 755]. Với thuật toán tìm kiếm nhị phân thì tại bước số 3, giá trị của giới hạn bên trái, bên phải và giá trị giữa khi tìm kiếm giá trị bằng 755  là bao nhiêu ?",
+      "options": ["A. 9, 16, 12.", "B. 13, 16, 14.", "C. 15, 16, 15.", "D. 16, 16, 16."],
+      "answer": "B"
+    },
+    {
+      "number": 42,
+      "question": "Câu 42. Cho dãy số A = [ 1, 5, 8, 11, 16, 22, 34, 46, 57, 61, 83, 94, 102, 305, 457, 633, 755]. Với thuật toán tìm kiếm nhị phân thì tại bước số 2, giá trị của giới hạn bên trái, bên phải và giá trị giữa khi tìm kiếm giá trị bằng 755  là bao nhiêu?",
+      "options": ["A. 9, 16, 12.", "B. 13, 16, 14.", "C. 15, 16, 15.", "D. 0, 8, 16."],
+      "answer": "A"
+    },
+    {
+      "number": 43,
+      "question": "Câu 43. Trong thuật toán tìm kiếm nhị phân với dãy số A tăng dần thì khi A[mid] < K trong bước 1, ta có",
+      "options": ["A. Left = 0, Right = mid - 1.", "B. Left = mid + 1, Right = len(A).", "C. Left = mid + 1, Right = len(A) - 1.", "D. Left = mid + 1, Right = mid - 1."],
+      "answer": "C"
+    },
+    {
+      "number": 44,
+      "question": "Câu 44. Trong thuật toán tìm kiếm nhị phân với dãy số A tăng dần thì khi A[mid] > K trong bước 1, ta có",
+      "options": ["A. Left = 0, Right = mid - 1.", "B. Left = mid + 1, Right = mid - 1.", "C. Left = mid + 1, Right = len(A) - 1.", "D. Left = 0, Right = mid + 1."],
+      "answer": "A"
+    },
+    {
+      "number": 45,
+      "question": "Câu 45. Trong thuật toán tìm kiếm nhị phân với dãy số A giảm dần thì khi A[mid] < K trong bước 1, ta có",
+      "options": ["A. Left = 0, Right = mid - 1.", "B. Left = mid + 1, Right = mid - 1.", "C. Left = mid + 1, Right = len(A) - 1.", "D. Left = 0, Right = mid + 1."],
+      "answer": "A"
+    },
+    {
+      "number": 46,
+      "question": "Câu 46. Trong thuật toán tìm kiếm nhị phân với dãy số A giảm dần thì khi A[mid] > K trong bước 1, ta có",
+      "options": ["A. Left = 0, Right = mid - 1.", "B. Left = mid + 1, Right = mid - 1.", "C. Left = mid + 1, Right = len(A) - 1.", "D. Left = 0, Right = mid + 1."],
+      "answer": "C"
+    },
+    {
+      "number": 47,
+      "question": "Câu 47. Thuật toán tìm kiếm nhị phân cần bao nhiêu bước để tìm thấy số 170 trong danh sách dãy số gồm [1, 2, 3, 12, 14, 17, 19, 20, 25, 30, 36, 52, 56, 163, 170]?",
+      "options": ["A. 3.", "B. 4.", "C. 5.", "D. 6."],
+      "answer": "B"
+    },
+    {
+      "number": 48,
+      "question": "Câu 48. Thuật toán tìm kiếm nhị phân cần bao nhiêu bước để tìm thấy số 20 trong danh sách dãy gồm các số sau: [ 0, 4, 9, 10, 12, 14, 17, 18, 20, 31, 34, 67 ]?",
+      "options": ["A. 5.", "B. 4.", "C. 3.", "D. 2."],
+      "answer": "D"
+    },
+    {
+      "number": 49,
+      "question": "Câu 49. Cho các câu sau, chọn câu SAI?\n           A = [1, 4, 5, 8, 12, 17, 18, 21]\nK = int(input(“Moi nhap K:”))",
+      "options": ["A. Với K = 17, thuật toán tìm kiếm tuần tự sẽ thực hiện 5 bước chạy", "B. Với K = 18, thuật toán tìm kiếm tuần tự thì chỉ số của K trong mảng A là 6", "C. Với K = 12, thuật toán tìm kiếm nhị phân sẽ thực hiện 3 bước chạy", "D. Với K = 11, thuật toán nhị phân sau khi chạy xong bước 1 thì phạm vi tìm kiếm được giới hạn thành [12, 17, 18, 21]"],
+      "answer": "A"
+    },
+    {
+      "number": 50,
+      "question": "Câu 50. Thuật toán tìm kiếm nhị phân cần bao nhiêu bước để tìm thấy số 163  trong danh sách dãy số gồm [1, 2, 3, 12, 14, 17, 19, 20, 25, 30, 36, 52, 56, 163]?",
+      "options": ["A. 3.", "B. 4.", "C. 5.", "D. 14."],
+      "answer": "B"
+    },
+    {
+      "number": 51,
+      "question": "Câu 51. Thuật toán sắp xếp nào hoạt động bằng cách so sánh từng cặp phần tử liên tiếp và đổi chỗ nếu chúng không đúng thứ tự?",
+      "options": ["A. Sắp xếp chèn.", "B. Sắp xếp lựa chọn.", "C. Sắp xếp nổi bọt.", "D. Sắp xếp nhanh."],
+      "answer": "C"
+    },
+    {
+      "number": 52,
+      "question": "Câu 52. Đâu là lệnh mở tệp để đọc?",
+      "options": ["A. f = open(<file name>, \"r\", encoding=\"UTF-8\").", "B. f = open(<file name>, \"a\", encoding=\"UTF-8\").", "C. f = open(<file name>, \"w\", encoding=\"UTF-8\").", "D. f.close()."],
+      "answer": "A"
+    },
+    {
+      "number": 53,
+      "question": "Câu 53. Đâu là lệnh đọc một dòng tiếp theo từ f ?",
+      "options": ["A. f.readlines( ).", "B. L = list(f).", "C. f.lose( ).", "D. f.readline( )."],
+      "answer": "D"
+    },
+    {
+      "number": 54,
+      "question": "Câu 54. Bổ sung đoạn lệnh sau để xuất ra mảng Diem từ tệp Data.txt saufile = rʺData.txtʺ\nf  = open(file, encoding = ʺUTF-8ʺ)\nDiem = [ ]\nfor  line  in  f:\n    ----------------------------\n    Diem.append(float(L[1]))\nf.close()\nprint(Diem)\n\n    Data.txt\n\n    Hà 9.6\nBình 8.5\nQuang 7.2",
+      "options": ["A. L = line.split( ).", "B. Ten.append(L[0]).", "C. return Diem.", "D. Không có đáp án."],
+      "answer": "A"
+    },
+    {
+      "number": 55,
+      "question": "Câu 55. Giả sử có hai mảng Ten và Diem tương ứng với dữ liệu tên và điểm của học sinh trong lớp. Chương trình sau ghi những dòng thông tin này ra tệp ʺoutput.txtʺ sau đây lỗi ở mấy dòng?",
+      "code": "tep = \"output.txt\"\nTen = [\"Hà\", \"Bình\", \"Quang\"]\nDiem = [9.5; 6.5; 7.4]\n\nf = open(tep, \"w\", encoding = \"UTF-8\")\n\nfor i in range(len(Ten)):\n    print(Ten[i], Diem[i], fil = f)\n\nf.close()",
+      "options": ["A. 0.", "B. 1.", "C. 2.", "D. 3."],
+      "answer": "C"
+    },
+    {
+      "number": 56,
+      "question": "Câu 56. Các nhiệm vụ để thực hiện việc sắp xếp gồm?",
+      "options": ["A. Đổi chỗ.", "B. So sánh và đổi chỗ.", "C. So sánh.", "D. Xóa và đổi chỗ."],
+      "answer": "B"
+    },
+    {
+      "number": 57,
+      "question": "Câu 57. Thuật toán sắp xếp nổi bọt sắp xếp danh sách bằng cách nào?",
+      "options": ["A. Hoán đổi.", "B. Thay thế.", "C. .Thay đổi", "D. Sửa đổi."],
+      "answer": "A"
+    },
+    {
+      "number": 58,
+      "question": "Câu 58. Trong thuật toán sắp xếp nổi bọt thì dấu hiệu để biết dãy chưa sắp xếp xong là gì ?",
+      "options": ["A. Vẫn còn cặp phần tử liền kề không đúng thứ tự mong muốn.", "B. Dãy chưa được sắp xếp tăng dần.", "C. Dãy chưa được sắp xếp giảm dần.", "D. Cả A, B và C."],
+      "answer": "A"
+    },
+    {
+      "number": 59,
+      "question": "Câu 59. Thuật toán sắp xếp nổi bọt sắp xếp danh sách bằng cách hoán đổi các phần tử liền kề khi chúng chưa đúng vị trí bao nhiêu lần?",
+      "options": ["A. Hai lần.", "B. Nhiều lần.", "C. Một lần.", "D. Mười lần."],
+      "answer": "B"
+    },
+    {
+      "number": 60,
+      "question": "Câu 60. Cho dãy số 7, 9, 12, 5, 4. Nếu sử dụng thuật toán sắp xếp nổi bọt để sắp xếp dãy tăng dần thì sau bao nhiêu vòng lặp thì thuật toán kết thúc?",
+      "options": ["A. 3.", "B. 4.", "C. 5.", "D. 6."],
+      "answer": "B"
+    },
+    {
+      "number": 61,
+      "question": "Câu 61. Cho dãy số 7, 9, 12, 5, 4. Nếu sử dụng thuật toán sắp xếp nổi bọt để sắp xếp dãy tăng dần thì sau vòng lặp thứ 3 ta được dãy số nào?",
+      "options": ["A. [7, 9, 5, 4, 12].", "B. [7, 5, 4, 9, 12].", "C. [4, 5, 7, 9, 12].", "D. [5, 4, 7, 9, 12]."],
+      "answer": "D"
+    },
+    {
+      "number": 62,
+      "question": "Câu 62. Cho dãy số 3, 12, 4, 15, 9. Nếu sử dụng thuật toán sắp xếp chọn để sắp xếp dãy tăng dần thì sau vòng lặp thứ 2 ta được dãy số nào?",
+      "options": ["A. [3, 4, 12, 15, 9].", "B. [3, 12, 4, 15, 9].", "C. [3, 4, 9, 15, 12].", "D. [3, 4, 9, 12, 15]."],
+      "answer": "A"
+    },
+    {
+      "number": 63,
+      "question": "Câu 63. Bạn Vy thực hiện thuật toán sắp xếp chọn để sắp xếp dãy chữ cái A = [\"c\", \"g\", \"q\", \"a\", \"h\", \"m\"] theo thứ tự tăng dần. Ở vòng lặp đầu tiên ta sẽ đổi vị trí của hai chữ cái nào với nhau?",
+      "options": ["A. g, c.", "B. q, g.", "C. a, c.", "D. q, h."],
+      "answer": "C"
+    },
+    {
+      "number": 64,
+      "question": "Câu 64. Bạn An thực hiện thuật toán sắp xếp chọn để sắp xếp dãy số sau theo thứ tự tăng dần, kết thúc bước thứ 3 ta thu được dãy số nào? Biết dãy số ban đầu gồm [64, 35, 17, 23, 11]?",
+      "options": ["A. [11, 35, 17, 23, 64].", "B. [11, 17, 23, 35, 64].", "C. [11, 17, 35, 23, 64].", "D. [64, 17, 23, 35, 11]."],
+      "answer": "B"
+    },
+    {
+      "number": 65,
+      "question": "Câu 65. Cho dãy số 9, 7, 12, 5, 4. Nếu sử dụng thuật toán sắp xếp chèn để sắp xếp dãy tăng dần thì sau vòng lặp thứ 2 ta được dãy số nào?",
+      "options": ["A. [4, 5, 7, 9, 12].", "B. [5, 7, 9, 12, 4].", "C. [7, 9, 12, 5, 4].", "D. [7, 9, 12, 4, 5]."],
+      "answer": "C"
+    },
+    {
+      "number": 66,
+      "question": "Câu 66. Cho dãy số 9, 7, 12, 5, 4. Nếu sử dụng thuật toán sắp xếp chèn để sắp xếp dãy tăng dần thì sau vòng lặp thứ 3 ta được dãy số nào?",
+      "options": ["A. [4, 5, 7, 9, 12].", "B. [5, 7, 9, 12, 4].", "C. [7, 9, 12, 5, 4].", "D. [7, 9, 12, 5, 4]."],
+      "answer": "B"
+    },
+    {
+      "number": 67,
+      "question": "Câu 67. Có bao nhiêu phương pháp để kiểm thử chương trình?",
+      "options": ["A. 1.", "B. 2.", "C. 3.", "D. 4."],
+      "answer": "C"
+    },
+    {
+      "number": 68,
+      "question": "Câu 68. Đâu không là công cụ để kiểm thử chương trình?",
+      "options": ["A. Công cụ in biến trung gian.", "B. Công cụ thống kê dữ liệu.", "C. Công cụ sinh các bộ dữ liệu test.", "D. Công cụ điểm dừng trong phần mềm soạn thảo lập trình."],
+      "answer": "B"
+    },
+    {
+      "number": 69,
+      "question": "Câu 69. Hoàn thành phát biểu sau: “Có rất nhiều công cụ và phương pháp khác nhau để kiểm thử chương trình. Các công cụ có mục đích … của chương trình và …, … các lỗi phát sinh trong tương lai”?",
+      "options": ["A. Tìm ra lỗi, phòng ngừa, ngăn chặn.", "B. Tìm ra lỗi, phòng ngừa, xử lí.", "C. Phòng ngừa, ngăn chặn, xử lí lỗi.", "D. Xử lí lỗi, phòng ngừa, ngăn chặn."],
+      "answer": "A"
+    },
+    {
+      "number": 70,
+      "question": "Câu 70. Phát biểu nào sau đây đúng?",
+      "options": ["A. Kiểm thử sẽ giảm độ tin cậy của chương trình và chưa chứng minh được tính đúng của thuật toán và chương trình.", "B. Kiểm thử sẽ tăng độ tin cậy của chương trình nhưng chưa chứng minh được tính đúng của thuật toán và chương trình .", "C. Kiểm thử sẽ tăng độ tin cậy của chương trình và chứng minh được tính đúng của thuật toán và chương trình.", "D. Kiểm thử sẽ giảm độ tin cậy của chương trình nhưng chưa chứng minh được tính đúng của thuật toán và chương trình."],
+      "answer": "B"
+    },
+    {
+      "number": 71,
+      "question": "Câu 71. Tính đúng của thuật toán cần được chứng minh bằng?",
+      "options": ["A. Thuật toán.", "B. Suy luận logic.", "C. Bộ dữ liệu kiểm thử.", "D. Lập luận toán học."],
+      "answer": "D"
+    },
+    {
+      "number": 72,
+      "question": "Câu 72. Hiệu quả hay tính tối ưu của chương trình thường được xem xét trên cơ sở đánh giá nào?",
+      "options": ["A. Độ phức tạp thời gian.", "B. Độ phức tạp không gian.", "C. Độ phức tạp tính toán.", "D. Độ phức tạp của tập tin."],
+      "answer": "C"
+    },
+    {
+      "number": 73,
+      "question": "Câu 73. Hai tiêu chí đánh giá độ phức tạp tính toán quan trọng nhất là gì?",
+      "options": ["A. Thời gian thực hiện và không gian bộ nhớ.", "B. Tính đúng và không gian bộ nhớ.", "C. Thuật toán và lập luận bài toán.", "D. Thời gian và tính tối ưu."],
+      "answer": "A"
+    },
+    {
+      "number": 74,
+      "question": "Câu 74. Độ phức tạp thời gian của một chương trình đo lường?",
+      "options": ["A. Không gian bộ nhớ được sử dụng bởi chương trình.", "B. Thời gian mà chương trình mất để hoàn thành một nhiệm vụ, dựa trên kích thước của dữ liệu đầu vào.", "C. Số lần thực hiện các phép toán cơ bản bởi chương trình.", "D. Tất cả các phương án trên."],
+      "answer": "B"
+    },
+    {
+      "number": 75,
+      "question": "Câu 75. Độ phức tạp không gian của một chương trình đo lường?",
+      "options": ["A. Không gian bộ nhớ được sử dụng bởi chương trình.", "B. Thời gian mà chương trình mất để hoàn thành một nhiệm vụ, dựa trên kích thước của dữ liệu đầu vào.", "C. Số lần thực hiện các phép toán cơ bản bởi chương trình.", "D. Tất cả các phương án trên."],
+      "answer": "A"
+    },
+    {
+      "number": 76,
+      "question": "Câu 76. Một chương trình/ thuật toán là hiệu quả nếu chương trình thực hiện phải?",
+      "options": ["A. Tốn ít thời gian nhưng nhiều bộ nhớ.", "B. Tốn nhiều thời gian và nhiều bộ nhớ.", "C. Tốn ít thời gian và ít bộ nhớ.", "D. Tốn nhiều thời gian nhưng ít bộ nhớ."],
+      "answer": "C"
+    },
+    {
+      "number": 77,
+      "question": "Câu 77.\nTìm kết quả ở vòng lặp 3 trong đoạn chương trình sau khi ta nhập dayso = \"5 8 0 10 4 3\".",
+      "code": "dayso = input('Nhập dãy số, mỗi số cách nhau một dấu cách: ')\nA = [int(x) for x in dayso.split()]\nprint('A = ', A)\n\nn = len(A)\n\ndef sapxepchen(A):\n    for i in range(1, n):\n        value = A[i]\n        j = i - 1\n        while j >= 0 and A[j] > value:\n            A[j+1] = A[j]\n            j = j - 1\n        A[j+1] = value\n        print('Sau vòng ', i, 'thì A = ', A, '=> điểm dừng j = ', j)\n        print(' j = ', j)\n\nsapxepchen(A)",
+      "options": ["A. Sau vòng  3 thì A =  [5, 8, 0, 10, 4, 3] => điểm dừng j =  0", "B. Sau vòng  3 thì A =  [0, 5, 8, 10, 4, 3] => điểm dừng j =  -1", "C. Sau vòng  3 thì A =  [0, 5, 8, 10, 4, 3] => điểm dừng j =  2", "D. Sau vòng  3 thì A =  [0, 4, 5, 8, 10, 3] => điểm dừng j =  0"],
+      "answer": "C"
+    },
+    {
+      "number": 78,
+      "question": "Câu 78. Yêu cầu nhập số tự nhiên n và tính tổng 1 + 2 + …+ n. Sắp xếp thứ tự các bước chứng minh bằng phương pháp qui nạp để kiểm tra tính đúng của chương trình sau?\nB1: Vậy chương trình đúng với mọi i\nB2: Chương trình đúng ở bước thứ nhất (i = 0): S = 0 + 0 =0\nB3: Chương trình cũng đúng ở bước thứ i+1 (i=6): S=0+1+2+3+4+5+6\nB4: Giả sử chương trình đúng ở bước thứ i (i=5): S=0+1+2+3+4+5 ",
+      "options": ["A. B2, B1, B3, B4.", "B. B1, B4, B3, B2.", "C. B3, B1, B2, B4.", "D. B2, B4, B3, B1."],
+      "answer": "D"
+    },
+    {
+      "number": 79,
+      "question": "Câu 79. Chương trình giải bài toán đếm số các ước số thực sự của số tự nhiên n này đúng hay sai? Nếu sai thì sửa như sau:",
+      "code": "def dem(n):\n    count = 0\n    k = 2\n    while k <= n:\n        if n % k == 0:\n            count = count + 1\n        k = k + 1\n    return count\n\nkq = dem(4)\nprint(kq)",
+      "options": ["A. Sai, sửa dòng 3 là k = 1.", "B. Sai, sửa dòng 4 là k < n.", "C. Sai, sửa dòng 3 là k = 1 và dòng 4 là k < n .", "D. Đúng."],
+      "answer": "A"
+    },
+    {
+      "number": 80,
+      "question": "Câu 80. Tìm lệnh còn thiếu trong chương trình xuất thời gian của thuật toán tìm kiếm tuần tự phần tử K = 9 của dãy số A sau.",
+      "code": "from time import perf_counter\n\ndef LinearSearch(A, K):\n    for i in range(len(A)):\n        if A[i] == K:\n            return i\n    return -1\n\nA = [3, 1, 0, 10, 13, 16, 9, 7, 5, 11]\n\nt1 = perf_counter()\n# ....................................\nt2 = perf_counter()\n\nprint(\"Thời gian tìm kiếm tuần tự: \", t2 - t1)",
+      "options": ["A. TKTT(A,9).", "B. LinearSearch(A).", "C. LinearSearch(A,9).", "D. linearsearch(A,9)."],
+      "answer": "C"
+    },
+    {
+      "number": 81,
+      "question": "Bài 17. Câu 1. Cấu trúc dữ liệu mảng một chiều trong Python được biểu diễn bằng kiểu dữ liệu nào?",
+      "options": ["A. Tuple.", "B. Set.", "C. List.", "D. Dictionary."],
+      "answer": "C"
+    },
+    {
+      "number": 82,
+      "question": "Bài 17. Câu 2. Lệnh nào sau đây kiểm tra xem giá trị 7 có tồn tại trong mảng A = [1, 3, 5, 7, 9]?",
+      "options": ["A. 7 in A.", "B. A.has(7).", "C. A.contains(7).", "D. A.search(7)."],
+      "answer": "A"
+    },
+    {
+      "number": 83,
+      "question": "Bài 17. Câu 3. Để thêm một phần tử vào cuối danh sách trong Python, ta dùng lệnh nào?",
+      "options": ["A. append().", "B. insert().", "C. extend().", "D. pop()."],
+      "answer": "A"
+    },
+    {
+      "number": 84,
+      "question": "Bài 17. Câu 4. Mảng hai chiều là gì?",
+      "options": ["A. Một chuỗi các phần tử cùng kiểu dữ liệu.", "B. Một danh sách chứa các danh sách con.", "C. Một bảng với dữ liệu không có cấu trúc.", "D. Một danh sách các giá trị ngẫu nhiên."],
+      "answer": "B"
+    },
+    {
+      "number": 85,
+      "question": "Bài 17. Câu 5. Lệnh nào sau đây được dùng để truy cập phần tử tại hàng 2 cột 3 của ma trận A sau?",
+      "code": "A = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+      "options": ["A. A[1][2].", "B. A[2][3].", "C. A[3][2].", "D. A[0][1]."],
+      "answer": "A"
+    },
+    {
+      "number": 86,
+      "question": "Bài 17. Câu 6. Trong Python, ta có thể duyệt qua từng phần tử của mảng hai chiều bằng lệnh nào sau đây?",
+      "options": ["A. Một lệnh for đơn.", "B. Hai lệnh for lồng nhau.", "C. Hàm map().", "D. Lệnh while."],
+      "answer": "B"
+    },
+    {
+      "number": 87,
+      "question": "Bài 17. Câu 7. Để tính tổng các phần tử của một danh sách trong Python, ta sử dụng hàm nào?",
+      "options": ["A. sum().", "B. max().", "C. min().", "D. avg()."],
+      "answer": "A"
+    },
+    {
+      "number": 88,
+      "question": "Bài 17. Câu 8. Cho danh sách A sau. Kết quả của lệnh print(A[-1]) là gì?",
+      "code": "A = [1, 2, 3, 4, 5]\nprint(A[-1])",
+      "options": ["A. 1.", "B. 3.", "C. 5.", "D. Lỗi."],
+      "answer": "C"
+    },
+    {
+      "number": 89,
+      "question": "Bài 17. Câu 9. Mảng hai chiều trong Python có thể được biểu diễn bằng cách nào?",
+      "options": ["A. Dictionary chứa danh sách.", "B. List chứa list.", "C. Tuple chứa set.", "D. Set chứa tuple."],
+      "answer": "B"
+    },
+    {
+      "number": 90,
+      "question": "Bài 17. Câu 10. Lệnh nào sau đây dùng để xóa một phần tử trong danh sách tại vị trí cụ thể?",
+      "options": ["A. list.remove(index).", "B. list.delete(index).", "C. list.clear(index).", "D. list.pop(index)."],
+      "answer": "D"
+    },
+    {
+      "number": 91,
+      "question": "Bài 19. Câu 1. Trong tìm kiếm tuần tự, khi nào ta có thể tìm thấy kết quả ngay với ít bước nhất?",
+      "options": ["A. Khi phần tử cần tìm ở giữa danh sách.", "B. Khi phần tử cần tìm ở cuối danh sách.", "C. Khi phần tử cần tìm không có trong danh sách.", "D. Khi phần tử cần tìm là phần tử đầu tiên."],
+      "answer": "D"
+    },
+    {
+      "number": 92,
+      "question": "Bài 19. Câu 2. Trong tìm kiếm tuần tự, khi nào cần nhiều bước nhất để tìm ra kết quả?",
+      "options": ["A. Khi phần tử cần tìm ở giữa danh sách.", "B. Khi phần tử cần tìm là phần tử cuối cùng.", "C. Khi phần tử cần tìm không có trong danh sách.", "D. Khi phần tử cần tìm là phần tử đầu tiên."],
+      "answer": "B"
+    },
+    {
+      "number": 93,
+      "question": "Bài 19. Câu 3. Với thuật toán tìm kiếm tuần tự, cần duyệt bao nhiêu phần tử để tìm ra phần tử có giá trị bằng 34 trong dãy A sau?",
+      "code": "A = [0, 4, 9, 10, 12, 14, 17, 18, 20, 31, 34, 67]",
+      "options": ["A. 6.", "B. 10.", "C. 12.", "D. 11."],
+      "answer": "D"
+    },
+    {
+      "number": 94,
+      "question": "Bài 19. Câu 4. Thuật toán tìm kiếm nhị phân có ưu điểm gì so với tìm kiếm tuần tự?",
+      "options": ["A. Đơn giản hơn trong lập trình.", "B. Có thể áp dụng cho mọi danh sách.", "C. Tốc độ nhanh hơn khi danh sách đã sắp xếp.", "D. Không cần phải sắp xếp danh sách trước khi tìm."],
+      "answer": "C"
+    },
+    {
+      "number": 95,
+      "question": "Bài 19. Câu 5. Cho dãy A sau. Cần tìm giá trị K = 9 bằng thuật toán tìm kiếm nhị phân, chỉ số nào sẽ được trả về?",
+      "code": "A = [1, 3, 4, 7, 8, 9, 10]\nK = 9",
+      "options": ["A. 3.", "B. 4.", "C. 5.", "D. 6."],
+      "answer": "C"
+    },
+    {
+      "number": 96,
+      "question": "Bài 19. Câu 6. Thuật toán tìm kiếm tuần tự có thể áp dụng trong trường hợp nào?",
+      "options": ["A. Dữ liệu đã được sắp xếp.", "B. Dữ liệu chưa được sắp xếp.", "C. Chỉ cho các dãy số.", "D. Chỉ cho các dãy chữ cái."],
+      "answer": "B"
+    },
+    {
+      "number": 97,
+      "question": "Bài 19. Câu 7. Nếu dãy số đã được sắp xếp giảm dần, thuật toán tìm kiếm nhị phân sẽ hoạt động như thế nào?",
+      "options": ["A. Thuật toán vẫn hoạt động bình thường.", "B. Phải thay đổi thuật toán để so sánh ngược lại.", "C. Không thể áp dụng tìm kiếm nhị phân.", "D. Chỉ áp dụng cho dãy số ngắn."],
+      "answer": "B"
+    },
+    {
+      "number": 98,
+      "question": "Bài 21. Câu 1. Ý tưởng chính của thuật toán sắp xếp chèn là gì?",
+      "options": ["A. Tìm phần tử nhỏ nhất và chuyển nó vào vị trí đầu tiên.", "B. So sánh từng cặp phần tử liền kề và hoán đổi nếu chúng không đúng thứ tự.", "C. Chèn từng phần tử vào đúng vị trí trong một mảng con đã sắp xếp.", "D. Chia mảng thành hai phần và sắp xếp từng phần đệ quy."],
+      "answer": "C"
+    },
+    {
+      "number": 99,
+      "question": "Bài 21. Câu 2. Trong thuật toán sắp xếp chọn, điều gì xảy ra trong mỗi lần lặp?",
+      "options": ["A. Phần tử lớn nhất được chuyển về cuối mảng.", "B. Phần tử nhỏ nhất được đưa vào đúng vị trí.", "C. Mỗi phần tử được chèn vào đúng vị trí của nó.", "D. Các phần tử liền kề được hoán đổi để sắp xếp."],
+      "answer": "B"
+    },
+    {
+      "number": 100,
+      "question": "Bài 21. Câu 3. Thuật toán nào sau đây không sử dụng so sánh giữa các phần tử?",
+      "options": ["A. Sắp xếp chèn.", "B. Sắp xếp chọn.", "C. Sắp xếp đếm.", "D. Sắp xếp nổi bọt."],
+      "answer": "C"
+    },
+    {
+      "number": 101,
+      "question": "Bài 21. Câu 4. Mục đích của vòng lặp bên trong trong thuật toán sắp xếp nổi bọt là gì?",
+      "options": ["A. Tìm phần tử lớn nhất và đưa nó về đúng vị trí.", "B. Tìm phần tử nhỏ nhất và đưa nó về đúng vị trí.", "C. So sánh và hoán đổi các phần tử liền kề nếu chúng không đúng thứ tự.", "D. Chia mảng thành các phần nhỏ hơn để sắp xếp."],
+      "answer": "C"
+    },
+    {
+      "number": 102,
+      "question": "Bài 21. Câu 5. Trường hợp tốt nhất của thuật toán sắp xếp nổi bọt là gì?",
+      "options": ["A. Mảng được sắp xếp ngược lại.", "B. Mảng đã được sắp xếp.", "C. Mảng chứa tất cả các phần tử giống nhau.", "D. Mảng chỉ có hai phần tử."],
+      "answer": "B"
+    },
+    {
+      "number": 103,
+      "question": "Bài 21. Câu 6. Phát biểu nào sai về thuật toán sắp xếp nổi bọt?",
+      "options": ["A. Nó là thuật toán ổn định, có nghĩa là nó giữ nguyên thứ tự của các phần tử bằng nhau.", "B. Nó là thuật toán tại chỗ, tức là nó sử dụng bộ nhớ phụ không đáng kể.", "C. Nó luôn thực hiện số lượng so sánh giống nhau, bất kể thứ tự của đầu vào.", "D. Độ phức tạp thời gian xấu nhất của nó là O(n^2)."],
+      "answer": "C"
+    },
+    {
+      "number": 104,
+      "question": "Bài 21. Câu 7. Trong thuật toán sắp xếp chèn, thuật toán xác định vị trí để chèn phần tử như thế nào trong mỗi lần lặp?",
+      "options": ["A. Bằng cách tìm phần tử ở giữa và chèn vào đó.", "B. Bằng cách dịch chuyển các phần tử lớn hơn phần tử hiện tại sang bên phải.", "C. Bằng cách hoán đổi các phần tử liền kề cho đến khi phần tử hiện tại ở đúng vị trí.", "D. Bằng cách chia mảng ra đệ quy."],
+      "answer": "B"
+    },
+    {
+      "number": 105,
+      "question": "Bài 23. Câu 1. Phương pháp kiểm thử nào dưới đây có thể giúp tăng độ tin cậy của chương trình nhưng không chứng minh được tính đúng của thuật toán?",
+      "options": ["A. Kiểm thử bằng chứng minh lôgic toán học.", "B. Sử dụng các bộ dữ liệu kiểm thử.", "C. Sử dụng phương pháp quy nạp toán học.", "D. Xem xét thời gian chạy của chương trình."],
+      "answer": "B"
+    },
+    {
+      "number": 106,
+      "question": "Bài 23. Câu 2. Phương pháp nào sau đây thường được sử dụng để chứng minh tính đúng của thuật toán một cách chắc chắn?",
+      "options": ["A. Kiểm thử bằng cách chạy nhiều lần.", "B. Dùng dữ liệu kiểm thử ngẫu nhiên.", "C. Chứng minh bằng lôgic toán học.", "D. Kiểm tra độ phức tạp tính toán."],
+      "answer": "C"
+    },
+    {
+      "number": 107,
+      "question": "Bài 23. Câu 3. Mục đích chính của việc kiểm thử chương trình là gì?",
+      "options": ["A. Đảm bảo chương trình chạy nhanh nhất có thể.", "B. Phát hiện lỗi và sửa lỗi để tăng độ tin cậy của chương trình.", "C. Chứng minh chương trình không bao giờ sai.", "D. Đánh giá khả năng tối ưu của thuật toán."],
+      "answer": "B"
+    },
+    {
+      "number": 108,
+      "question": "Bài 23. Câu 4. Trong kiểm thử chương trình, tại sao không thể chỉ dựa vào các bộ dữ liệu kiểm thử để chứng minh tính đúng của thuật toán?",
+      "options": ["A. Vì các bộ dữ liệu kiểm thử thường có sai sót.", "B. Vì kiểm thử không kiểm tra được tất cả các tình huống có thể xảy ra.", "C. Vì thuật toán luôn có khả năng chạy sai.", "D. Vì kiểm thử chỉ làm tăng thời gian chạy của chương trình."],
+      "answer": "B"
+    },
+    {
+      "number": 109,
+      "question": "Bài 23. Câu 5. Tiêu chí nào dưới đây thường được xem xét khi đánh giá hiệu quả của một thuật toán?",
+      "options": ["A. Tính đơn giản và dễ hiểu.", "B. Thời gian và không gian bộ nhớ sử dụng.", "C. Khả năng phát hiện lỗi tự động.", "D. Độ dài của mã lệnh."],
+      "answer": "B"
+    },
+    {
+      "number": 110,
+      "question": "Bài 23. Câu 6. Một chương trình có thể tối ưu về mặt thời gian nhưng không tối ưu về mặt nào dưới đây?",
+      "options": ["A. Tính đúng của thuật toán.", "B. Dung lượng bộ nhớ sử dụng.", "C. Khả năng kiểm thử.", "D. Độ phức tạp logic."],
+      "answer": "B"
+    },
+    {
+      "number": 111,
+      "question": "Bài 23. Câu 7. Trong kiểm thử chương trình, tại sao nên sử dụng các bộ dữ liệu có tính đa dạng cao?",
+      "options": ["A. Để kiểm tra độ nhanh chậm của thuật toán.", "B. Để tăng khả năng phát hiện lỗi trong các trường hợp khác nhau.", "C. Để giúp chương trình dễ hiểu hơn.", "D. Để giảm thời gian chạy chương trình."],
+      "answer": "B"
+    },
+    {
+      "number": 112,
+      "question": "Bài 23. Câu 8. Độ phức tạp tính toán của một thuật toán chủ yếu đánh giá điều gì?",
+      "options": ["A. Tính đơn giản của thuật toán.", "B. Tài nguyên phần cứng cần thiết để chạy chương trình.", "C. Tốc độ thực thi và bộ nhớ cần thiết cho chương trình.", "D. Khả năng kiểm tra lỗi của chương trình."],
+      "answer": "C"
+    },
+    {
+      "number": 113,
+      "question": "Bài 23. Câu 9. Trong các lựa chọn sau, đâu là lợi ích của việc sử dụng các bộ dữ liệu kiểm thử?",
+      "options": ["A. Chứng minh thuật toán chạy đúng cho mọi trường hợp.", "B. Tăng độ tin cậy của chương trình.", "C. Giảm thời gian cần để viết mã.", "D. Đảm bảo bộ nhớ sử dụng tối thiểu."],
+      "answer": "B"
+    },
+    {
+      "number": 114,
+      "question": "Bài 23. Câu 10. Phương pháp quy nạp toán học thường được sử dụng để làm gì trong kiểm thử chương trình?",
+      "options": ["A. Để tìm và sửa lỗi trong mã lệnh.", "B. Để chứng minh tính đúng của thuật toán.", "C. Để đo độ phức tạp của chương trình.", "D. Để đánh giá dung lượng bộ nhớ sử dụng."],
+      "answer": "B"
+    },
+    {
+      "number": 115,
+      "question": "Bài 20. Câu 1. Trong Python, lệnh nào sau đây dùng để mở tệp văn bản data.txt để ghi thêm dữ liệu mà không xóa nội dung cũ?",
+      "options": ["A. f = open(\"data.txt\", \"r\", encoding=\"UTF-8\").", "B. f = open(\"data.txt\", \"w\", encoding=\"UTF-8\").", "C. f = open(\"data.txt\", \"a\", encoding=\"UTF-8\").", "D. f = open(\"data.txt\", \"x\", encoding=\"UTF-8\")."],
+      "answer": "C"
+    },
+    {
+      "number": 116,
+      "question": "Bài 20. Câu 2. Khi mở tệp bằng lệnh f = open(\"data.txt\", \"r\"), Python sẽ thực hiện điều gì?",
+      "options": ["A. Mở tệp để ghi dữ liệu từ đầu.", "B. Mở tệp để ghi thêm dữ liệu.", "C. Mở tệp để đọc dữ liệu.", "D. Mở tệp nếu tệp không tồn tại."],
+      "answer": "C"
+    },
+    {
+      "number": 117,
+      "question": "Bài 20. Câu 3. Câu lệnh f.close() có tác dụng gì trong Python?",
+      "options": ["A. Đóng tệp sau khi hoàn tất việc đọc hoặc ghi.", "B. Xóa nội dung của tệp.", "C. Ghi dữ liệu ra tệp.", "D. Mở tệp để đọc."],
+      "answer": "A"
+    },
+    {
+      "number": 118,
+      "question": "Bài 20. Câu 4. Lệnh print(TenHS[i], DiemHS[i], file=f) dùng để:",
+      "options": ["A. Hiển thị dữ liệu trên màn hình.", "B. Ghi dữ liệu vào tệp.", "C. Xóa dữ liệu trong tệp.", "D. Tạo một tệp mới."],
+      "answer": "B"
+    },
+    {
+      "number": 119,
+      "question": "Bài 20. Câu 5. Câu lệnh line.split() trong Python có chức năng gì?",
+      "options": ["A. Tách một dòng thành danh sách các phần tử dựa trên dấu cách.", "B. Xóa dòng trong tệp.", "C. Ghi một dòng vào tệp.", "D. Tạo một dòng mới trong tệp."],
+      "answer": "A"
+    },
+    {
+      "number": 120,
+      "question": "Bài 20. Câu 6. Thuật toán nào được sử dụng để tăng tốc độ tìm kiếm trong tệp đã được sắp xếp theo thứ tự tăng dần?",
+      "options": ["A. Tìm kiếm tuần tự.", "B. Tìm kiếm nhị phân.", "C. Tìm kiếm mờ.", "D. Tìm kiếm tuyến tính."],
+      "answer": "B"
+    },
+    {
+      "number": 121,
+      "question": "Bài 20. Câu 7. Khi tìm kiếm tên học sinh trong danh sách, nếu tên học sinh không tồn tại, chương trình sẽ:",
+      "options": ["A. Ghi lại tên vào danh sách.", "B. Thông báo \"Không tìm thấy dữ liệu của học sinh\".", "C. Ghi lại điểm số của học sinh đó.", "D. Xóa tên học sinh khỏi danh sách."],
+      "answer": "B"
+    },
+    {
+      "number": 122,
+      "question": "Bài 20. Câu 8. Trong thuật toán tìm kiếm nhị phân, điều kiện nào quyết định quá trình tìm kiếm tiếp theo?",
+      "options": ["A. Vị trí giữa của danh sách so sánh với giá trị cần tìm.", "B. Giá trị đầu tiên của danh sách.", "C. Giá trị cuối cùng của danh sách.", "D. Tổng số phần tử trong danh sách."],
+      "answer": "A"
+    },
+    {
+      "number": 123,
+      "question": "Bài 20. Câu 9. Khi sử dụng lệnh f.readlines(), kết quả trả về là:",
+      "options": ["A. Một danh sách các dòng trong tệp.", "B. Một danh sách các ký tự trong tệp.", "C. Một chuỗi chứa toàn bộ nội dung tệp.", "D. Một số nguyên đếm số dòng trong tệp."],
+      "answer": "A"
+    },
+    {
+      "number": 124,
+      "question": "Bài 20. Câu 10. Trong bài toán tra cứu điểm thi, nếu người dùng nhập từ khóa \"end\", chương trình sẽ:",
+      "options": ["A. Kết thúc quá trình tra cứu.", "B. Xóa dữ liệu của học sinh.", "C. In ra danh sách học sinh.", "D. Ghi lại tên học sinh cuối cùng."],
+      "answer": "A"
+    },
+    {
+      "number": 125,
+      "question": "Bài 22. Câu 1. Thuật toán nào phù hợp nhất để sắp xếp số lượng các mặt hàng trong kho theo thứ tự tăng dần?",
+      "options": ["A. Thuật toán nổi bọt.", "B. Thuật toán sắp xếp chọn.", "C. Thuật toán sắp xếp chèn.", "D. Thuật toán sắp xếp nhanh."],
+      "answer": "C"
+    },
+    {
+      "number": 126,
+      "question": "Bài 22. Câu 2. Trong thuật toán sắp xếp chèn, tại sao chúng ta phải dịch chuyển các phần tử lớn hơn giá trị đang xét lên một vị trí?",
+      "options": ["A. Để tìm vị trí chính xác của phần tử mới.", "B. Để giảm số lần so sánh.", "C. Để giảm số lần trao đổi.", "D. Để tăng tốc độ sắp xếp."],
+      "answer": "A"
+    },
+    {
+      "number": 127,
+      "question": "Bài 22. Câu 3. Trong nhiệm vụ 2, thuật toán nào được sử dụng để sắp xếp điểm trung bình môn Tin học theo thứ tự giảm dần?",
+      "options": ["A. Thuật toán sắp xếp chèn.", "B. Thuật toán sắp xếp chọn.", "C. Thuật toán nổi bọt.", "D. Thuật toán sắp xếp nhanh."],
+      "answer": "B"
+    },
+    {
+      "number": 128,
+      "question": "Bài 22. Câu 4. Dòng lệnh nào trong nhiệm vụ 1 dùng để thêm số lượng mặt hàng vào danh sách soluong_ds?",
+      "options": ["A. soluong_ds.append(int(line)).", "B. soluong_ds = [int(line)].", "C. soluong_ds.insert(line).", "D. soluong_ds.remove(line)."],
+      "answer": "A"
+    },
+    {
+      "number": 129,
+      "question": "Bài 22. Câu 5. Trong thuật toán sắp xếp chọn, mục đích của biến Max là gì?",
+      "options": ["A. Lưu giá trị nhỏ nhất của dãy.", "B. Lưu chỉ số của phần tử có giá trị lớn nhất trong dãy.", "C. Lưu chỉ số của phần tử có giá trị nhỏ nhất trong dãy.", "D. Xác định chỉ số cuối của dãy."],
+      "answer": "B"
+    },
+    {
+      "number": 130,
+      "question": "Bài 22. Câu 6. Trong nhiệm vụ 1, hàm InsertionSort(soluong_ds) thực hiện chức năng gì?",
+      "options": ["A. Thực hiện sắp xếp nổi bọt danh sách.", "B. Sắp xếp danh sách theo thứ tự tăng dần.", "C. Sắp xếp danh sách theo thứ tự giảm dần.", "D. Đọc dữ liệu từ tệp và in danh sách."],
+      "answer": "B"
+    },
+    {
+      "number": 131,
+      "question": "Bài 22. Câu 7. Khi nào chúng ta sử dụng thuật toán sắp xếp nổi bọt?",
+      "options": ["A. Khi số lượng phần tử trong danh sách rất lớn.", "B. Khi cần sắp xếp một danh sách ngẫu nhiên có số lượng nhỏ hoặc trung bình.", "C. Khi không yêu cầu hiệu suất cao.", "D. Khi danh sách đã được sắp xếp hoàn toàn."],
+      "answer": "B"
+    },
+    {
+      "number": 132,
+      "question": "Bài 22. Câu 8. Trong nhiệm vụ 2, việc sắp xếp điểm trung bình theo thứ tự giảm dần có thể thực hiện bằng cách nào?",
+      "options": ["A. Tìm phần tử nhỏ nhất và đưa về đầu danh sách.", "B. Tìm phần tử lớn nhất và đưa về cuối danh sách.", "C. Tìm phần tử lớn nhất và đưa về đầu danh sách.", "D. Không cần thực hiện sắp xếp."],
+      "answer": "C"
+    },
+    {
+      "number": 133,
+      "question": "Bài 22. Câu 9. Dòng lệnh nào sẽ hiển thị danh sách điểm trung bình đã sắp xếp từ cao đến thấp?",
+      "options": ["A. print('Danh sách điểm theo thứ tự tăng dần là:').", "B. print('Danh sách điểm theo thứ tự giảm dần là:').", "C. print('Danh sách điểm trung bình là:').", "D. print('Danh sách điểm đã sắp xếp:')."],
+      "answer": "B"
+    },
+    {
+      "number": 134,
+      "question": "Bài 22. Câu 10. Phát biểu nào sau đây đúng về thuật toán chèn trong sắp xếp danh sách?",
+      "options": ["A. Luôn tìm phần tử lớn nhất và đưa về đầu danh sách.", "B. Thực hiện dịch chuyển phần tử lớn hơn sang phải để tạo khoảng trống cho phần tử chèn vào.", "C. Thực hiện hoán đổi phần tử ở vị trí đầu và cuối.", "D. Thực hiện sắp xếp dãy theo thứ tự ngẫu nhiên."],
+      "answer": "B"
+    }
+  ]
+}

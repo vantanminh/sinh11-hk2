@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Tra Cứu Siêu Tốc – Tin 11 HK2</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .search-page {
+      height: 100dvh;
+      padding: 10px;
+      display: grid;
+      grid-template-rows: auto auto auto 1fr;
+      gap: 10px;
+      overflow: hidden;
+    }
+
+    .search-bar-wrap {
+      position: relative;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 18px;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .search-input {
+      display: block;
+      width: 100%;
+      height: 54px;
+      padding: 0 52px 0 50px;
+      border: 2px solid var(--line);
+      border-radius: 18px;
+      background: var(--card);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 18px;
+      font-weight: 500;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      box-shadow: var(--shadow);
+    }
+
+    .search-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1), var(--shadow);
+    }
+
+    .search-input::placeholder {
+      color: #94a3b8;
+      font-weight: 400;
+    }
+
+    .search-clear {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background: #e2e8f0;
+      color: #64748b;
+      border-radius: 999px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+
+    .search-clear:hover {
+      background: #cbd5e1;
+    }
+
+    .results-meta {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--muted);
+      padding: 0 4px;
+      align-self: center;
+    }
+
+    .results-scroll {
+      min-height: 0;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-bottom: 4px;
+    }
+
+    .empty-state {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 60px 20px;
+      color: var(--muted);
+    }
+
+    .empty-icon {
+      font-size: 44px;
+      line-height: 1;
+    }
+
+    .empty-primary {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .empty-secondary {
+      font-size: 14px;
+      text-align: center;
+      max-width: 320px;
+      line-height: 1.6;
+    }
+
+    .result-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .result-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--line);
+      background: #f8fafc;
+    }
+
+    .result-number {
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .result-answer-chip {
+      padding: 6px 16px;
+      border-radius: 999px;
+      border: 1.5px solid #86efac;
+      background: var(--green-soft);
+      color: var(--green);
+      font-size: 14px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .result-body {
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .result-question {
+      font-size: 15.5px;
+      line-height: 1.65;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .result-options {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .result-opt {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card);
+      font-size: 14px;
+      line-height: 1.55;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .result-opt.is-answer {
+      border-color: #86efac;
+      background: var(--green-soft);
+      color: #166534;
+      font-weight: 600;
+    }
+
+    .result-opt-label {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: #e2e8f0;
+      color: #0f172a;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .result-opt.is-answer .result-opt-label {
+      background: #bbf7d0;
+      color: #166534;
+    }
+
+    .result-explain {
+      padding: 10px 14px;
+      border: 1px solid #fde68a;
+      border-radius: 12px;
+      background: #fffbeb;
+      color: #78350f;
+      font-size: 13.5px;
+      line-height: 1.65;
+    }
+
+    .result-explain-label {
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #b45309;
+      margin-bottom: 4px;
+    }
+
+    @media (max-width: 900px) {
+      .search-input {
+        height: 48px;
+        font-size: 16px;
+        border-radius: 16px;
+      }
+
+      .search-page {
+        padding: 8px;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="search-page">
+
+    <header class="topbar">
+      <div class="titlebox">
+        <div class="title">Tra cứu siêu tốc ⚡</div>
+        <div class="subtitle">Nhập số câu hoặc từ khóa – đáp án hiện ngay</div>
+      </div>
+      <div class="tools">
+        <a href="../index.html" class="tool-btn" style="text-decoration:none;display:inline-flex;align-items:center;">← Trắc nghiệm</a>
+      </div>
+    </header>
+
+    <div class="card" style="padding: 10px 12px;">
+      <div class="search-bar-wrap">
+        <span class="search-icon">🔍</span>
+        <input
+          id="searchInput"
+          class="search-input"
+          type="text"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+          placeholder="Nhập số câu (vd: 55) hoặc từ khóa…"
+          autofocus
+        />
+        <button class="search-clear" id="clearBtn" hidden title="Xóa">✕</button>
+      </div>
+    </div>
+
+    <div id="resultsMeta" class="results-meta" hidden></div>
+
+    <div class="results-scroll" id="resultsList">
+      <div class="empty-state">
+        <div class="empty-icon">⚡</div>
+        <div class="empty-primary">Tra cứu siêu tốc</div>
+        <div class="empty-secondary">Nhập số câu (ví dụ: <strong>55</strong>) hoặc từ khóa để tìm câu hỏi và xem ngay đáp án</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+"use strict";
+
+const DISPLAY_KEYS = ["A", "B", "C", "D", "E", "F"];
+
+const PYTHON_KEYWORDS = new Set([
+  "and", "as", "break", "class", "continue", "def", "elif", "else",
+  "except", "False", "finally", "for", "from", "if", "import", "in",
+  "is", "None", "not", "or", "pass", "return", "True", "try", "while", "with"
+]);
+
+const PYTHON_BUILTINS = new Set([
+  "dict", "enumerate", "float", "input", "int", "len", "list", "max",
+  "min", "open", "perf_counter", "print", "range", "set", "str", "sum", "tuple"
+]);
+
+let questions = [];
+let explainData = {};
+
+function escapeHtml(v) {
+  return String(v || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function highlightCode(code) {
+  const src = String(code || "");
+  const pat = /("""[\s\S]*?"""|'''[\s\S]*?'''|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*')|(#.*$)|\b(\d+(?:\.\d+)?)\b|\b([A-Za-z_]\w*)\b/gm;
+  let html = "";
+  let last = 0;
+
+  src.replace(pat, (m, str, cmt, num, word, offset) => {
+    html += escapeHtml(src.slice(last, offset));
+    if (str) {
+      html += `<span class="code-token string">${escapeHtml(str)}</span>`;
+    } else if (cmt) {
+      html += `<span class="code-token comment">${escapeHtml(cmt)}</span>`;
+    } else if (num) {
+      html += `<span class="code-token number">${num}</span>`;
+    } else if (word) {
+      if (PYTHON_KEYWORDS.has(word)) html += `<span class="code-token keyword">${word}</span>`;
+      else if (PYTHON_BUILTINS.has(word)) html += `<span class="code-token builtin">${word}</span>`;
+      else html += escapeHtml(word);
+    } else {
+      html += escapeHtml(m);
+    }
+    last = offset + m.length;
+    return m;
+  });
+
+  html += escapeHtml(src.slice(last));
+  return html;
+}
+
+function normalize(str) {
+  return String(str || "")
+    .toLowerCase()
+    .replace(/đ/g, "d")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
+
+function optionKey(raw) {
+  const m = String(raw || "").trim().match(/^[A-D]/i);
+  return m ? m[0].toUpperCase() : "";
+}
+
+function optionText(raw) {
+  return String(raw || "").trim().replace(/^[A-D](?:\s*[.)])?\s*/i, "").trim();
+}
+
+function parseQuestion(raw) {
+  const opts = Array.isArray(raw?.options) ? raw.options : [];
+  return {
+    number: Number(raw?.number),
+    question: String(raw?.question || ""),
+    code: String(raw?.code || ""),
+    options: opts.map((o, i) => ({
+      key: optionKey(o) || DISPLAY_KEYS[i] || String(i + 1),
+      text: optionText(o) || String(o || "")
+    })),
+    answer: String(raw?.answer || "").trim().toUpperCase()
+  };
+}
+
+function doSearch(raw) {
+  const query = raw.trim();
+  if (!query) return null;
+
+  const norm = normalize(query);
+  const isNum = /^\d+$/.test(query);
+
+  if (isNum) {
+    const num = parseInt(query, 10);
+    const exact = questions.find(item => item.number === num);
+    if (exact) return [exact];
+    return questions.filter(item => String(item.number).startsWith(query));
+  }
+
+  return questions.filter(item => {
+    const searchable = normalize(
+      item.question + " " +
+      item.options.map(o => o.text).join(" ") + " " +
+      item.code
+    );
+    return searchable.includes(norm);
+  }).slice(0, 20);
+}
+
+function renderCard(item) {
+  const answerIdx = item.options.findIndex(o => o.key === item.answer);
+  const displayAnswer = DISPLAY_KEYS[answerIdx] !== undefined ? DISPLAY_KEYS[answerIdx] : item.answer;
+  const explain = explainData[String(item.number)];
+
+  const codeHtml = item.code
+    ? `<pre class="question-code"><code>${highlightCode(item.code)}</code></pre>`
+    : "";
+
+  const optsHtml = item.options.map((opt, i) => {
+    const displayKey = DISPLAY_KEYS[i] || String(i + 1);
+    const isAnswer = opt.key === item.answer;
+    return `<div class="result-opt${isAnswer ? " is-answer" : ""}">
+      <span class="result-opt-label">${escapeHtml(displayKey)}</span>
+      <span>${escapeHtml(opt.text)}</span>
+    </div>`;
+  }).join("");
+
+  const explainHtml = explain
+    ? `<div class="result-explain">
+        <div class="result-explain-label">Giải thích</div>
+        <div>${escapeHtml(explain)}</div>
+      </div>`
+    : "";
+
+  return `<div class="result-card">
+    <div class="result-head">
+      <div class="result-number">Câu ${item.number}</div>
+      <div class="result-answer-chip">Đáp án: ${escapeHtml(displayAnswer)}</div>
+    </div>
+    <div class="result-body">
+      <div class="result-question">${escapeHtml(item.question)}</div>
+      ${codeHtml}
+      <div class="result-options">${optsHtml}</div>
+      ${explainHtml}
+    </div>
+  </div>`;
+}
+
+const metaEl = document.getElementById("resultsMeta");
+const listEl = document.getElementById("resultsList");
+const clearBtn = document.getElementById("clearBtn");
+
+function render(raw) {
+  const results = doSearch(raw);
+
+  clearBtn.hidden = !raw.trim();
+
+  if (results === null) {
+    metaEl.hidden = true;
+    listEl.innerHTML = `<div class="empty-state">
+      <div class="empty-icon">⚡</div>
+      <div class="empty-primary">Tra cứu siêu tốc</div>
+      <div class="empty-secondary">Nhập số câu (ví dụ: <strong>55</strong>) hoặc từ khóa để tìm câu hỏi và xem ngay đáp án</div>
+    </div>`;
+    return;
+  }
+
+  if (results.length === 0) {
+    metaEl.hidden = true;
+    listEl.innerHTML = `<div class="empty-state">
+      <div class="empty-icon">🤷</div>
+      <div class="empty-primary">Không tìm thấy</div>
+      <div class="empty-secondary">Thử từ khóa khác hoặc nhập số câu cụ thể</div>
+    </div>`;
+    return;
+  }
+
+  metaEl.hidden = false;
+  metaEl.textContent = results.length === 1
+    ? "1 kết quả"
+    : `${results.length} kết quả`;
+
+  listEl.innerHTML = results.map(renderCard).join("");
+  listEl.scrollTop = 0;
+}
+
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("input", () => render(searchInput.value));
+
+clearBtn.addEventListener("click", () => {
+  searchInput.value = "";
+  searchInput.focus();
+  render("");
+});
+
+async function init() {
+  try {
+    const [qRes, eRes] = await Promise.all([
+      fetch("../question.json", { cache: "no-store" }),
+      fetch("../explain.json", { cache: "no-store" }).catch(() => null)
+    ]);
+
+    if (!qRes.ok) throw new Error("Không tải được question.json");
+
+    const data = await qRes.json();
+    questions = Array.isArray(data.questions)
+      ? data.questions.map(parseQuestion)
+      : [];
+
+    if (eRes && eRes.ok) {
+      const eData = await eRes.json();
+      explainData = eData.explanations || {};
+    }
+
+    render(searchInput.value);
+  } catch (err) {
+    console.error(err);
+    listEl.innerHTML = `<div class="empty-state">
+      <div class="empty-icon">⚠️</div>
+      <div class="empty-primary">Lỗi tải dữ liệu</div>
+      <div class="empty-secondary">Hãy mở trang bằng localhost / Live Server, không mở trực tiếp file</div>
+    </div>`;
+  }
+}
+
+init();
+  </script>
+</body>
+</html>
