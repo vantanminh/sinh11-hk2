@@ -1,7 +1,12 @@
 "use strict";
 
-const STORAGE_KEY = "tin11_hk2_mcq_v1";
+const STORAGE_KEY = "tin11_hk2_quiz_v2";
 const DISPLAY_KEYS = ["A", "B", "C", "D", "E", "F"];
+const STATEMENT_KEYS = ["a", "b", "c", "d", "e", "f"];
+const TRUE_FALSE_CHOICES = [
+  { value: "true", label: "Đúng" },
+  { value: "false", label: "Sai" }
+];
 const PYTHON_KEYWORDS = new Set([
   "and",
   "as",
@@ -73,6 +78,7 @@ const els = {
   overlay: document.getElementById("overlay"),
   qPosition: document.getElementById("qPosition"),
   qNumber: document.getElementById("qNumber"),
+  qTypeBadge: document.getElementById("qTypeBadge"),
   answerChip: document.getElementById("answerChip"),
   questionText: document.getElementById("questionText"),
   options: document.getElementById("options"),
@@ -141,39 +147,12 @@ function saveState() {
   } catch (_) {}
 }
 
-function optionKey(optionRaw) {
-  const match = String(optionRaw || "").trim().match(/^[A-D]/i);
-  return match ? match[0].toUpperCase() : "";
-}
-
-function optionText(optionRaw) {
-  return String(optionRaw || "")
-    .trim()
-    .replace(/^[A-D](?:\s*[.)])?\s*/i, "")
-    .trim();
-}
-
-function parseQuestion(rawQuestion) {
-  const options = Array.isArray(rawQuestion?.options) ? rawQuestion.options : [];
-
-  return {
-    number: Number(rawQuestion?.number),
-    question: String(rawQuestion?.question || ""),
-    code: String(rawQuestion?.code || ""),
-    options: options.map((option, index) => ({
-      key: optionKey(option) || DISPLAY_KEYS[index] || String(index + 1),
-      text: optionText(option) || String(option || "")
-    })),
-    answer: String(rawQuestion?.answer || "").trim().toUpperCase()
-  };
-}
-
 function escapeHtml(value) {
   return String(value || "")
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
-    .replace(/\"/g, "&quot;")
+    .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
 }
 
@@ -386,11 +365,249 @@ function isPermutation(order, expectedValues) {
   return normalizedExpected.every((value) => normalizedOrder.includes(value));
 }
 
+function optionKey(optionRaw) {
+  if (optionRaw && typeof optionRaw === "object" && !Array.isArray(optionRaw)) {
+    const explicitKey = String(optionRaw.key || "").trim().toUpperCase();
+    if (/^[A-F]$/.test(explicitKey)) return explicitKey;
+
+    const textKey = String(optionRaw.text || optionRaw.label || "")
+      .trim()
+      .match(/^[A-F]/i);
+    return textKey ? textKey[0].toUpperCase() : "";
+  }
+
+  const match = String(optionRaw || "").trim().match(/^[A-F]/i);
+  return match ? match[0].toUpperCase() : "";
+}
+
+function optionText(optionRaw) {
+  if (optionRaw && typeof optionRaw === "object" && !Array.isArray(optionRaw)) {
+    const rawText = optionRaw.text ?? optionRaw.label ?? "";
+    return String(rawText).trim();
+  }
+
+  return String(optionRaw || "")
+    .trim()
+    .replace(/^[A-F](?:\s*[.)])?\s*/i, "")
+    .trim();
+}
+
+function normalizeTrueFalseValue(value) {
+  if (typeof value === "boolean") return value ? "true" : "false";
+
+  const normalized = String(value || "")
+    .trim()
+    .toLowerCase();
+
+  if (["true", "t", "đúng", "dung", "d", "yes", "1"].includes(normalized)) {
+    return "true";
+  }
+  if (["false", "f", "sai", "s", "no", "0"].includes(normalized)) {
+    return "false";
+  }
+
+  return "";
+}
+
+function statementKey(statementRaw, index) {
+  if (statementRaw && typeof statementRaw === "object" && !Array.isArray(statementRaw)) {
+    const explicitKey = String(statementRaw.key || statementRaw.label || "")
+      .trim()
+      .toLowerCase();
+    if (/^[a-z]$/.test(explicitKey)) return explicitKey;
+  }
+
+  return STATEMENT_KEYS[index] || String(index + 1);
+}
+
+function statementText(statementRaw) {
+  if (statementRaw && typeof statementRaw === "object" && !Array.isArray(statementRaw)) {
+    return String(statementRaw.text || statementRaw.label || "").trim();
+  }
+
+  return String(statementRaw || "").trim();
+}
+
+function parseMultipleChoiceQuestion(rawQuestion, index) {
+  const options = Array.isArray(rawQuestion?.options) ? rawQuestion.options : [];
+  const normalizedOptions = options.map((option, optionIndex) => ({
+    key: optionKey(option) || DISPLAY_KEYS[optionIndex] || String(optionIndex + 1),
+    text: optionText(option) || String(option || "")
+  }));
+  const normalizedAnswer = String(rawQuestion?.answer || "")
+    .trim()
+    .toUpperCase();
+  const answer = normalizedOptions.some((option) => option.key === normalizedAnswer)
+    ? normalizedAnswer
+    : normalizedOptions[0]?.key || "";
+
+  return {
+    number: Number(rawQuestion?.number) || index + 1,
+    type: "mcq",
+    question: String(rawQuestion?.question || ""),
+    code: String(rawQuestion?.code || ""),
+    explanation: String(rawQuestion?.explanation || ""),
+    options: normalizedOptions,
+    answer
+  };
+}
+
+function parseTrueFalseQuestion(rawQuestion, index) {
+  const statements = Array.isArray(rawQuestion?.statements) ? rawQuestion.statements : [];
+  const normalizedStatements = statements
+    .map((statement, statementIndex) => {
+      const answer = normalizeTrueFalseValue(
+        statement && typeof statement === "object" ? statement.answer : ""
+      );
+      const text = statementText(statement);
+
+      if (!text || !answer) return null;
+
+      return {
+        key: statementKey(statement, statementIndex),
+        text,
+        answer
+      };
+    })
+    .filter(Boolean);
+
+  return {
+    number: Number(rawQuestion?.number) || index + 1,
+    type: "true_false",
+    question: String(rawQuestion?.question || ""),
+    code: String(rawQuestion?.code || ""),
+    explanation: String(rawQuestion?.explanation || ""),
+    statements: normalizedStatements
+  };
+}
+
+function parseQuestion(rawQuestion, index) {
+  const type = String(rawQuestion?.type || "").trim().toLowerCase();
+
+  if (type === "true_false" || Array.isArray(rawQuestion?.statements)) {
+    return parseTrueFalseQuestion(rawQuestion, index);
+  }
+
+  return parseMultipleChoiceQuestion(rawQuestion, index);
+}
+
+function questionTypeLabel(question) {
+  return question.type === "true_false" ? "Đúng / Sai" : "Trắc nghiệm";
+}
+
+function questionChoiceCount(question) {
+  return question.type === "true_false" ? question.statements.length : 1;
+}
+
+function selectedOptionKey(question) {
+  if (question.type !== "mcq") return "";
+  return String(state.answers[question.number] || "")
+    .trim()
+    .toUpperCase();
+}
+
+function selectedStatements(question) {
+  if (question.type !== "true_false") return {};
+
+  const raw = state.answers[question.number];
+  if (!raw || typeof raw !== "object" || Array.isArray(raw)) return {};
+
+  const validKeys = new Set(question.statements.map((statement) => statement.key));
+  const next = {};
+
+  Object.entries(raw).forEach(([key, value]) => {
+    const normalizedKey = String(key || "")
+      .trim()
+      .toLowerCase();
+    const normalizedValue = normalizeTrueFalseValue(value);
+
+    if (validKeys.has(normalizedKey) && normalizedValue) {
+      next[normalizedKey] = normalizedValue;
+    }
+  });
+
+  return next;
+}
+
+function getQuestionProgress(question) {
+  if (question.type === "mcq") {
+    const selected = selectedOptionKey(question);
+    const answeredUnits = selected ? 1 : 0;
+    const correctUnits = selected && selected === question.answer ? 1 : 0;
+
+    return {
+      started: answeredUnits > 0,
+      complete: answeredUnits === 1,
+      answeredUnits,
+      totalUnits: 1,
+      correctUnits,
+      fullyCorrect: correctUnits === 1
+    };
+  }
+
+  const selections = selectedStatements(question);
+  const answeredUnits = question.statements.filter((statement) => selections[statement.key]).length;
+  const correctUnits = question.statements.filter(
+    (statement) => selections[statement.key] === statement.answer
+  ).length;
+  const totalUnits = question.statements.length;
+  const complete = totalUnits > 0 && answeredUnits === totalUnits;
+
+  return {
+    started: answeredUnits > 0,
+    complete,
+    answeredUnits,
+    totalUnits,
+    correctUnits,
+    fullyCorrect: complete && correctUnits === totalUnits
+  };
+}
+
+function getCounts() {
+  return sourceQuestions.reduce(
+    (counts, question) => {
+      const progress = getQuestionProgress(question);
+
+      counts.totalQuestions += 1;
+      counts.totalUnits += progress.totalUnits;
+      counts.answeredUnits += progress.answeredUnits;
+      counts.correctUnits += progress.correctUnits;
+
+      if (progress.started) counts.startedQuestions += 1;
+      if (progress.complete) counts.completeQuestions += 1;
+      if (progress.fullyCorrect) counts.correctQuestions += 1;
+
+      return counts;
+    },
+    {
+      totalQuestions: 0,
+      totalUnits: 0,
+      answeredUnits: 0,
+      correctUnits: 0,
+      startedQuestions: 0,
+      completeQuestions: 0,
+      correctQuestions: 0
+    }
+  );
+}
+
+function buildTypeBreakdown() {
+  const mcqCount = sourceQuestions.filter((question) => question.type === "mcq").length;
+  const trueFalseCount = sourceQuestions.filter((question) => question.type === "true_false").length;
+  const parts = [];
+
+  if (mcqCount) parts.push(`${mcqCount} trắc nghiệm`);
+  if (trueFalseCount) parts.push(`${trueFalseCount} đúng/sai`);
+
+  return parts.join(" · ");
+}
+
 function buildQuestionOrder() {
   return shuffled(sourceQuestions.map((question) => question.number));
 }
 
 function buildOptionOrder(question) {
+  if (question.type !== "mcq") return [];
   return shuffled(question.options.map((option) => option.key));
 }
 
@@ -404,6 +621,8 @@ function rebuildQuestions(preserveNumber = null) {
     .map((number) => sourceByNumber.get(Number(number)))
     .filter(Boolean)
     .map((question) => {
+      if (question.type !== "mcq") return { ...question };
+
       const optionOrder = state.shuffleOptions
         ? state.optionOrders[question.number]
         : question.options.map((option) => option.key);
@@ -418,9 +637,7 @@ function rebuildQuestions(preserveNumber = null) {
       };
     });
 
-  questionIndexByNumber = new Map(
-    questions.map((question, index) => [question.number, index])
-  );
+  questionIndexByNumber = new Map(questions.map((question, index) => [question.number, index]));
 
   if (preserveNumber !== null && questionIndexByNumber.has(preserveNumber)) {
     state.current = questionIndexByNumber.get(preserveNumber);
@@ -434,26 +651,39 @@ function rebuildQuestions(preserveNumber = null) {
 }
 
 function normalizeState() {
-  const questionByNumber = new Map(
-    sourceQuestions.map((question) => [String(question.number), question])
-  );
+  const questionByNumber = new Map(sourceQuestions.map((question) => [String(question.number), question]));
 
   Object.keys(state.answers).forEach((key) => {
     const question = questionByNumber.get(String(key));
-    const selectedKey = String(state.answers[key] || "").trim().toUpperCase();
 
     if (!question) {
       delete state.answers[key];
       return;
     }
 
-    const validKeys = new Set(question.options.map((option) => option.key));
-    if (!validKeys.has(selectedKey)) {
+    if (question.type === "mcq") {
+      const selectedKey = String(state.answers[key] || "")
+        .trim()
+        .toUpperCase();
+      const validKeys = new Set(question.options.map((option) => option.key));
+
+      if (!validKeys.has(selectedKey)) {
+        delete state.answers[key];
+        return;
+      }
+
+      state.answers[key] = selectedKey;
+      return;
+    }
+
+    const normalizedSelections = selectedStatements(question);
+
+    if (!Object.keys(normalizedSelections).length) {
       delete state.answers[key];
       return;
     }
 
-    state.answers[key] = selectedKey;
+    state.answers[key] = normalizedSelections;
   });
 
   if (state.revealMode !== "submit" && state.revealMode !== "instant") {
@@ -477,6 +707,8 @@ function normalizeState() {
     const nextOptionOrders = {};
 
     sourceQuestions.forEach((question) => {
+      if (question.type !== "mcq") return;
+
       const expectedKeys = question.options.map((option) => option.key);
       const savedOrder = state.optionOrders?.[question.number];
 
@@ -493,46 +725,69 @@ function normalizeState() {
   rebuildQuestions();
 }
 
-function selectedOf(question) {
-  return state.answers[question.number] || "";
+function questionIsFullyEvaluated(question) {
+  const progress = getQuestionProgress(question);
+  if (state.submitted) return true;
+  if (state.revealMode !== "instant") return false;
+  return progress.complete;
 }
 
-function getCounts() {
-  const answered = sourceQuestions.filter((question) => !!selectedOf(question)).length;
-  const correct = sourceQuestions.filter(
-    (question) => selectedOf(question) === question.answer
-  ).length;
+function isStatementRevealed(question, statementKeyValue) {
+  if (state.submitted) return true;
+  if (state.revealMode !== "instant") return false;
 
-  return { answered, correct };
-}
-
-function isQuestionRevealed(question) {
-  if (state.revealMode === "instant") {
-    return !!selectedOf(question);
+  if (question.type === "mcq") {
+    return getQuestionProgress(question).complete;
   }
 
-  return state.submitted;
+  return Boolean(selectedStatements(question)[statementKeyValue]);
+}
+
+function answerChipVisible(question) {
+  if (!question) return false;
+  if (state.submitted) return true;
+  if (state.revealMode !== "instant") return false;
+  return getQuestionProgress(question).complete;
 }
 
 function answerDisplayKey(question) {
+  if (question.type === "true_false") {
+    return question.statements
+      .map((statement) => `${statement.key}. ${statement.answer === "true" ? "Đúng" : "Sai"}`)
+      .join(" · ");
+  }
+
   const answerIndex = question.options.findIndex((option) => option.key === question.answer);
   return DISPLAY_KEYS[answerIndex] || question.answer;
 }
 
-function renderHeader() {
-  els.examTitle.textContent =
-    data?.meta?.subtitleRaw || data?.meta?.titleRaw || "Ôn tập";
-  els.examSection.textContent = data?.meta?.sectionRaw || "";
+function currentExplanationText(question) {
+  if (!question) return "";
 
-  const { answered, correct } = getCounts();
-  const total = sourceQuestions.length;
+  if (question.explanation) return String(question.explanation);
+  return String(explainData[String(question.number)] || "");
+}
+
+function renderHeader() {
+  const title = data?.meta?.subtitleRaw || data?.meta?.titleRaw || "Ôn tập";
+  const section = data?.meta?.sectionRaw || "";
+  const breakdown = buildTypeBreakdown();
+  const sectionParts = [section, breakdown].filter(Boolean);
+  const counts = getCounts();
+  const total = counts.totalQuestions;
   const showScore = state.revealMode === "instant" || state.submitted;
 
-  els.openPaletteBtn.textContent = total > 0 ? `1–${total}` : "0";
+  els.examTitle.textContent = title;
+  els.examSection.textContent = sectionParts.join(" · ");
+
+  els.openPaletteBtn.textContent = total > 0 ? `1-${total}` : "0";
 
   els.summary.textContent = showScore
-    ? `${answered}/${total} · ${correct} đúng`
-    : `${answered}/${total}`;
+    ? `${counts.completeQuestions}/${total} câu · ${counts.correctUnits}/${counts.totalUnits} ý đúng`
+    : `${counts.completeQuestions}/${total} câu · ${counts.answeredUnits}/${counts.totalUnits} ý đã chọn`;
+  els.summary.title = showScore
+    ? `${counts.correctQuestions}/${total} câu làm đúng hoàn toàn`
+    : `${counts.startedQuestions}/${total} câu đã bắt đầu làm`;
 
   els.revealModeSelect.value = state.revealMode;
   els.shuffleQuestionsToggle.checked = state.shuffleQuestions;
@@ -549,12 +804,14 @@ function renderHeader() {
 }
 
 function classForPaletteButton(question) {
-  const selected = selectedOf(question);
+  const progress = getQuestionProgress(question);
   const classes = ["q-btn"];
 
-  if (selected) {
-    if (isQuestionRevealed(question)) {
-      classes.push(selected === question.answer ? "correct" : "wrong");
+  if (progress.started && !progress.complete) {
+    classes.push("partial");
+  } else if (progress.complete) {
+    if (questionIsFullyEvaluated(question)) {
+      classes.push(progress.fullyCorrect ? "correct" : "wrong");
     } else {
       classes.push("answered");
     }
@@ -567,11 +824,40 @@ function classForPaletteButton(question) {
   return classes.join(" ");
 }
 
+function paletteButtonTitle(question) {
+  const progress = getQuestionProgress(question);
+  const parts = [`Câu ${question.number}`, questionTypeLabel(question)];
+
+  if (question.type === "true_false") {
+    parts.push(`${progress.answeredUnits}/${progress.totalUnits} ý đã chọn`);
+  } else if (progress.complete) {
+    parts.push("Đã chọn đáp án");
+  }
+
+  if (questionIsFullyEvaluated(question)) {
+    parts.push(progress.fullyCorrect ? "Đúng hoàn toàn" : "Còn sai");
+  } else if (progress.started && !progress.complete) {
+    parts.push("Đang làm dở");
+  }
+
+  return parts.join(" · ");
+}
+
+function paletteMeta(question) {
+  const progress = getQuestionProgress(question);
+
+  if (question.type === "true_false") {
+    return `${progress.answeredUnits}/${progress.totalUnits}`;
+  }
+
+  return progress.complete ? "xong" : "TN";
+}
+
 function renderPaletteInto(container) {
   container.innerHTML = questions
     .map(
       (question) =>
-        `<button type="button" class="${classForPaletteButton(question)}" data-number="${question.number}" aria-label="Câu ${question.number}">${question.number}</button>`
+        `<button type="button" class="${classForPaletteButton(question)}" data-number="${question.number}" aria-label="Câu ${question.number}" title="${escapeHtml(paletteButtonTitle(question))}"><span class="q-btn-number">${question.number}</span><span class="q-btn-meta">${escapeHtml(paletteMeta(question))}</span></button>`
     )
     .join("");
 }
@@ -581,25 +867,47 @@ function renderPalette() {
   renderPaletteInto(els.paletteMobile);
 }
 
-function selectOption(question, optionKeyValue) {
+function setMcqSelection(question, optionKeyValue) {
+  if (question.type !== "mcq") return;
   if (!question.options.some((option) => option.key === optionKeyValue)) return;
 
-  state.answers[question.number] = optionKeyValue;
+  const current = selectedOptionKey(question);
+  if (current === optionKeyValue) {
+    delete state.answers[question.number];
+  } else {
+    state.answers[question.number] = optionKeyValue;
+  }
+
   saveState();
   render();
 }
 
-function renderQuestion() {
-  const question = questions[state.current];
-  if (!question) return;
+function setTrueFalseSelection(question, statementKeyValue, answerValue) {
+  if (question.type !== "true_false") return;
 
-  const selected = selectedOf(question);
-  const revealed = isQuestionRevealed(question);
+  const normalizedValue = normalizeTrueFalseValue(answerValue);
+  if (!normalizedValue) return;
+  if (!question.statements.some((statement) => statement.key === statementKeyValue)) return;
 
-  els.qPosition.textContent = `${state.current + 1}/${questions.length}`;
-  els.qNumber.textContent = `Câu ${question.number}`;
-  els.answerChip.hidden = !revealed;
-  els.answerChip.textContent = `Đáp án: ${answerDisplayKey(question)}`;
+  const selections = selectedStatements(question);
+
+  if (selections[statementKeyValue] === normalizedValue) {
+    delete selections[statementKeyValue];
+  } else {
+    selections[statementKeyValue] = normalizedValue;
+  }
+
+  if (Object.keys(selections).length) {
+    state.answers[question.number] = selections;
+  } else {
+    delete state.answers[question.number];
+  }
+
+  saveState();
+  render();
+}
+
+function renderQuestionStem(question) {
   els.questionText.innerHTML = "";
   const questionBlocks = splitQuestionBlocks(question.question);
 
@@ -615,8 +923,16 @@ function renderQuestion() {
     els.questionText.appendChild(createQuestionCodeBlock(question.code));
   }
 
-  els.questionText.scrollTop = 0;
+  if (!questionBlocks.length && !question.code) {
+    els.questionText.appendChild(createQuestionTextBlock("Câu hỏi trống."));
+  }
 
+  els.questionText.scrollTop = 0;
+}
+
+function renderMcqOptions(question) {
+  const selected = selectedOptionKey(question);
+  const revealed = questionIsFullyEvaluated(question);
   const fragment = document.createDocumentFragment();
 
   question.options.forEach((option, index) => {
@@ -628,6 +944,7 @@ function renderQuestion() {
     btn.className = "option-btn";
     btn.dataset.key = option.key;
     btn.dataset.displayKey = DISPLAY_KEYS[index] || String(index + 1);
+    btn.setAttribute("aria-pressed", String(selected === option.key));
 
     label.className = "option-label";
     label.textContent = DISPLAY_KEYS[index] || String(index + 1);
@@ -649,7 +966,7 @@ function renderQuestion() {
     }
 
     btn.addEventListener("click", () => {
-      selectOption(question, option.key);
+      setMcqSelection(question, option.key);
     });
 
     fragment.appendChild(btn);
@@ -657,33 +974,169 @@ function renderQuestion() {
 
   els.options.innerHTML = "";
   els.options.appendChild(fragment);
+}
+
+function renderTrueFalseOptions(question) {
+  const selections = selectedStatements(question);
+  const progress = getQuestionProgress(question);
+  const fragment = document.createDocumentFragment();
+  const intro = document.createElement("div");
+
+  intro.className = "tf-intro";
+  intro.innerHTML =
+    `<span class="tf-intro-badge">${progress.answeredUnits}/${progress.totalUnits} ý</span><span>Chọn Đúng hoặc Sai cho từng ý.</span>`;
+  fragment.appendChild(intro);
+
+  question.statements.forEach((statement) => {
+    const card = document.createElement("article");
+    const marker = document.createElement("div");
+    const body = document.createElement("div");
+    const text = document.createElement("div");
+    const controls = document.createElement("div");
+    const selection = selections[statement.key] || "";
+    const revealed = isStatementRevealed(question, statement.key);
+
+    card.className = "tf-card";
+    if (selection) card.classList.add("answered");
+    if (revealed && selection === statement.answer) {
+      card.classList.add("correct");
+    } else if (revealed && selection && selection !== statement.answer) {
+      card.classList.add("wrong");
+    }
+
+    marker.className = "tf-marker";
+    marker.textContent = statement.key;
+
+    body.className = "tf-body";
+
+    text.className = "tf-text";
+    text.innerHTML = formatInlineCode(statement.text);
+
+    controls.className = "tf-choice-row";
+
+    TRUE_FALSE_CHOICES.forEach((choice) => {
+      const choiceBtn = document.createElement("button");
+
+      choiceBtn.type = "button";
+      choiceBtn.className = "tf-choice-btn";
+      choiceBtn.textContent = choice.label;
+      choiceBtn.dataset.value = choice.value;
+      choiceBtn.setAttribute("aria-pressed", String(selection === choice.value));
+
+      if (selection === choice.value) {
+        choiceBtn.classList.add("selected");
+      }
+
+      if (revealed) {
+        if (choice.value === statement.answer) {
+          choiceBtn.classList.add("correct");
+        }
+        if (selection === choice.value && choice.value !== statement.answer) {
+          choiceBtn.classList.add("wrong");
+        }
+      }
+
+      choiceBtn.addEventListener("click", () => {
+        setTrueFalseSelection(question, statement.key, choice.value);
+      });
+
+      controls.appendChild(choiceBtn);
+    });
+
+    body.append(text, controls);
+
+    if (revealed) {
+      const feedback = document.createElement("div");
+      feedback.className = "tf-feedback";
+
+      if (selection === statement.answer) {
+        feedback.textContent = "Chính xác.";
+        feedback.classList.add("correct");
+      } else if (selection) {
+        feedback.textContent = `Đáp án đúng: ${statement.answer === "true" ? "Đúng" : "Sai"}.`;
+        feedback.classList.add("wrong");
+      } else {
+        feedback.textContent = `Bạn chưa chọn ý này. Đáp án đúng: ${statement.answer === "true" ? "Đúng" : "Sai"}.`;
+      }
+
+      body.appendChild(feedback);
+    }
+
+    card.append(marker, body);
+    fragment.appendChild(card);
+  });
+
+  els.options.innerHTML = "";
+  els.options.appendChild(fragment);
+}
+
+function renderQuestion() {
+  const question = questions[state.current];
+
+  if (!question) {
+    els.qPosition.textContent = "0/0";
+    els.qNumber.textContent = "Chưa có câu hỏi";
+    els.qTypeBadge.hidden = true;
+    els.answerChip.hidden = true;
+    els.questionText.textContent = "Không có dữ liệu để hiển thị.";
+    els.options.innerHTML = "";
+    els.prevBtn.disabled = true;
+    els.nextBtn.disabled = true;
+    els.clearBtn.disabled = true;
+    return;
+  }
+
+  const progress = getQuestionProgress(question);
+
+  els.qPosition.textContent = `${state.current + 1}/${questions.length}`;
+  els.qNumber.textContent = `Câu ${question.number}`;
+  els.qTypeBadge.hidden = false;
+  els.qTypeBadge.textContent = questionTypeLabel(question);
+  els.qTypeBadge.dataset.type = question.type;
+  els.answerChip.hidden = !answerChipVisible(question);
+  els.answerChip.classList.toggle("wide", question.type === "true_false");
+  els.answerChip.textContent = `Đáp án: ${answerDisplayKey(question)}`;
+  els.options.dataset.type = question.type;
+
+  renderQuestionStem(question);
+
+  if (question.type === "true_false") {
+    renderTrueFalseOptions(question);
+  } else {
+    renderMcqOptions(question);
+  }
 
   els.prevBtn.disabled = state.current === 0;
   els.nextBtn.disabled = state.current === questions.length - 1;
-  els.clearBtn.disabled = !selected;
+  els.clearBtn.disabled = !progress.started;
 }
 
 function renderExplainBox() {
   const question = questions[state.current];
-  els.explainBtn.classList.toggle("active", showExplain);
+  const text = currentExplanationText(question);
 
-  if (!showExplain || !question) {
-    els.explainBox.hidden = true;
-    return;
+  if (!text) {
+    showExplain = false;
   }
 
-  const text = explainData[String(question.number)];
-  if (!text) {
+  els.explainBtn.disabled = !text;
+  els.explainBtn.classList.toggle("active", showExplain && !!text);
+  els.explainBtn.title = text ? "Xem giải thích" : "Câu này chưa có giải thích";
+
+  if (!showExplain || !text) {
     els.explainBox.hidden = true;
     return;
   }
 
   els.explainBox.hidden = false;
   els.explainBox.innerHTML =
-    `<div class="explain-label">Giải thích</div><div>${escapeHtml(text)}</div>`;
+    `<div class="explain-label">Giải thích</div><div class="explain-content">${formatInlineCode(text)}</div>`;
 }
 
 function toggleExplain() {
+  const question = questions[state.current];
+  if (!currentExplanationText(question)) return;
+
   showExplain = !showExplain;
   renderExplainBox();
 }
@@ -711,14 +1164,13 @@ function clearCurrent() {
 }
 
 function submitAll() {
-  const total = sourceQuestions.length;
-  const { answered } = getCounts();
+  const counts = getCounts();
 
-  if (!total) return;
+  if (!counts.totalQuestions) return;
 
-  if (answered < total) {
+  if (counts.completeQuestions < counts.totalQuestions) {
     const shouldSubmit = confirm(
-      `Bạn mới làm ${answered}/${total} câu. Vẫn nộp bài?`
+      `Bạn mới hoàn tất ${counts.completeQuestions}/${counts.totalQuestions} câu (${counts.answeredUnits}/${counts.totalUnits} ý đã chọn). Vẫn nộp bài?`
     );
     if (!shouldSubmit) return;
   }
@@ -730,6 +1182,11 @@ function submitAll() {
 
 function setRevealMode(mode) {
   state.revealMode = mode === "instant" ? "instant" : "submit";
+
+  if (state.revealMode === "instant") {
+    state.submitted = false;
+  }
+
   saveState();
   render();
 }
@@ -755,6 +1212,7 @@ function setShuffleOptions(enabled) {
   if (enabled) {
     const nextOrders = {};
     sourceQuestions.forEach((question) => {
+      if (question.type !== "mcq") return;
       nextOrders[question.number] = buildOptionOrder(question);
     });
     state.optionOrders = nextOrders;
@@ -776,13 +1234,45 @@ function closeOverlay() {
 }
 
 function selectDisplayedOption(question, displayKey) {
+  if (!question || question.type !== "mcq") return;
+
   const displayIndex = DISPLAY_KEYS.indexOf(displayKey);
   if (displayIndex < 0) return;
 
   const option = question.options[displayIndex];
   if (!option) return;
 
-  selectOption(question, option.key);
+  setMcqSelection(question, option.key);
+}
+
+function handleTrueFalseHotkeys(question, key) {
+  if (!question || question.type !== "true_false") return false;
+
+  const map = {
+    q: { key: "a", value: "true" },
+    a: { key: "a", value: "false" },
+    w: { key: "b", value: "true" },
+    s: { key: "b", value: "false" },
+    e: { key: "c", value: "true" },
+    d: { key: "c", value: "false" },
+    r: { key: "d", value: "true" },
+    f: { key: "d", value: "false" },
+    Q: { key: "a", value: "true" },
+    A: { key: "a", value: "false" },
+    W: { key: "b", value: "true" },
+    S: { key: "b", value: "false" },
+    E: { key: "c", value: "true" },
+    D: { key: "c", value: "false" },
+    R: { key: "d", value: "true" },
+    F: { key: "d", value: "false" }
+  };
+
+  const action = map[key];
+  if (!action) return false;
+  if (!question.statements.some((statement) => statement.key === action.key)) return false;
+
+  setTrueFalseSelection(question, action.key, action.value);
+  return true;
 }
 
 function bindEvents() {
@@ -846,6 +1336,16 @@ function bindEvents() {
       return;
     }
 
+    const question = questions[state.current];
+    if (!question) return;
+
+    if (question.type === "true_false") {
+      if (handleTrueFalseHotkeys(question, event.key)) {
+        event.preventDefault();
+      }
+      return;
+    }
+
     const map = {
       "1": "A",
       "2": "B",
@@ -864,9 +1364,7 @@ function bindEvents() {
     const displayKey = map[event.key];
     if (!displayKey) return;
 
-    const question = questions[state.current];
-    if (!question) return;
-
+    event.preventDefault();
     selectDisplayedOption(question, displayKey);
   });
 }
@@ -877,6 +1375,7 @@ function resetAll() {
   state.answers = {};
   state.current = 0;
   state.submitted = false;
+  showExplain = false;
   saveState();
   render();
 }
@@ -892,7 +1391,13 @@ async function init() {
 
     data = await questionRes.json();
     sourceQuestions = Array.isArray(data.questions)
-      ? data.questions.map(parseQuestion)
+      ? data.questions.map(parseQuestion).filter((question) => {
+          if (question.type === "true_false") {
+            return question.statements.length > 0;
+          }
+
+          return question.options.length > 0;
+        })
       : [];
 
     if (explainRes && explainRes.ok) {
@@ -907,7 +1412,7 @@ async function init() {
   } catch (error) {
     console.error(error);
     els.examTitle.textContent = "Không tải được dữ liệu";
-    els.examSection.textContent = "Hãy mở bằng localhost / Live Server.";
+    els.examSection.textContent = "Hãy mở bằng localhost hoặc Live Server.";
     els.summary.textContent = "Lỗi";
     els.questionText.textContent = "Không tải được question.json";
     els.options.innerHTML = "";

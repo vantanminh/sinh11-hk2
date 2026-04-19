@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Ôn tập Tin 11 HK2 - trắc nghiệm</title>
+  <title>Ôn tập Tin 11 HK2</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="app">
     <header class="topbar">
       <div class="titlebox">
-        <div class="title" id="examTitle">Đang tải…</div>
+        <div class="title" id="examTitle">Đang tải...</div>
         <div class="subtitle" id="examSection"></div>
       </div>
 
@@ -44,18 +44,21 @@
 
       <section class="viewer card">
         <div class="viewer-head">
-          <div>
+          <div class="viewer-head-left">
             <div class="q-position" id="qPosition">0/0</div>
-            <div class="q-number" id="qNumber">Câu 1</div>
+            <div class="q-title-row">
+              <div class="q-number" id="qNumber">Câu 1</div>
+              <div class="q-type-badge" id="qTypeBadge" hidden>Trắc nghiệm</div>
+            </div>
           </div>
           <div class="viewer-head-right">
-            <button class="bulb-btn" id="explainBtn" type="button" title="Xem giải thích">💡</button>
+            <button class="bulb-btn" id="explainBtn" type="button" title="Xem giải thích">Giải thích</button>
             <div class="answer-chip" id="answerChip" hidden>Đáp án: A</div>
           </div>
         </div>
 
         <div class="viewer-body">
-          <div class="question-text" id="questionText">Đang tải…</div>
+          <div class="question-text" id="questionText">Đang tải...</div>
           <div class="explain-box" id="explainBox" hidden></div>
           <div class="options" id="options"></div>
         </div>
