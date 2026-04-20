@@ -1229,8 +1229,10 @@ function setTrueFalseSelection(question, statementKeyValue, answerValue) {
     delete state.answers[question.number];
   }
 
+  const savedScrollTop = els.options.scrollTop;
   saveState();
   render();
+  els.options.scrollTop = savedScrollTop;
 }
 
 function renderQuestionStem(question) {
