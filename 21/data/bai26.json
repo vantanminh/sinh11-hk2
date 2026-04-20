@@ -495,7 +495,7 @@
       "answer": "A"
     },
     {
-      "number": 1,
+      "number": 40,
       "type": "true_false",
       "question": "Sinh sản vô tính ở động vật là sự sinh sản mà các cơ thể con sinh ra từ một phần của cơ thể mẹ, dựa trên nguyên lí nguyên phân, cơ thể con giống nhau và giống mẹ. Gồm có các hình thức sau: phân đôi, nảy chồi, phân mảnh, trinh sinh. Mỗi nhận định sau đây Đúng hay Sai về sinh sản vô tính ở động vật?",
       "statements": [
@@ -522,7 +522,7 @@
       ]
     },
     {
-      "number": 2,
+      "number": 41,
       "type": "true_false",
       "question": "Điều hoà sinh sản hữu tính ở động vật chủ yếu biểu hiện ở điều hòa quá trình sinh tỉnh và sinh trứng, trong đó hệ nội tiết đóng vai trò chính. Mỗi nhận định sau đây Đúng hay Sai về tác dụng của các hormone trong điều hòa quá trình sinh tỉnh và sinh trứng ở động vật?",
       "statements": [
@@ -549,7 +549,7 @@
       ]
     },
     {
-      "number": 3,
+      "number": 42,
       "type": "true_false",
       "question": "Để điều khiển quá trình sinh sản ở động vật nhằm mục đích mang lại những giá trị phục vụ nhu cầu con người và con người đã đưa ra nhiều biện pháp. Mỗi nhận định sau đây Đúng hay Sai về những biện pháp nhằm điều khiển quá trình sinh sản của động vật mang lại lợi ích cho con người?",
       "statements": [
