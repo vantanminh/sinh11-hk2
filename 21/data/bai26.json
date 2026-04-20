@@ -1,0 +1,558 @@
+{
+  "meta": {
+    "titleRaw": "BÀI 26: SINH SẢN Ở ĐỘNG VẬT",
+    "subtitleRaw": "ÔN TẬP CK2- SINH HỌC 11-BÀI 20-26 | TRƯỜNG THPT TRẦN PHÚ",
+    "sectionRaw": "Bộ đề gồm 39 câu trắc nghiệm nhiều lựa chọn và 3 câu đúng/sai."
+  },
+  "questions": [
+    {
+      "number": 1,
+      "type": "mcq",
+      "question": "Sinh sản vô tính ở động vật là từ một cá thể:",
+      "options": [
+        "A. Sinh ra một hay nhiều cá thể giống hoặc khác mình, không có sự kết hợp giữa tinh trùng và trứng.",
+        "B. Luôn sinh ra nhiều cá thể giống mình, không có sự kết hợp giữa tinh trùng và trứng.",
+        "C. Sinh ra một hay nhiều cá thể giống mình, không có sự kết hợp giữa tinh trùng và trứng.",
+        "D. Sinh ra nhiều cá thể có kiểu gene khác nhau, có sự kết hợp giữa tinh trùng và trứng."
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 2,
+      "type": "mcq",
+      "question": "Cơ sở sinh học của sinh sản vô tính ở động vật là quá trình:",
+      "options": [
+        "A. Nguyên phân.",
+        "B. Giảm phân.",
+        "C. Phân bào.",
+        "D. Thụ tinh."
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 3,
+      "type": "mcq",
+      "question": "Phân đôi là hình thức sinh sản phổ biến ở:",
+      "options": [
+        "A. Giun dẹp và giun đất.",
+        "B. Động vật đơn bào và động vật ngành Ruột khoang.",
+        "C. Trùng roi và thủy tức.",
+        "D. Bọt biển và trùng đế giày."
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 4,
+      "type": "mcq",
+      "question": "Cá thể mới sinh ra vẫn dính với cơ thể mẹ một thời gian là đặc trưng của hình thức sinh sản vô tính:",
+      "options": [
+        "A. Nảy chồi.",
+        "B. Phân đôi.",
+        "C. Tái sinh.",
+        "D. Trinh sinh."
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 5,
+      "type": "mcq",
+      "question": "Phân mảnh là hình thức sinh sản có ở:",
+      "options": [
+        "A. Trùng roi và bọt biển.",
+        "B. Bọt biển và giun dẹp.",
+        "C. Amip và trùng đế giày.",
+        "D. Amip và trùng roi."
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 6,
+      "type": "mcq",
+      "question": "Trong các kiểu sinh sản vô tính ở động vật, có một kiểu mà con sinh ra có vật chất di truyền chỉ bằng một nửa của mẹ, đó là hình thức sinh sản:",
+      "options": [
+        "A. Phân đôi.",
+        "B. Trinh sinh.",
+        "C. Tái sinh.",
+        "D. Phân mảnh."
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 7,
+      "type": "mcq",
+      "question": "Thế nào là thụ tinh ngoài:",
+      "options": [
+        "A. Là hình thức các tinh trùng gặp nhau ở môi trường nước.",
+        "B. Trứng gặp tinh trùng và thụ tinh ở bên ngoài cơ thể con cái.",
+        "C. Hình thức thụ tinh nhờ cơ quan sinh dục phụ.",
+        "D. Hình thức thụ tinh xảy ra trong cơ thể động vật."
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 8,
+      "type": "mcq",
+      "question": "Thế nào là thụ tinh trong:",
+      "options": [
+        "A. Là hình thức thụ tinh ngoài cơ thể động vật.",
+        "B. Là hình thức thụ tinh nhờ các cơ quan sinh dục phụ vận chuyển tinh dịch.",
+        "C. Là hình thức thụ tinh nhờ các cơ quan sinh dục phụ vận chuyển tinh dịch từ cơ thể con đực vào cơ thể con cái để có sự kết hợp nhân giữa hai giao tử đực và tổ hợp vật chất di truyền.",
+        "D. Trứng gặp tinh trùng và thụ tinh ở bên trong cơ quan sinh dục của con cái."
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 9,
+      "type": "mcq",
+      "question": "Hiện tượng noãn thai sinh (đẻ trứng thai) là:",
+      "options": [
+        "A. Trứng được thụ tinh trong cơ thể mẹ rồi mới sinh ra ngoài.",
+        "B. Trứng sinh ra ngoài rồi mới được thụ tinh.",
+        "C. Trứng không thụ tinh vẫn có thể nở thành con non.",
+        "D. Trứng được thụ tinh trong cơ thể mẹ và phát triển thành phôi nhờ noãn hoàng và thành con non rồi mới sinh ra ngoài."
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 10,
+      "type": "mcq",
+      "question": "Yếu tố nào quan trọng nhất chi phối quá trình tạo tinh trùng và trứng ở động vật có xương sống:",
+      "options": [
+        "A. Hệ thần kinh.",
+        "B. Hệ nội tiết.",
+        "C. Các yếu tố môi trường.",
+        "D. Sự xuất hiện cá thể khác giới."
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 11,
+      "type": "mcq",
+      "question": "Nhóm hormone nào sau đây tham gia điều hòa quá trình sinh tinh:",
+      "options": [
+        "A. GnRH, FSH, LH và estrogen.",
+        "B. GnRH, FSH, LH, progesterone và estrogen.",
+        "C. GnRH, FSH, LH và testosterone.",
+        "D. GnRH, FSH và florigen."
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 12,
+      "type": "mcq",
+      "question": "Hormone GnRH có vai trò là:",
+      "options": [
+        "A. Kích thích tuyến yên sản sinh LH.",
+        "B. Kích thích tế bào kẽ sản sinh ra FSH.",
+        "C. Kích thích phát triển ống sinh tinh và sản sinh tinh trùng.",
+        "D. Kích thích tuyến yên tuyết FSH và LH."
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 13,
+      "type": "mcq",
+      "question": "Hormone FSH ở cơ quan sinh dục nam có vai trò:",
+      "options": [
+        "A. Kích thích tuyến yên sản sinh LH.",
+        "B. Kích thích tế bào kẽ sản sinh ra FSH.",
+        "C. Kích thích ống sinh tinh sản sinh tinh trùng.",
+        "D. Điều hòa tuyến yên tuyết FSH và LH."
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 14,
+      "type": "mcq",
+      "question": "Hormone LH ở cơ quan sinh dục nam có vai trò:",
+      "options": [
+        "A. Kích thích tuyến yên sản sinh LH.",
+        "B. Kích thích tế bào kẽ sản xuất ra testosterone.",
+        "C. Kích thích phát triển ống sinh tinh và sản sinh tinh trùng.",
+        "D. Điều hòa tuyến yên tuyết FSH và LH."
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 15,
+      "type": "mcq",
+      "question": "Hormone progesterone và estrogen có vai trò:",
+      "options": [
+        "A. Kích thích tuyến yên sản sinh LH.",
+        "B. Kích thích tế bào kẽ sản xuất ra testosterone.",
+        "C. Kích thích niêm mạc tử cung phát triển dày lên chuẩn bị cho hợp tử làm tổ.",
+        "D. Điều hòa tuyến yên tuyết FSH và LH."
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 16,
+      "type": "mcq",
+      "question": "Điểm khác nhau cơ bản giữa sinh sản vô tính và sinh sản hữu tính ở động vật là:",
+      "options": [
+        "A. Có hoặc không có sự hợp nhất giữa giao tử đực và giao tử cái.",
+        "B. Thời gian sinh trưởng của cơ thể con.",
+        "C. Đặc điểm hình thái của cơ thể con so với thế hệ trước.",
+        "D. Thời gian sinh trưởng và phát triển của cơ thể con."
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 17,
+      "type": "mcq",
+      "question": "Biến dị tổ hợp xuất hiện trong trường hợp nào sau đây?",
+      "options": [
+        "A. Sinh sản vô tính.",
+        "B. Sinh sản hữu tính.",
+        "C. Cả sinh sản vô tính và sinh sản vô tính.",
+        "D. Sinh sản sinh dưỡng."
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 18,
+      "type": "mcq",
+      "question": "Khi nói về quá trình thụ tinh, điều nào sau đây sai:",
+      "options": [
+        "A. Các loài thụ tinh ngoài thường đẻ rất nhiều trứng.",
+        "B. Các động vật đẻ con đều thụ tinh trong.",
+        "C. Các loài đẻ trứng đều thụ tinh ngoài.",
+        "D. Tỉ lệ thụ tinh trong cao hơn tỉ lệ thụ tinh ngoài."
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 19,
+      "type": "mcq",
+      "question": "Khi nói về đặc điểm của sinh sản hữu tính ở động vật, nhận định nào sau đây đúng:",
+      "options": [
+        "A. Thời gian sinh sản nhanh.",
+        "B. Các con mang đặc điểm của cha và mẹ, có thể xuất hiện thêm các đặc điểm mới.",
+        "C. Các con mang đặc điểm giống nhau và giống với cha mẹ.",
+        "D. Số lượng cá thể sinh ra trong một lứa đẻ rất nhiều."
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 20,
+      "type": "mcq",
+      "question": "Biện pháp nào sau đây là hữu hiệu nhất để điều khiển tỉ lệ đực cái ở động vật:",
+      "options": [
+        "A. Tách tinh trùng X và Y rồi cho thụ tinh nhân tạo.",
+        "B. Tiêm hormone sinh dục cho động vật mang thai.",
+        "C. Sử dụng thức ăn phù hợp để sinh theo ý muốn.",
+        "D. Chọn thời điểm thích hợp để phối giống tự nhiên."
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 21,
+      "type": "mcq",
+      "question": "Trong các phát biểu sau, có bao nhiêu phát biểu đúng:\n(1). Các hình thức sinh sản vô tính ở động vật gồm: phân đôi, nảy chồi, phân mảnh và trinh sinh.\n(2). Hình thức sinh sản phân đôi gặp ở hải quỳ, bọt biển, thủy tức.\n(3). Phân mảnh là hình thức sinh sản mà cơ thể mới phát triển từ mảnh tách ra từ cơ thể mẹ.\n(4). Trinh sinh thường gặp ở các loài chân đốt như ong, kiến, rệp.",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 22,
+      "type": "mcq",
+      "question": "Trong các nhận định sau, có bao nhiêu nhận định đúng:\n(1). Noãn thai sinh gặp ở một số loài cá, một số loài bò sát và một số loài chân khớp.\n(2). Bò sát, chim và nhiều đông vật không xương sống đẻ trứng, trứng thu tỉnh trong cơ thể con cái.\n(3). Đẻ con có ở tất cả các loài Thú và người.\n(4). Nhiều loài cá và lưỡng cư đẻ trứng và trứng thu tỉnh với tinh trùng trong môi trường nước.",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 23,
+      "type": "mcq",
+      "question": "Trong sinh sản hữu tính, đời con thường đa dạng về các đặc điểm di truyền là do:",
+      "options": [
+        "A. Quá trình giảm phân tạo nhiều loại giao tử.",
+        "B. Quá trình thụ tinh tạo nhiều loại hợp tử.",
+        "C. Quá trình giảm phân kết hợp với thụ tinh.",
+        "D. Ảnh hưởng của môi trường sống."
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 24,
+      "type": "mcq",
+      "question": "Một tế bào sinh tỉnh giảm phân hình thành bao nhiêu tinh trùng:",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 4.",
+        "D. 8."
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 25,
+      "type": "mcq",
+      "question": "Xét các phát biểu sau:\n(1). Các hình thức sinh sản hữu tính ở động vật là phân đôi, nảy chồi, phân mảnh và trình sinh.\n(2). Trinh sinh là hiện tượng các trứng không thụ tinh phát triển thành cá thể mới có bộ NST lưỡng bội.\n(3). Một trong những ưu điểm của sinh sản vô tính so với sinh sản hữu tính là tạo ra các cá thể mới rất đa dạng về mặt di truyền.\n(4). Sinh sản hữu tính có thể tạo ra số lượng lớn con cháu trong thời gian ngắn.\nSố phát biểu đúng khi nói về sinh sản ở động vật là:",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 26,
+      "type": "mcq",
+      "question": "Khi so sánh sự giống nhau giữa sinh sản hữu tính ở thực vật và động vật, có bao nhiêu phát biểu sau đây đúng:\n(1). Đều có sự kết hợp giữa giao tử đực và giao tử cái tạo hợp tử.\n(2). Hợp tử phát triển thành cơ thể mới luôn mang tính trạng di truyền của cả cha và mẹ.\n(3). Quá trình giảm phân hình thành giao tử, quá trình thụ tỉnh và quá trình phát triển của hợp tử luôn luôn giống nhau.\n(4). Đều có thụ tỉnh kép.",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 27,
+      "type": "mcq",
+      "question": "Ở người, khi nói đến quá trình sinh trứng và quá trình sinh tỉnh, có bao nhiêu phát biểu sau đây đúng:\n(I). Quá trình sản sinh trứng diễn ra theo chu kỳ, còn tỉnh trùng được tạo ra liên tục.\n(II). Số lượng trứng sinh ra qua phân bào giảm nhiễm ít hơn so với tinh trùng.\n(III). Tinh trùng có thể được sản sinh suốt đời, còn trứng chỉ được tạo ra trong thời gian nhất định (ở độ tuổi sinh sản).\n(IV). Tinh trùng và trứng được sản sinh không liên quan đến đặc điểm sinh lý cơ thể.",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 28,
+      "type": "mcq",
+      "question": "Trong các nhận định sau đây về hormone tuyến yên (FSH và LH) tham gia điều hòa sinh sản ở người, có bao nhiêu nhận định đúng:\n(I). LH ở nữ giới kích thích hình thành thể vàng; thể vàng sản xuất estrogen và progesterone.\n(II). FSH ở nam giới kích thích sự sinh sản tinh trùng.\n(III). FSH ở nữ giới kích thích sự phát triển của tế bào trứng trong buồng trứng.\n(IV). LH ở nam giới kích thích tuyến tinh hoàn sản xuất testosterone.",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 29,
+      "type": "mcq",
+      "question": "Khi nói về vai trò của các hormone trong điều hòa quá trình sinh tinh và sinh trứng ở người, có bao nhiêu phát biểu sau đây đúng:\n(I). Cơ chế điều hòa quá trình sinh tỉnh và sinh trứng đều được kiểm soát nhờ liên hệ ngược.\n(II). Vùng dưới đồi tiết GnRH kích tích tuyến yên tiết ra FSH và LH.\n(III). Ở quá trình sinh tinh, FSH kích thích ống sinh tỉnh sản xuất tinh trùng.\n(IV). Ở quá trình sinh trứng, FSH kích thích nang trứng phát triển và tiết ra estrogen.",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 30,
+      "type": "mcq",
+      "question": "Khi so sánh điểm khác nhau về vai trò của các hormone trong điều hòa quá trình sinh tinh và sinh trứng ở người, có bao nhiêu phát biểu sau đây đúng:\n(I). Ở quá trình sinh tinh, LH kích thích tế bào kẽ tiết ra hormone testosterone.\n(II). Ở quá trình sinh trứng, LH làm nang trứng chín và trứng rụng.\n(III). Ở quá trình sinh tinh, FSH kích thích ống sinh tỉnh sản xuất tinh trùng.\n(IV). Ở quá trình sinh trứng, FSH kích thích nang trứng phát triển và tiết ra progesterone.",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 31,
+      "type": "mcq",
+      "question": "Để điều khiển quá trình sinh sản ở động vật nhằm mục đích mang lại những giá trị phục vụ nhu cầu con người, người ta đã đưa ra nhiều biện pháp. Có bao nhiêu nhận định đúng liên quan những biện pháp nhằm điều khiển quá trình sinh sản của động vật mang lại lợi ích cho con người:\n(I). Thụ tinh nhân tạo để tạo điều kiện cho quá trình thụ tinh hiệu quả.\n(II). Thu tinh nhân tao bên ngoài cơ thể ở một số loài cá như cá mè, cá trắm cỏ, ....\n(III). Sử dụng các kĩ thuật như lọc, li tâm, điện di để tách tinh trùng thành hai loại từ đó tuỳ theo mục đích và nhu cầu cần con đực hay con cái để chọn ra loại tinh trùng cho thụ tinh với trứng.\n(IV). Chiếu tia tử ngoai lên tằm sẽ tao ra nhiều tằm đực hơn, giúp nâng cao hiệu quả kinh tế do tằm đực cho nhiều tơ hơn so với tằm cái.",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 32,
+      "type": "mcq",
+      "question": "Dựa trên hình và kiến thức về đặc điểm các giai đoạn của quá trình sinh sản ở người, có bao nhiêu phát biểu sau đây đúng?\n(I). Quá trình thu tỉnh có rất nhiều tỉnh trùng tiếp cân trứng.\n(II). Có nhiều tỉnh trùng khỏe mạnh cùng thụ tỉnh cho một trứng.\n(III). Tinh trùng tiết enzyme khoan thùng vỏ trứng và tinh trùng chui vào bên trong, nhân của tinh trùng hợp nhất với nhân của trứng tạo thành hợp tử.\n(IV). Sau khi phôi hình thành sẽ tạo thành hợp tử từ đó tạo thành cơ thể hoàn chỉnh.",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 33,
+      "type": "mcq",
+      "question": "Dựa trên hình và kiến thức về đặc điểm quá trình hình thành tinh trùng ở người, có bao nhiêu phát biểu sau đây đúng?\n(I). Tinh trùng hình thành trong ống sinh tỉnh của hai tỉnh hoàn.\n(II). Từ tỉnh nguyên bào (2n), trải qua quá trình nguyên phân và giảm phân tạo nên tỉnh trùng (n).\n(III). Từ 1 tinh bào bậc 1 (2n) trải qua quá trình nguyên phân và giảm phân (giảm phân I, II) tạo nên 4 tỉnh trùng (n).\n(IV). Từ 1 tỉnh bào bậc 2 (2n) trải qua quá trình giảm phân tạo nên 4 tinh trùng (n).",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 34,
+      "type": "mcq",
+      "question": "Dựa trên hình và đặc điểm quá trình hình thành trứng và thụ tinh ở người. Có bao nhiêu phát biểu sau đây đúng?\n(I). Quá trình giảm phân bắt đầu từ tế bào mâm sinh dục giảm phân tạo ra noãn nguyên bào.\n(II). Noãn bào bậc 1 (2n) bắt đầu giảm phân I khi trẻ em gái bắt đầu dậy thì.\n(III). Ở giai đoạn dậy thì khi chưa có mặt tinh trùng thì noãn bào bậc 1 sẽ giảm phân I, II tạo trứng để chờ sẵn tinh trùng.\n(IV). Ở giai đoạn dậy thì thì noãn bào bậc 1 mới tiến hành giảm phân I và dừng lại ở kỳ giữa của giảm phân II.",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 35,
+      "type": "mcq",
+      "question": "Người ta thường dùng những nhân tố nào sau đây là căn cứ để điều khiển sinh sản ở động vật:\n(1). Nhu cầu sản xuất.\n(2). Các giống gốc hoang dại.\n(3). Chiều hướng chọn lọc tự nhiên.\n(4). Các loại hormone điều hòa sinh sản.\n(5). Các kỹ thuật hiện đại.\n(6). Các điều kiện ngoại cảnh tác động lên sinh sản của động vật.",
+      "options": [
+        "A. (1), (2), (3), (4), (5) và (6).",
+        "B. (2), (3), (4), (5) và (6).",
+        "C. (2), (4), (5) và (6).",
+        "D. (1), (4), (5) và (6)."
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 36,
+      "type": "mcq",
+      "question": "Khi nói về ưu điểm của mang thai đẻ con ở thú so với đẻ trứng ở các loài động vật khác, có bao nhiêu phát biểu sau đây đúng:\n(I). Nguồn cung cấp chất dinh dưỡng cho thai nhi lớn.\n(II). Thai nhi được bảo vệ tốt.\n(III). Tỉ lệ sống cao.\n(IV). Động vật mang thai nên thuận lợi trong khi di chuyển.",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 37,
+      "type": "mcq",
+      "question": "Khi nói về các biện pháp làm thay đổi số con ở động vật, có bao nhiêu phát biểu đúng:\n(I). Sử dụng hormone hoặc chất kích thích tổng hợp.\n(II). Thay đổi các yếu tố môi trường.\n(III). Nuôi cấy phôi.\n(IV). Thụ tinh nhân tạo.",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 38,
+      "type": "mcq",
+      "question": "Khi nói về các biện pháp điều khiển giới tính ở động vật, có bao nhiêu phát biểu đúng:\n(I). Sử dụng hormone.\n(II). Chiếu tia tử ngoại.\n(III). Tách tỉnh trùng bằng kĩ thuật lọc, li tâm.\n(IV). Thụ tinh nhân tạo.",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 39,
+      "type": "mcq",
+      "question": "Trong các biện pháp tránh thai sau, có bao nhiêu biện pháp vừa giúp tránh mang thai vừa giúp tránh được các bệnh lây truyền qua quan hệ tình dục:\n(1). Sử dụng bao cao su.\n(II). Thắt ống dẫn tinh.\n(II). Sử dụng thuốc tránh thai.\n(IV). Sử dụng dụng cụ tử cung.",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 1,
+      "type": "true_false",
+      "question": "Sinh sản vô tính ở động vật là sự sinh sản mà các cơ thể con sinh ra từ một phần của cơ thể mẹ, dựa trên nguyên lí nguyên phân, cơ thể con giống nhau và giống mẹ. Gồm có các hình thức sau: phân đôi, nảy chồi, phân mảnh, trinh sinh. Mỗi nhận định sau đây Đúng hay Sai về sinh sản vô tính ở động vật?",
+      "statements": [
+        {
+          "key": "a",
+          "text": "Sinh sản vô tính bằng hình thức phân đôi tạo thành hai cơ thể con có kích thước bằng nhau.",
+          "answer": true
+        },
+        {
+          "key": "b",
+          "text": "Nảy chồi là hình thức sinh sản mà chồi mọc ra từ cơ thể mẹ.",
+          "answer": true
+        },
+        {
+          "key": "c",
+          "text": "Phân mảnh là hình thức sinh sản mà cơ thể mẹ bị phân thành hai hoặc nhiều mảnh, mỗi mảnh hình thành cơ thể mới.",
+          "answer": true
+        },
+        {
+          "key": "d",
+          "text": "Ong chúa có bộ nhiễm sắc thể đơn bội.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "type": "true_false",
+      "question": "Điều hoà sinh sản hữu tính ở động vật chủ yếu biểu hiện ở điều hòa quá trình sinh tỉnh và sinh trứng, trong đó hệ nội tiết đóng vai trò chính. Mỗi nhận định sau đây Đúng hay Sai về tác dụng của các hormone trong điều hòa quá trình sinh tỉnh và sinh trứng ở động vật?",
+      "statements": [
+        {
+          "key": "a",
+          "text": "Hormone estrogen có tác dụng giúp duy trì thai nghén và sự phát triển của thai nhi.",
+          "answer": false
+        },
+        {
+          "key": "b",
+          "text": "Trong quá trình sinh tinh, FSH kích thích ống sinh tỉnh sản xuất tinh trùng.",
+          "answer": true
+        },
+        {
+          "key": "c",
+          "text": "Trong quá trình sinh trứng LH làm nang trứng chín và trứng rụng.",
+          "answer": true
+        },
+        {
+          "key": "d",
+          "text": "Hormone GnRH (do vùng dưới đồi tiết ra) chỉ kích thích tuyên yên tiết FSH.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "type": "true_false",
+      "question": "Để điều khiển quá trình sinh sản ở động vật nhằm mục đích mang lại những giá trị phục vụ nhu cầu con người và con người đã đưa ra nhiều biện pháp. Mỗi nhận định sau đây Đúng hay Sai về những biện pháp nhằm điều khiển quá trình sinh sản của động vật mang lại lợi ích cho con người?",
+      "statements": [
+        {
+          "key": "a",
+          "text": "Thực hiện thu tinh nhân tao bên ngoài cơ thể số loài cá như cá mè, cá trắm cỏ",
+          "answer": true
+        },
+        {
+          "key": "b",
+          "text": "Sử dụng các kĩ thuật như lọc, li tâm, điện di để tách tinh trùng thành hai loại từ đó tuỳ theo mục đích và nhu cầu cần con đực hay con cái để chọn ra loại tinh trùng cho thụ tinh với trứng.",
+          "answer": true
+        },
+        {
+          "key": "c",
+          "text": "Chiếu tia tử ngoại lên tằm sẽ tạo ra nhiều tằm đực hơn, giúp nâng cao hiệu quả kinh tế do tằm đực cho nhiều tơ hơn so với tằm cái.",
+          "answer": true
+        },
+        {
+          "key": "d",
+          "text": "Tiêm hormone sinh dục cho động vật đang mang thai.",
+          "answer": false
+        }
+      ]
+    }
+  ]
+}

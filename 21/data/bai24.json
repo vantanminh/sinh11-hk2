@@ -1,0 +1,462 @@
+{
+  "meta": {
+    "titleRaw": "BÀI 24: SINH SẢN Ở THỰC VẬT",
+    "subtitleRaw": "ÔN TẬP CK2- SINH HỌC 11-BÀI 20-26 | TRƯỜNG THPT TRẦN PHÚ",
+    "sectionRaw": "Bộ đề gồm 31 câu trắc nghiệm nhiều lựa chọn và 3 câu đúng/sai."
+  },
+  "questions": [
+    {
+      "number": 1,
+      "type": "mcq",
+      "question": "Sinh sản vô tính ở thực vật là hình thức sinh sản tạo ra các cá thể mới:",
+      "options": [
+        "A. Giống nhau và giống cả cha và mẹ.",
+        "B. Giống hệt nhau và giống cơ thể mẹ.",
+        "C. Rất đa dạng về đặc tính di truyền.",
+        "D. Khác nhau và giống bố hoặc mẹ."
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 2,
+      "type": "mcq",
+      "question": "Khẳng định nào sau đây không đúng:",
+      "options": [
+        "A. Sinh sản vô tính chỉ có ở thực vật.",
+        "B. Ở sinh sản vô tính, cá thể mới được hình thành từ một tế bào, mô hoặc cơ quan của thế hệ trước.",
+        "C. Nguyên phân là cơ sở tế bào giúp truyền đạt vật chất di truyền trong sinh sản vô tính.",
+        "D. Sinh sản vô tính không có sự kết hợp giữa giao tử đực và giao tử cái."
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 3,
+      "type": "mcq",
+      "question": "Sinh sản sinh dưỡng là hình thức sinh sản tạo ra cây mới chỉ từ một phần:",
+      "options": [
+        "A. của thân của cây mẹ và cây cha.",
+        "B. của cơ quan sinh dưỡng ở cây mẹ.",
+        "C. rễ của cây mẹ và không có cha.",
+        "D. lá của cây mẹ."
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 4,
+      "type": "mcq",
+      "question": "Một hạn chế của sinh sản vô tính là:",
+      "options": [
+        "A. Tạo ra một số lượng lớn cá thể mới trong thời gian ngắn.",
+        "B. có vai trò quan trọng trong duy trì đặc điểm của loài, cơ thể và sinh vật.",
+        "C. các cá thể mới chỉ thích nghi tốt trong môi trường ổn định, nên dễ xảy ra hiện tượng chết hàng loạt khi môi trường có nhiều biến động.",
+        "D. Cá thể sống độc lập, đơn lẻ vẫn có thể tạo ra con cháu."
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 5,
+      "type": "mcq",
+      "question": "Sinh sản hữu tính ở thực vật là?",
+      "options": [
+        "A. Sự kết hợp có chọn lọc của hai giao tử đực và giao tử cái tạo nên hợp tử phát triển thành cơ thể mới.",
+        "B. Sự kết hợp ngẫu nhiên giữa giao tử đực và giao tử cái tạo nên hợp tử phát triển thành cơ thể mới.",
+        "C. Sự kết hợp có chọn lọc của giao tử cái và nhiều giao tử đực tạo nên hợp tử phát triển thành cơ thể mới.",
+        "D. Sự kết hợp của nhiều giao tử đực với một giao tử cái tạo nên hợp tử phát triển thành cơ thể mới."
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 6,
+      "type": "mcq",
+      "question": "Hình thức sinh sản nào sau đây có sự hợp nhất của giao tử đực và giao tử cái tạo nên hợp tử phát triển thành cơ thể mới?",
+      "options": [
+        "A. Sinh sản hữu tính.",
+        "B. Sinh sản vô tính.",
+        "C. Sinh sản bằng bào tử.",
+        "D. Sinh sản bằng nuôi cấy mô tế bào."
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 7,
+      "type": "mcq",
+      "question": "Trong sinh sản hữu tính, cơ thể mới được phát triển từ:",
+      "options": [
+        "A. Giao tử.",
+        "B. Hợp tử.",
+        "C. Bào tử.",
+        "D. Phôi."
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 8,
+      "type": "mcq",
+      "question": "Sự kếp hợp giữa giao tử đực và giao tử cái, được gọi là quá trình:",
+      "options": [
+        "A. Tiếp hợp.",
+        "B. Giao phối.",
+        "C. Thụ tinh.",
+        "D. Phối tỉnh."
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 9,
+      "type": "mcq",
+      "question": "Cơ sở khoa học của nuôi cấy mô, tế bào thực vật là:",
+      "options": [
+        "A. Tính nguyên vẹn.",
+        "B. Tính toàn vẹn.",
+        "C. Tính bảo toàn.",
+        "D. Tính toàn năng."
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 10,
+      "type": "mcq",
+      "question": "Sau khi thụ tinh, quả được tạo thành từ:",
+      "options": [
+        "A. Noãn.",
+        "B. Tràng hoa.",
+        "C. Bầu nhụy.",
+        "D. Đài hoa."
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 11,
+      "type": "mcq",
+      "question": "Quá trình thụ tinh ở thực vật hạt kín diễn ra ở:",
+      "options": [
+        "A. Núm nhụy.",
+        "B. Vòi nhụy.",
+        "C. Túi phôi.",
+        "D. Bao phấn."
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 12,
+      "type": "mcq",
+      "question": "Ở thực vật có hoa, sự thụ tinh kép diễn ra như thế nào?",
+      "options": [
+        "A. Có hai giao tử đực tham gia thụ tinh tạo thành hai hợp tử.",
+        "B. Có hai giao tử đực cùng tham gia thụ tinh để tạo một hợp tử.",
+        "C. Cùng một lúc có hai giao tử đực tham gia thụ tinh để tạo hợp tử và nhân tam bội.",
+        "D. Một giao tử đực tham gia thụ tỉnh tạo thành một hợp tử và nội nhũ."
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 13,
+      "type": "mcq",
+      "question": "Trong sự hình thành túi phôi ở thực vật có hoa, các tế bào mang bộ NST đơn bội bao gồm:",
+      "options": [
+        "A. Tế bào mẹ, tế bào đối cực, tế bào kèm, tế bào trứng và nhân cực.",
+        "B. Tế bào kèm, tế bào trứng và nhân cực.",
+        "C. Noãn cầu (trứng).",
+        "D. Đại bào tử, tế bào đối cực, tế bào kèm, tế bào trứng và tế bào nhân cực."
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 14,
+      "type": "mcq",
+      "question": "Hạt của cây hạt kín có nguồn gốc từ:",
+      "options": [
+        "A. Noãn.",
+        "B. Bầu nhụy.",
+        "C. Tế bào trứng và tế bào nhân cực.",
+        "D. Đầu nhụy."
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 15,
+      "type": "mcq",
+      "question": "Ở thực vật có hoa, sau thụ tinh, nhân tam bội sẽ phát triển thành:",
+      "options": [
+        "A. hạt.",
+        "B. phôi.",
+        "C. quả.",
+        "D. nội nhũ."
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 16,
+      "type": "mcq",
+      "question": "Đặc điểm nào không phải là ưu thế của sinh sản hữu tính so với sinh sản vô tính ở thực vật?",
+      "options": [
+        "A. Tạo thế hệ sau có khả năng thích nghi với những điều kiện môi trường biến đổi.",
+        "B. Tạo được nhiều biến dị tổ hợp làm nguyên liệu cho quá trình chọn giống và tiến hoá.",
+        "C. Duy trì ổn định những tính trạng tốt về mặt di truyền.",
+        "D. Là hình thức sinh sản phổ biến."
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 17,
+      "type": "mcq",
+      "question": "Sự hình thành giao tử ở thực vật khác với sự hình thành giao tử ở động vật là:",
+      "options": [
+        "A. Chỉ thực hiện nhờ quá trình giảm phân.",
+        "B. Chỉ thực hiện nhờ quá trình nguyên phân.",
+        "C. Diễn ra qua giảm phân và nguyên phân.",
+        "D. Tạo số giao tử đực và cái bằng nhau từ một tế bào ban đầu."
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 18,
+      "type": "mcq",
+      "question": "Ý nào không đúng với ưu điểm của phương pháp nuôi cấy mô?",
+      "options": [
+        "A. Phục chế giống cây quý, hạ giá thành cây con nhờ giảm mặt bằng sản xuất.",
+        "B. Nhân nhanh với số lượng lớn cây giống và sạch bệnh.",
+        "C. Duy trì những tính trạng mong muốn về mặt di truyền.",
+        "D. Dễ tạo ra nhiều biến dị di truyền cung cấp cho chọn giống."
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 19,
+      "type": "mcq",
+      "question": "Khi nói đến sinh sản hữu tính ở thực vật, đặc điểm nào sau đây sai?",
+      "options": [
+        "A. Tạo ra thế hệ sau luôn thích nghi với môi trường sống ổn định.",
+        "B. Luôn có quá trình hình thành và hợp nhất của giao tử đực và giao tử cái.",
+        "C. Luôn gắn liền với giảm phân để tạo giao tử.",
+        "D. Luôn có sự trao đổi, tái tổ hợp của hai bộ gene."
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 20,
+      "type": "mcq",
+      "question": "Cắt bỏ lá ở cành ghép có mục đích gì?",
+      "options": [
+        "A. Giảm quá trình quang hợp, ít tiêu tốn năng lượng.",
+        "B. Giảm sự thoát hơi nước, mất nước của cây.",
+        "C. Giảm khối lượng cho cành ghép.",
+        "D. Giúp cành ghép không lệch khỏi vị trí ghép."
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 21,
+      "type": "mcq",
+      "question": "Khi nói về quá trình hình thành hạt, phát biểu nào sau đây là sai?",
+      "options": [
+        "A. Tế bào tam bội trong hạt phát triển thành nội nhũ.",
+        "B. Mọi hạt của thực vật có hoa đều có nội nhũ.",
+        "C. Hợp tử trong hạt phát triển thành phôi.",
+        "D. Hạt là noãn đã được thụ tỉnh phát triển thành."
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 22,
+      "type": "mcq",
+      "question": "Bạn An quan sát thấy: Mẹ trồng rau lang bằng một đoạn thân. Sau một thời gian, An thấy từ thân đó mọc thành một cây hoàn chỉnh. Hiện tượng đó cho thấy cây khoai lang sinh sản bằng hình thức sinh sản gì?",
+      "options": [
+        "A. Hữu tính.",
+        "B. Sinh dưỡng.",
+        "C. Bào tử.",
+        "D. Nuôi cấy mô."
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 23,
+      "type": "mcq",
+      "question": "Khi nói về quá trình thụ phấn chéo, phát biểu nào dưới đây đúng?",
+      "options": [
+        "A. Là quá trình hạt phấn của hoa rơi trên núm nhuy của chính hoa đó.",
+        "B. Là quá trình các tế bào mẹ tiểu bào tử giảm phân hình thành nên hạt phấn.",
+        "C. Là quá trình hạt phấn phát tán và rơi trên núm nhuỵ của một hoa khác trong cùng một cây.",
+        "D. Là quá trình hạt phấn của hoa ở cây này phát tán và rơi trên núm nhuỵ của hoa ở cây khác."
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 24,
+      "type": "mcq",
+      "question": "Khi nói đến kỹ thuật giâm cành, thứ tự nào sau đây đúng quy trình?\n(1). Khi rễ cây mọc nhiều và đủ dài ở các cành giâm, chuyển cây vào vườn ươm.\n(2). Cắt vát, tránh dập nát từng đoạn 10 – 15cm các cành bánh tẻ.\n(3). Khi cây đã đủ rễ và lá, đưa cây vào trồng đại trà.\n(4). Cành đã cắt có thể cắm trực tiếp hoặc xử lý bằng chất kích thích ra rễ, sau đó cắm vào nền giâm.",
+      "options": [
+        "A. (1) -> (4) -> (2) -> (3).",
+        "B. (2) -> (4) -> (1) -> (3).",
+        "C. (4) -> (2) -> (1) -> (3).",
+        "D. (4) -> (2) -> (3) -> (1)."
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 25,
+      "type": "mcq",
+      "question": "Khi nói về vai trò của sinh sản vô tính đối với đời sống con người và thực vật, phát biểu nào sau đây đúng?\n(1). Trồng cây xoài ghép sau 1 năm sẽ cho quả.\n(2). Từ một đoan nhỏ thân khoai tây có thể nhân ra hàng trăm, nghìn cây con.\n(3). Trồng cây xoài từ hạt sau 2 năm sẽ cho quả.\n(4). Tạo số lượng lớn cây cọ dầu bằng nuôi cấy mô.",
+      "options": [
+        "A. (1), (2) và (4).",
+        "B. (2), (3) và (4).",
+        "C. (1), (2) và (3).",
+        "D. (1), (3) và (4)."
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 26,
+      "type": "mcq",
+      "question": "Có bao nhiêu phát biểu sau đây đúng về sinh sản vô tính ở thực vật?\n(I). Cây con được tạo ra từ các bộ phận sinh dưỡng của cây mẹ (củ, thân, rễ, lá, ...), vì vậy cây con thường giống nhau và giống với cây mẹ.\n(II). Cây con có bộ gene giống cây mẹ.\n(III). Đảm bảo cho thực vật luôn duy trì được kiểu gene thích nghi với mọi điều kiện môi trường sống thay đổi.\n(IV). Hình thức sinh sản này có lợi thế trong điều kiện môi trường thường xuyên thay đổi.",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 27,
+      "type": "mcq",
+      "question": "Trong nông nghiệp, người ta đã áp dụng nhiều phương pháp nhân giống vô tính, có bao nhiêu phương pháp sau đây đúng?\n(I). Giâm cành: mía, khoai lang, sắn dây, dâu tằm,.....\n(II). Chiết cành: cam, quýt, chanh, bưởi,.....\n(III). Ghép cành: xoài cát ghép với xoài bưởi; cây táo chua ghép với táo ngọt.....\n(IV). Nuôi cấy mô tế bào thực vật: nhân giống việt quất bằng nuôi cấy mô dưới ánh sáng nhân tạo.....",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 28,
+      "type": "mcq",
+      "question": "Khi nói đến quá trình hình hạt phấn ở thực vật có hoa, có bao nhiêu phát biểu sau đây đúng?\n(I). Tế bào mẹ (2n) trong bao phấn thực hiện giảm phân tạo thành 4 tế bào con (n). 4 tế bào con (n) nguyên phân tạo 4 hạt phấn (thể giao tử đực).\n(II). Hạt phấn được hình thành trong bao phấn.\n(III). Khi mỗi tế bào đơn bội (n) được tạo ra qua giảm phân sẽ nguyên phân tạo hạt phấn, trong hạt phấn có 2 tế bào (tế bào sinh dưỡng và tế bào sinh sản).\n(IV). Mỗi hạt phấn có 1 tinh tử (giao tử đực).",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 29,
+      "type": "mcq",
+      "question": "Khi nói đến quá trình hình túi phôi ở thực vật có hoa, có bao nhiêu phát biểu sau đây đúng?\n(I). 1 tế bào me đai bào tử (2n) trong bầu nhuy thực hiện giảm phân tạo thành 4 tế bào con.\n(II). 1 tế bào mẹ đại bào tử (2n) trong bầu nhụy giảm phân tạo 4 tế bào con và qua nguyên phân tạo 4 giao tử cái.\n(III). Túi phôi được hình thành trong bầu nhụy.\n(IV). Đại bào tử sống sót nguyên phân 3 lần liên tiếp tao túi phôi gồm 3 tế bào đối cực, 1 tế bào nhân cực chứa 2 nhân đơn bội, 1 tế bào trứng và 2 tế bào kèm.",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 30,
+      "type": "mcq",
+      "question": "Dựa trên quá trình thụ tỉnh ở thực vật có hoa (hình) và kiến thức học được, có bao nhiêu phát biểu sau đây đúng?\n(I). Thu tinh là sự kết hợp giữa giao tử đực với giao tử cái hình thành nên hợp tử.\n(II). Ống phấn sinh trưởng kéo dài chạm tới túi phôi, xuyên qua lỗ noãn và giải phóng 2 tỉnh tử.\n(III). Quá trình thụ tỉnh ở thực vật hạt kín là thu tinh kép.\n(IV). Quá trình thụ tinh chịu ảnh hưởng mạnh nhất từ hàm lượng auxin ngoại sinh của hạt phấn.",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 31,
+      "type": "mcq",
+      "question": "Khi tìm hiểu quá trình hình thành hạt và quả như thế nào, một học sinh đã đưa ra các nhận định sau, có bao nhiêu nhận định đúng?\n(I). Hạt do noãn đã được thụ tỉnh phát triển thành.\n(II). Một số loài thực vật, hạt chứa phôi và có nội nhũ.\n(III). Quả do bầu nhuy phát triển dày lên tạo thành.\n(IV). Khi quả chín, màu sắc của vỏ quả sẽ thay đổi do sự phân giải diệp lục cùng với sự gia tăng hàm lương các sắc tố carotenoid và sắc tố dịch bào.",
+      "options": [
+        "A. 1.",
+        "B. 2.",
+        "C. 3.",
+        "D. 4."
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 32,
+      "type": "true_false",
+      "question": "Sinh sản vô tính ở thực vật gồm sinh sản sinh dưỡng và sinh sản bào tử. Trong nông nghiệp, người ta đã áp dụng nhiều phương pháp nhân giống vô tính để nhân nhanh nhiều giống cây trồng có lợi cho con người. Mỗi nhận định sau đây Đúng hay Sai về sinh sản vô tính ở thực vật?",
+      "statements": [
+        {
+          "key": "a",
+          "text": "Ưu điểm của chiết cành so với trồng từ hạt là tiết kiệm thời gian sinh trưởng của cây.",
+          "answer": true
+        },
+        {
+          "key": "b",
+          "text": "Sinh sản vô tính ở thực vật góp phần giữ nguyên khả năng thích nghi của thực vật với môi trường ổn định.",
+          "answer": true
+        },
+        {
+          "key": "c",
+          "text": "Phương pháp nuôi cấy mô có ưu điểm tạo ra số lượng lớn các giống cây trồng có năng suất cao, chất lượng tốt, thích nghi với điều kiện sinh thái nhất định, chống chịu tốt với nhiều loại sâu bệnh.",
+          "answer": true
+        },
+        {
+          "key": "d",
+          "text": "Sinh sản vô tính ở thực vật luôn giúp tăng giá thành cây con, tăng hiệu quả kinh tế.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "number": 33,
+      "type": "true_false",
+      "question": "Sinh sản ở thực vật có hoa gồm các giai đoạn nối tiếp nhau: quá trình hình thành hạt phấn và túi phôi, thụ phấn và thụ tinh, sự hình thành hạt và quả, quá trình chín của quả. Mỗi nhận định sau đây Đúng hay Sai về sinh sản ở thực vật có hoa?",
+      "statements": [
+        {
+          "key": "a",
+          "text": "Sinh sản hữu tính ở thực vật tạo ra đời con thích nghi với môi trường luôn biến đổi.",
+          "answer": true
+        },
+        {
+          "key": "b",
+          "text": "Quá trình thụ tỉnh ở thực vật có hoa là thụ tinh kép.",
+          "answer": true
+        },
+        {
+          "key": "c",
+          "text": "Quả là do bầu nhuy sinh trưởng dày lên chuyển hoá thành.",
+          "answer": true
+        },
+        {
+          "key": "d",
+          "text": "Trong quá trình hình thành hạt phấn, tế bào sinh sản có 2 tỉnh tử (n).",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "number": 34,
+      "type": "true_false",
+      "question": "Thụ phấn là hiện tượng hạt phấn từ nhị tiếp xúc với đầu nhuy. Sau khi thụ phấn, hạt phấn nảy mầm và diễn ra quá trình thụ tinh. Mỗi nhận định sau đây Đúng hay Sai về quá trình thụ phấn và thụ tinh ở thực vật?",
+      "statements": [
+        {
+          "key": "a",
+          "text": "Ông phấn sinh trưởng kéo dài chạm tới túi phôi, xuyên qua lỗ noãn và giải phóng 1 tỉnh tử:",
+          "answer": false
+        },
+        {
+          "key": "b",
+          "text": "Thụ tinh kép gặp ở tất cả các loài thực vật.",
+          "answer": false
+        },
+        {
+          "key": "c",
+          "text": "Quá trình thụ phấn ở thực vật diễn ra hoàn toàn nhờ vào động vật và con người.",
+          "answer": false
+        },
+        {
+          "key": "d",
+          "text": "Thụ phấn chéo là hiện tượng hạt phấn của hoa này rơi trên núm nhụy của hoa khác.",
+          "answer": true
+        }
+      ]
+    }
+  ]
+}
