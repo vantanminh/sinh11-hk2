@@ -154,6 +154,7 @@ const els = {
   closeImageLightboxBtn: document.getElementById("closeImageLightboxBtn"),
   prevImageLightboxBtn: document.getElementById("prevImageLightboxBtn"),
   nextImageLightboxBtn: document.getElementById("nextImageLightboxBtn"),
+  promptPane: document.getElementById("promptPane"),
   qPosition: document.getElementById("qPosition"),
   qNumber: document.getElementById("qNumber"),
   qTypeBadge: document.getElementById("qTypeBadge"),
@@ -1252,7 +1253,7 @@ function renderQuestionStem(question) {
     els.questionText.appendChild(createQuestionTextBlock("Câu hỏi trống."));
   }
 
-  els.questionText.scrollTop = 0;
+  els.promptPane.scrollTop = 0;
 }
 
 function imageLightboxOpen() {
@@ -1578,6 +1579,8 @@ function renderQuestion() {
     els.questionMedia.innerHTML = "";
     els.questionMedia.hidden = true;
     els.options.innerHTML = "";
+    els.promptPane.scrollTop = 0;
+    els.options.scrollTop = 0;
     els.prevBtn.disabled = true;
     els.nextBtn.disabled = true;
     els.clearBtn.disabled = true;
@@ -1604,6 +1607,9 @@ function renderQuestion() {
   } else {
     renderMcqOptions(question);
   }
+
+  els.promptPane.scrollTop = 0;
+  els.options.scrollTop = 0;
 
   els.prevBtn.disabled = state.current === 0;
   els.nextBtn.disabled = state.current === questions.length - 1;

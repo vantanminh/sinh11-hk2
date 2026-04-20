@@ -581,24 +581,45 @@ button {
 
 .viewer-body {
   min-height: 0;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
   gap: 12px;
   padding: 14px 16px;
   overflow: hidden;
 }
 
-.question-text {
-  flex: 1 1 auto;
+.prompt-pane,
+.answer-pane {
   min-height: 0;
-  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.prompt-pane {
   padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  border: 1px solid var(--line);
-  border-radius: 18px;
+  gap: 14px;
+  overflow: auto;
+  overscroll-behavior: contain;
   background: linear-gradient(180deg, #fbfdff 0%, #f6f9fe 100%);
+}
+
+.answer-pane {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
+}
+
+.question-text {
+  flex: 0 0 auto;
+  min-height: auto;
+  overflow: visible;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   white-space: normal;
   word-break: break-word;
   font-size: 16px;
@@ -611,26 +632,25 @@ button {
 }
 
 .question-media {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-  gap: 12px;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: stretch;
 }
 
 .question-figure {
   margin: 0;
   border: 1px solid var(--line);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.96);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.9);
   overflow: hidden;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
-  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.04);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
 }
 
 .question-figure:hover {
   border-color: #bfd7ff;
-  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.09);
-  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.07);
 }
 
 .question-image-trigger {
@@ -656,7 +676,7 @@ button {
 
 .question-image {
   width: 100%;
-  max-height: min(46vh, 420px);
+  max-height: min(58vh, 560px);
   display: block;
   object-fit: contain;
   transition: transform 0.22s ease;
@@ -762,10 +782,14 @@ button {
 }
 
 .options {
-  flex: 0 1 auto;
+  flex: 1 1 auto;
+  min-height: 0;
   overflow: auto;
+  overscroll-behavior: contain;
   display: grid;
   gap: 10px;
+  padding: 14px;
+  align-content: start;
 }
 
 .option-btn {
@@ -1531,22 +1555,28 @@ button {
     padding: 8px 10px;
   }
 
-  .question-text {
-    flex: 1 1 0;
-    gap: 10px;
+  .prompt-pane,
+  .answer-pane {
+    border-radius: 16px;
+  }
+
+  .prompt-pane {
     padding: 12px;
-    border-radius: 14px;
+    gap: 10px;
+  }
+
+  .question-text {
+    gap: 10px;
     font-size: 14.5px;
     line-height: 1.56;
   }
 
   .question-media {
-    grid-template-columns: 1fr;
     gap: 8px;
   }
 
   .question-image {
-    max-height: min(28vh, 240px);
+    max-height: min(46vh, 360px);
   }
 
   .question-image-hint {
@@ -1638,14 +1668,13 @@ button {
 
   .options {
     min-height: 0;
-    max-height: 46%;
     gap: 8px;
     align-content: start;
+    padding: 12px;
   }
 
   .options[data-type="true_false"] {
     gap: 8px;
-    max-height: 50%;
   }
 
   .tf-intro {
@@ -1790,8 +1819,16 @@ button {
     padding: 5px 8px;
   }
 
-  .question-text {
+  .prompt-pane,
+  .answer-pane {
+    border-radius: 14px;
+  }
+
+  .prompt-pane {
     padding: 11px;
+  }
+
+  .question-text {
     font-size: 14px;
     line-height: 1.5;
   }
@@ -1815,10 +1852,6 @@ button {
     width: 28px;
     height: 28px;
     font-size: 11px;
-  }
-
-  .options {
-    max-height: 48%;
   }
 
   .tf-card {
@@ -1896,9 +1929,16 @@ button {
     border-radius: 14px;
   }
 
-  .question-text {
-    padding: 10px;
+  .prompt-pane,
+  .answer-pane {
     border-radius: 12px;
+  }
+
+  .prompt-pane {
+    padding: 10px;
+  }
+
+  .question-text {
     font-size: 13.75px;
   }
 
@@ -1920,10 +1960,6 @@ button {
   .image-lightbox-meta,
   .image-lightbox-close {
     min-height: 34px;
-  }
-
-  .options {
-    max-height: 50%;
   }
 
   .option-btn {
@@ -1970,10 +2006,6 @@ button {
 
   .image-lightbox-viewport {
     min-height: min(48dvh, 400px);
-  }
-
-  .options {
-    max-height: 50%;
   }
 
   .viewer-foot {
