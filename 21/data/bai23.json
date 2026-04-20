@@ -242,12 +242,12 @@
         {
           "key": "c",
           "text": "Trong sinh sản vô tính không có sự hình thành giao tử.",
-          "answer": false
+          "answer": true
         },
         {
           "key": "d",
           "text": "Cây dâu tây mọc thêm cành mới là ví dụ về sinh sản vô tính.",
-          "answer": true
+          "answer": false
         }
       ]
     },
