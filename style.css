@@ -94,7 +94,7 @@ button {
 }
 
 .title {
-  font-size: 18px;
+  font-size: 19.8px;
   font-weight: 800;
   line-height: 1.35;
   white-space: normal;
@@ -106,7 +106,7 @@ button {
 
 .mobile-title {
   display: none;
-  font-size: 15px;
+  font-size: 16.5px;
   font-weight: 800;
   line-height: 1.25;
   white-space: nowrap;
@@ -116,7 +116,7 @@ button {
 
 .subtitle {
   margin-top: 5px;
-  font-size: 12.5px;
+  font-size: 13.8px;
   line-height: 1.45;
   color: var(--muted);
   white-space: normal;
@@ -150,7 +150,7 @@ button {
 
 .tools-sheet-title {
   min-width: 0;
-  font-size: 14px;
+  font-size: 15.4px;
   font-weight: 800;
 }
 
@@ -189,7 +189,7 @@ button {
   background: rgba(255, 255, 255, 0.92);
   color: var(--text);
   border-radius: 14px;
-  font-size: 13.5px;
+  font-size: 14.9px;
   font-weight: 700;
   cursor: pointer;
   transition: 0.16s ease;
@@ -257,7 +257,7 @@ button {
 .tool-label {
   flex-shrink: 0;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 13.2px;
   font-weight: 800;
   white-space: nowrap;
 }
@@ -282,7 +282,7 @@ button {
   background: transparent;
   color: var(--text);
   font: inherit;
-  font-size: 13.5px;
+  font-size: 14.9px;
   font-weight: 700;
   cursor: pointer;
   outline: none;
@@ -330,7 +330,7 @@ button {
   background: transparent;
   color: var(--text);
   font: inherit;
-  font-size: 13px;
+  font-size: 14.3px;
   font-weight: 600;
   text-align: left;
   cursor: pointer;
@@ -360,7 +360,7 @@ button {
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.92);
   color: var(--text);
-  font-size: 13px;
+  font-size: 14.3px;
   font-weight: 700;
   cursor: pointer;
   user-select: none;
@@ -387,7 +387,7 @@ button {
   border: 1px solid var(--line);
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.92);
-  font-size: 13px;
+  font-size: 14.3px;
   font-weight: 800;
   white-space: nowrap;
 }
@@ -439,13 +439,13 @@ button {
 }
 
 .q-btn-number {
-  font-size: 13px;
+  font-size: 14.3px;
   font-weight: 800;
   line-height: 1;
 }
 
 .q-btn-meta {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   color: var(--muted);
   line-height: 1.1;
@@ -519,7 +519,7 @@ button {
 }
 
 .q-position {
-  font-size: 13px;
+  font-size: 14.3px;
   color: var(--muted);
 }
 
@@ -532,14 +532,14 @@ button {
 }
 
 .q-number {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 800;
 }
 
 .q-type-badge {
   padding: 6px 10px;
   border-radius: 999px;
-  font-size: 12px;
+  font-size: 13.2px;
   font-weight: 800;
   letter-spacing: 0.01em;
   background: #eef4ff;
@@ -569,7 +569,7 @@ button {
   border: 1px solid #9fe3b8;
   background: var(--green-soft);
   color: var(--green);
-  font-size: 13px;
+  font-size: 14.3px;
   font-weight: 800;
   line-height: 1.45;
   white-space: nowrap;
@@ -622,7 +622,7 @@ button {
   gap: 12px;
   white-space: normal;
   word-break: break-word;
-  font-size: 16px;
+  font-size: 17.6px;
   line-height: 1.65;
   tab-size: 4;
 }
@@ -710,7 +710,7 @@ button {
   border-radius: 999px;
   background: rgba(15, 23, 42, 0.6);
   color: #f8fafc;
-  font-size: 12px;
+  font-size: 13.2px;
   font-weight: 800;
   letter-spacing: 0.01em;
   backdrop-filter: blur(8px);
@@ -721,7 +721,7 @@ button {
   padding: 10px 12px 12px;
   border-top: 1px solid var(--line);
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14.3px;
   line-height: 1.5;
 }
 
@@ -740,7 +740,7 @@ button {
   min-width: max-content;
   padding: 14px 16px;
   font-family: Consolas, "Courier New", monospace;
-  font-size: 13.5px;
+  font-size: 14.9px;
   line-height: 1.6;
   white-space: pre;
   tab-size: 4;
@@ -808,7 +808,7 @@ button {
   transition: 0.16s ease;
   white-space: pre-wrap;
   word-break: break-word;
-  font-size: 14.5px;
+  font-size: 16px;
   line-height: 1.6;
 }
 
@@ -821,7 +821,7 @@ button {
   border-radius: 999px;
   background: #e8eef7;
   color: #0f172a;
-  font-size: 13px;
+  font-size: 14.3px;
   font-weight: 800;
 }
 
@@ -896,7 +896,7 @@ button {
   border-radius: 14px;
   background: #f7fbff;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14.3px;
   font-weight: 700;
 }
 
@@ -905,7 +905,7 @@ button {
   border-radius: 999px;
   background: #e8f1ff;
   color: var(--accent-strong);
-  font-size: 11px;
+  font-size: 12.1px;
   font-weight: 800;
 }
 
@@ -943,7 +943,7 @@ button {
   border-radius: 14px;
   background: #eef4ff;
   color: var(--accent-strong);
-  font-size: 15px;
+  font-size: 16.5px;
   font-weight: 800;
   text-transform: lowercase;
 }
@@ -966,7 +966,7 @@ button {
 }
 
 .tf-text {
-  font-size: 14.5px;
+  font-size: 16px;
   line-height: 1.6;
   white-space: pre-wrap;
   word-break: break-word;
@@ -986,7 +986,7 @@ button {
   border-radius: 12px;
   background: #f8fbff;
   color: var(--text);
-  font-size: 13.5px;
+  font-size: 14.9px;
   font-weight: 800;
   cursor: pointer;
   transition: 0.16s ease;
@@ -1021,7 +1021,7 @@ button {
 }
 
 .tf-feedback {
-  font-size: 13px;
+  font-size: 14.3px;
   font-weight: 700;
   color: var(--muted);
 }
@@ -1099,7 +1099,7 @@ button {
   border-radius: 999px;
   background: rgba(15, 23, 42, 0.38);
   color: #e2e8f0;
-  font-size: 13px;
+  font-size: 14.3px;
   font-weight: 800;
 }
 
@@ -1153,7 +1153,7 @@ button {
   border-radius: 999px;
   background: rgba(15, 23, 42, 0.68);
   color: #e2e8f0;
-  font-size: 12px;
+  font-size: 13.2px;
   font-weight: 800;
   letter-spacing: 0.01em;
 }
@@ -1178,7 +1178,7 @@ button {
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.08);
   color: #f8fafc;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 800;
   cursor: pointer;
   transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease, opacity 0.16s ease;
@@ -1212,14 +1212,14 @@ button {
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.06);
   color: #e2e8f0;
-  font-size: 13.5px;
+  font-size: 14.9px;
   line-height: 1.6;
   white-space: pre-wrap;
 }
 
 .image-lightbox-hint {
   color: rgba(226, 232, 240, 0.84);
-  font-size: 12.5px;
+  font-size: 13.8px;
   line-height: 1.45;
   text-align: center;
 }
@@ -1271,14 +1271,14 @@ button {
 }
 
 .overlay-title {
-  font-size: 14px;
+  font-size: 15.4px;
   font-weight: 800;
 }
 
 .overlay-subtitle {
   margin-bottom: 10px;
   color: var(--muted);
-  font-size: 12.5px;
+  font-size: 13.8px;
   line-height: 1.5;
 }
 
@@ -1470,7 +1470,7 @@ button {
   }
 
   .title {
-    font-size: 14px;
+    font-size: 15.4px;
     -webkit-line-clamp: 1;
   }
 
@@ -1484,7 +1484,7 @@ button {
   .tool-btn,
   .summary {
     padding: 0 10px;
-    font-size: 12px;
+    font-size: 13.2px;
     border-radius: 12px;
   }
 
@@ -1494,11 +1494,11 @@ button {
   }
 
   .tool-label {
-    font-size: 11px;
+    font-size: 12.1px;
   }
 
   .cs-trigger {
-    font-size: 12.5px;
+    font-size: 13.8px;
     min-width: 0;
   }
 
@@ -1506,7 +1506,7 @@ button {
     padding: 0 10px;
     gap: 6px;
     justify-content: center;
-    font-size: 12px;
+    font-size: 13.2px;
   }
 
   #openPaletteBtn {
@@ -1530,7 +1530,7 @@ button {
   }
 
   .tools .tool-label {
-    font-size: 11px;
+    font-size: 12.1px;
   }
 
   .viewer-head {
@@ -1547,7 +1547,7 @@ button {
   }
 
   .q-number {
-    font-size: 17px;
+    font-size: 18.7px;
   }
 
   .viewer-body {
@@ -1567,7 +1567,7 @@ button {
 
   .question-text {
     gap: 10px;
-    font-size: 14.5px;
+    font-size: 16px;
     line-height: 1.56;
   }
 
@@ -1585,7 +1585,7 @@ button {
     bottom: 10px;
     min-height: 28px;
     padding: 0 10px;
-    font-size: 11px;
+    font-size: 12.1px;
   }
 
   .image-lightbox {
@@ -1606,7 +1606,7 @@ button {
   .image-lightbox-meta {
     min-height: 36px;
     padding-inline: 12px;
-    font-size: 12px;
+    font-size: 13.2px;
   }
 
   .image-lightbox-stage {
@@ -1632,23 +1632,23 @@ button {
     width: 100%;
     height: 42px;
     border-radius: 14px;
-    font-size: 17px;
+    font-size: 18.7px;
   }
 
   .image-lightbox-caption {
     padding: 10px 12px;
     border-radius: 14px;
-    font-size: 12.5px;
+    font-size: 13.8px;
     line-height: 1.52;
   }
 
   .image-lightbox-hint {
-    font-size: 11.5px;
+    font-size: 12.7px;
   }
 
   .question-code code {
     padding: 12px 13px;
-    font-size: 12px;
+    font-size: 13.2px;
     line-height: 1.45;
   }
 
@@ -1656,14 +1656,14 @@ button {
     padding: 10px 12px;
     gap: 9px;
     border-radius: 14px;
-    font-size: 13.5px;
+    font-size: 14.9px;
     line-height: 1.48;
   }
 
   .option-label {
     width: 30px;
     height: 30px;
-    font-size: 12px;
+    font-size: 13.2px;
   }
 
   .options {
@@ -1680,12 +1680,12 @@ button {
   .tf-intro {
     padding: 8px 10px;
     border-radius: 12px;
-    font-size: 12px;
+    font-size: 13.2px;
   }
 
   .tf-intro-badge {
     padding: 3px 8px;
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .tf-card {
@@ -1699,7 +1699,7 @@ button {
     width: 34px;
     height: 34px;
     border-radius: 10px;
-    font-size: 12.5px;
+    font-size: 13.8px;
   }
 
   .tf-body {
@@ -1707,7 +1707,7 @@ button {
   }
 
   .tf-text {
-    font-size: 13.75px;
+    font-size: 15.1px;
     line-height: 1.52;
   }
 
@@ -1720,18 +1720,18 @@ button {
     min-height: 36px;
     padding: 0 12px;
     border-radius: 10px;
-    font-size: 12.5px;
+    font-size: 13.8px;
   }
 
   .tf-feedback {
-    font-size: 12px;
+    font-size: 13.2px;
   }
 
   .answer-chip {
     max-width: none;
     padding: 6px 9px;
     border-radius: 12px;
-    font-size: 11.5px;
+    font-size: 12.7px;
     line-height: 1.35;
   }
 
@@ -1753,7 +1753,7 @@ button {
     min-width: 64px;
     min-height: 38px;
     padding: 0 12px;
-    font-size: 13px;
+    font-size: 14.3px;
     border-radius: 12px;
   }
 
@@ -1769,11 +1769,11 @@ button {
   }
 
   .q-btn-number {
-    font-size: 12px;
+    font-size: 13.2px;
   }
 
   .q-btn-meta {
-    font-size: 9px;
+    font-size: 9.9px;
   }
 }
 
@@ -1788,7 +1788,7 @@ button {
 
   .q-type-badge {
     padding: 4px 7px;
-    font-size: 10.5px;
+    font-size: 11.6px;
   }
 
   .viewer-head {
@@ -1798,11 +1798,11 @@ button {
   }
 
   .q-position {
-    font-size: 11.5px;
+    font-size: 12.7px;
   }
 
   .q-number {
-    font-size: 15px;
+    font-size: 16.5px;
   }
 
   .q-title-row {
@@ -1815,7 +1815,7 @@ button {
   }
 
   .answer-chip {
-    font-size: 11px;
+    font-size: 12.1px;
     padding: 5px 8px;
   }
 
@@ -1829,7 +1829,7 @@ button {
   }
 
   .question-text {
-    font-size: 14px;
+    font-size: 15.4px;
     line-height: 1.5;
   }
 
@@ -1844,14 +1844,14 @@ button {
   .option-btn {
     padding: 9px 10px;
     gap: 8px;
-    font-size: 13px;
+    font-size: 14.3px;
     line-height: 1.42;
   }
 
   .option-label {
     width: 28px;
     height: 28px;
-    font-size: 11px;
+    font-size: 12.1px;
   }
 
   .tf-card {
@@ -1863,14 +1863,14 @@ button {
   .tf-marker {
     width: 30px;
     height: 30px;
-    font-size: 11.5px;
+    font-size: 12.7px;
     border-radius: 9px;
   }
 
   .tf-choice-btn {
     min-height: 34px;
     padding: 0 10px;
-    font-size: 12px;
+    font-size: 13.2px;
   }
 
   .viewer-foot {
@@ -1883,7 +1883,7 @@ button {
     min-width: 56px;
     min-height: 36px;
     padding: 0 10px;
-    font-size: 12.5px;
+    font-size: 13.8px;
   }
 
   .palette {
@@ -1917,11 +1917,11 @@ button {
   .tool-btn,
   .summary {
     padding: 0 8px;
-    font-size: 11.5px;
+    font-size: 12.7px;
   }
 
   .toggle-chip {
-    font-size: 11px;
+    font-size: 12.1px;
     padding: 0 8px;
   }
 
@@ -1939,11 +1939,11 @@ button {
   }
 
   .question-text {
-    font-size: 13.75px;
+    font-size: 15.1px;
   }
 
   .question-image-hint {
-    font-size: 10.5px;
+    font-size: 11.6px;
   }
 
   .image-lightbox {
@@ -1996,7 +1996,7 @@ button {
   }
 
   .question-text {
-    font-size: 14px;
+    font-size: 15.4px;
     line-height: 1.48;
   }
 
@@ -2015,18 +2015,18 @@ button {
 
 @media (min-width: 901px) and (max-height: 720px) {
   .question-text {
-    font-size: 14px;
+    font-size: 15.4px;
     line-height: 1.48;
   }
 
   .question-code code {
-    font-size: 12px;
+    font-size: 13.2px;
     line-height: 1.5;
   }
 
   .option-btn,
   .tf-text {
-    font-size: 13.5px;
+    font-size: 14.9px;
   }
 
   .q-btn {
