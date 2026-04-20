@@ -180,7 +180,7 @@ const imageViewerState = {
 const state = {
   current: 0,
   answers: {},
-  revealMode: "submit",
+  revealMode: "instant",
   submitted: false,
   shuffleQuestions: false,
   shuffleOptions: false,
