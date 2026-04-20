@@ -43,17 +43,29 @@
           <button class="tool-btn" id="closeToolsBtn" type="button">Đóng</button>
         </div>
         <button class="tool-btn mobile-only" id="openPaletteBtn" type="button">Câu</button>
-        <label class="tool-field" for="lessonSelect">
+        <div class="tool-field cs-field">
           <span class="tool-label">Chọn bài</span>
-          <select class="tool-select" id="lessonSelect"></select>
-        </label>
-        <label class="tool-field mode-field" for="revealModeSelect">
+          <div class="cs" id="lessonSelect" data-value="">
+            <button class="cs-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+              <span class="cs-value"></span>
+              <svg class="cs-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="cs-list" role="listbox" hidden></div>
+          </div>
+        </div>
+        <div class="tool-field mode-field cs-field">
           <span class="tool-label">Hiện đáp án</span>
-          <select class="tool-select" id="revealModeSelect">
-            <option value="submit">Cuối bài</option>
-            <option value="instant">Chọn xong</option>
-          </select>
-        </label>
+          <div class="cs" id="revealModeSelect" data-value="submit">
+            <button class="cs-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+              <span class="cs-value">Cuối bài</span>
+              <svg class="cs-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="cs-list" role="listbox" hidden>
+              <button class="cs-option selected" role="option" data-value="submit" type="button">Cuối bài</button>
+              <button class="cs-option" role="option" data-value="instant" type="button">Chọn xong</button>
+            </div>
+          </div>
+        </div>
         <button class="tool-btn accent" id="submitBtn" type="button">Nộp bài</button>
         <label class="toggle-chip" for="shuffleQuestionsToggle">
           <input id="shuffleQuestionsToggle" type="checkbox" />
@@ -134,7 +146,7 @@
         <button class="image-lightbox-nav" id="nextImageLightboxBtn" type="button" aria-label="Ảnh tiếp theo">→</button>
       </div>
       <div class="image-lightbox-caption" id="imageLightboxCaption" hidden></div>
-      <div class="image-lightbox-hint" id="imageLightboxHint">Bấm ra ngoài ảnh hoặc nhấn Esc để đóng</div>
+      <div class="image-lightbox-hint" id="imageLightboxHint">Bấm vùng tối bên ngoài hoặc nhấn Esc để đóng</div>
     </div>
   </div>
 

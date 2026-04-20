@@ -748,19 +748,86 @@ function buildShortExamTitle() {
   return activeLesson.label || data?.meta?.titleRaw || data?.meta?.subtitleRaw || "Ôn tập";
 }
 
+function csGetValue(el) {
+  return el?.dataset?.value ?? "";
+}
+
+function csSetValue(el, value) {
+  if (!el) return;
+  const list = el.querySelector(".cs-list");
+  const options = list ? list.querySelectorAll(".cs-option") : [];
+  let label = value;
+  options.forEach((opt) => {
+    const isSelected = opt.dataset.value === value;
+    opt.classList.toggle("selected", isSelected);
+    if (isSelected) label = opt.textContent;
+  });
+  const valueEl = el.querySelector(".cs-value");
+  if (valueEl) valueEl.textContent = label;
+  el.dataset.value = value;
+}
+
+function csInit(el) {
+  if (!el) return;
+  const trigger = el.querySelector(".cs-trigger");
+  const list = el.querySelector(".cs-list");
+  if (!trigger || !list) return;
+
+  function csOpen() {
+    list.hidden = false;
+    trigger.setAttribute("aria-expanded", "true");
+    el.dataset.open = "1";
+  }
+
+  function csClose() {
+    list.hidden = true;
+    trigger.setAttribute("aria-expanded", "false");
+    delete el.dataset.open;
+  }
+
+  trigger.addEventListener("click", () => {
+    if (el.dataset.open) csClose();
+    else csOpen();
+  });
+
+  list.addEventListener("click", (e) => {
+    const option = e.target.closest(".cs-option");
+    if (!option) return;
+    const oldValue = el.dataset.value;
+    const newValue = option.dataset.value;
+    csSetValue(el, newValue);
+    csClose();
+    if (newValue !== oldValue) {
+      el.dispatchEvent(new CustomEvent("cs-change", { detail: { value: newValue }, bubbles: true }));
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!el.contains(e.target) && el.dataset.open) csClose();
+  }, true);
+
+  el.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && el.dataset.open) csClose();
+  });
+}
+
 function renderLessonSelector() {
   if (!els.lessonSelect) return;
 
-  if (!els.lessonSelect.options.length) {
+  const list = els.lessonSelect.querySelector(".cs-list");
+  if (list && !list.querySelectorAll(".cs-option").length) {
     AVAILABLE_LESSONS.forEach((lesson) => {
-      const option = document.createElement("option");
-      option.value = lesson.id;
-      option.textContent = lesson.label;
-      els.lessonSelect.appendChild(option);
+      const btn = document.createElement("button");
+      btn.className = "cs-option";
+      btn.type = "button";
+      btn.setAttribute("role", "option");
+      btn.dataset.value = lesson.id;
+      btn.textContent = lesson.label;
+      list.appendChild(btn);
     });
   }
 
-  els.lessonSelect.value = activeLesson.id;
+  csSetValue(els.lessonSelect, activeLesson.id);
 }
 
 function buildLessonUrl(lessonId) {
@@ -992,7 +1059,7 @@ function renderHeaderLegacy() {
     ? `${counts.correctQuestions}/${total} câu làm đúng hoàn toàn`
     : `${counts.startedQuestions}/${total} câu đã bắt đầu làm`;
 
-  els.revealModeSelect.value = state.revealMode;
+  csSetValue(els.revealModeSelect, state.revealMode);
   els.shuffleQuestionsToggle.checked = state.shuffleQuestions;
   els.shuffleOptionsToggle.checked = state.shuffleOptions;
 
@@ -1044,9 +1111,9 @@ function renderHeader() {
   els.summary.title = summaryTitle;
 
   if (els.lessonSelect) {
-    els.lessonSelect.value = activeLesson.id;
+    csSetValue(els.lessonSelect, activeLesson.id);
   }
-  els.revealModeSelect.value = state.revealMode;
+  csSetValue(els.revealModeSelect, state.revealMode);
   els.shuffleQuestionsToggle.checked = state.shuffleQuestions;
   els.shuffleOptionsToggle.checked = state.shuffleOptions;
 
@@ -1221,8 +1288,8 @@ function syncImageLightbox() {
     ? `Ảnh ${imageViewerState.index + 1}/${totalImages}`
     : "Ảnh minh họa";
   els.imageLightboxHint.textContent = hasMultipleImages
-    ? "Vuốt ngang hoặc dùng ← → để chuyển ảnh. Nhấn Esc để đóng."
-    : "Bấm ra ngoài ảnh hoặc nhấn Esc để đóng.";
+    ? "Vuốt ngang hoặc dùng ← → để chuyển ảnh. Nhấn Esc hoặc bấm vùng tối để đóng."
+    : "Bấm vùng tối bên ngoài hoặc nhấn Esc để đóng.";
   els.imageLightboxCaption.textContent = captionText;
   els.imageLightboxCaption.hidden = !captionText;
 
@@ -1302,6 +1369,8 @@ function renderQuestionMedia(question) {
     return;
   }
 
+  const galleryImages = images.map((image) => ({ ...image }));
+
   images.forEach((image, index) => {
     const figure = document.createElement("figure");
     const trigger = document.createElement("button");
@@ -1324,6 +1393,7 @@ function renderQuestionMedia(question) {
     img.loading = "lazy";
     img.decoding = "async";
     img.addEventListener("error", () => {
+      galleryImages[index] = null;
       figure.remove();
       if (!els.questionMedia.children.length) {
         els.questionMedia.hidden = true;
@@ -1334,7 +1404,9 @@ function renderQuestionMedia(question) {
     hint.textContent = images.length > 1 ? `Xem lớn ${index + 1}/${images.length}` : "Bấm để phóng lớn";
 
     trigger.addEventListener("click", () => {
-      openImageLightbox(images, index, trigger);
+      const activeImages = galleryImages.filter((galleryImage) => galleryImage?.src);
+      const activeIndex = activeImages.indexOf(galleryImages[index]);
+      openImageLightbox(activeImages, Math.max(activeIndex, 0), trigger);
     });
 
     trigger.appendChild(img);
@@ -1725,11 +1797,13 @@ function handleTrueFalseHotkeys(question, key) {
 }
 
 function bindEvents() {
-  els.lessonSelect.addEventListener("change", (event) => {
-    changeLesson(event.target.value);
+  csInit(els.lessonSelect);
+  csInit(els.revealModeSelect);
+  els.lessonSelect.addEventListener("cs-change", (event) => {
+    changeLesson(event.detail.value);
   });
-  els.revealModeSelect.addEventListener("change", (event) => {
-    setRevealMode(event.target.value);
+  els.revealModeSelect.addEventListener("cs-change", (event) => {
+    setRevealMode(event.detail.value);
   });
   els.submitBtn.addEventListener("click", submitAll);
   els.shuffleQuestionsToggle.addEventListener("change", (event) => {
