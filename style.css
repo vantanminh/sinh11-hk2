@@ -80,6 +80,7 @@ button {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 14px;
+  z-index: 10;
   padding: 14px 16px;
   min-width: 0;
 }
