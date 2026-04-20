@@ -265,12 +265,20 @@ button {
   min-width: 108px;
   max-width: 100%;
   border: 0;
-  padding: 0;
-  background: transparent;
+  padding: 0 20px 0 0;
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%235f7187' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E") no-repeat right 2px center;
   color: var(--text);
   font-size: 13.5px;
   font-weight: 700;
   outline: none;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.tool-select:hover {
+  color: var(--accent);
 }
 
 .toggle-chip {
@@ -536,7 +544,9 @@ button {
 
 .question-media {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 12px;
+  align-items: start;
 }
 
 .question-figure {
@@ -545,6 +555,35 @@ button {
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.96);
   overflow: hidden;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.question-figure:hover {
+  border-color: #bfd7ff;
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.09);
+  transform: translateY(-1px);
+}
+
+.question-image-trigger {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  display: block;
+  cursor: zoom-in;
+  text-align: left;
+}
+
+.question-image-trigger::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 44%;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.34) 100%);
+  opacity: 0.82;
+  transition: opacity 0.18s ease;
 }
 
 .question-image {
@@ -552,9 +591,42 @@ button {
   max-height: min(46vh, 420px);
   display: block;
   object-fit: contain;
+  transition: transform 0.22s ease;
   background:
     linear-gradient(135deg, rgba(23, 105, 224, 0.08), rgba(14, 165, 233, 0.04)),
     #f8fbff;
+}
+
+.question-image-trigger:hover::after,
+.question-image-trigger:focus-visible::after {
+  opacity: 1;
+}
+
+.question-image-trigger:hover .question-image,
+.question-image-trigger:focus-visible .question-image {
+  transform: scale(1.015);
+}
+
+.question-image-hint {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.6);
+  color: #f8fafc;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  backdrop-filter: blur(8px);
+  pointer-events: none;
 }
 
 .question-caption {
@@ -878,6 +950,188 @@ button {
   border-top: 1px solid var(--line);
 }
 
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 72;
+  padding: 16px;
+  background: rgba(2, 8, 23, 0);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.24s ease, visibility 0.24s ease, background-color 0.24s ease;
+}
+
+.image-lightbox.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  background: rgba(2, 8, 23, 0.8);
+}
+
+.image-lightbox-panel {
+  width: min(1280px, 100%);
+  height: calc(100dvh - 32px);
+  margin: 0 auto;
+  padding: 16px;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto auto;
+  gap: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at top, rgba(59, 130, 246, 0.12), transparent 42%),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.96) 0%, rgba(15, 23, 42, 0.92) 100%);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.34);
+  transform: translateY(18px) scale(0.985);
+  transition: transform 0.24s ease;
+}
+
+.image-lightbox.open .image-lightbox-panel {
+  transform: translateY(0) scale(1);
+}
+
+.image-lightbox-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.image-lightbox-meta {
+  min-height: 40px;
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(191, 219, 254, 0.18);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.38);
+  color: #e2e8f0;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.image-lightbox-close {
+  border-color: rgba(191, 219, 254, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  color: #f8fafc;
+}
+
+.image-lightbox-close:hover {
+  border-color: rgba(191, 219, 254, 0.3);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.image-lightbox-stage {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr) 54px;
+  grid-template-areas: "prev viewport next";
+  align-items: center;
+  gap: 14px;
+}
+
+.image-lightbox-viewport {
+  grid-area: viewport;
+  min-height: 0;
+  height: 100%;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  overscroll-behavior: contain;
+  touch-action: pan-x pan-y pinch-zoom;
+  border: 1px solid rgba(191, 219, 254, 0.16);
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+    rgba(15, 23, 42, 0.45);
+  position: relative;
+}
+
+.image-lightbox-viewport.loading::after {
+  content: "Đang tải ảnh...";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 14px;
+  border: 1px solid rgba(191, 219, 254, 0.18);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.68);
+  color: #e2e8f0;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.image-lightbox-image {
+  max-width: 100%;
+  max-height: min(74dvh, 900px);
+  width: auto;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 18px;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.28);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.image-lightbox-nav {
+  width: 54px;
+  height: 54px;
+  padding: 0;
+  border: 1px solid rgba(191, 219, 254, 0.18);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #f8fafc;
+  font-size: 20px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease, opacity 0.16s ease;
+}
+
+#prevImageLightboxBtn {
+  grid-area: prev;
+}
+
+#nextImageLightboxBtn {
+  grid-area: next;
+}
+
+.image-lightbox-nav:hover {
+  border-color: rgba(191, 219, 254, 0.32);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.image-lightbox-nav:active {
+  transform: scale(0.95);
+}
+
+.image-lightbox-nav:disabled {
+  opacity: 0.34;
+  cursor: not-allowed;
+}
+
+.image-lightbox-caption {
+  padding: 12px 14px;
+  border: 1px solid rgba(191, 219, 254, 0.14);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #e2e8f0;
+  font-size: 13.5px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.image-lightbox-hint {
+  color: rgba(226, 232, 240, 0.84);
+  font-size: 12.5px;
+  line-height: 1.45;
+  text-align: center;
+}
+
 .overlay {
   position: fixed;
   inset: 0;
@@ -998,6 +1252,8 @@ button {
 .q-btn:focus-visible,
 .tool-btn:focus-visible,
 .nav-btn:focus-visible,
+.question-image-trigger:focus-visible,
+.image-lightbox-nav:focus-visible,
 .option-btn:focus-visible,
 .tf-choice-btn:focus-visible {
   outline: 2px solid rgba(23, 105, 224, 0.24);
@@ -1153,6 +1409,8 @@ button {
     min-width: 0;
     width: 100%;
     font-size: 12.5px;
+    padding-right: 18px;
+    background-size: 9px 5px;
   }
 
   .toggle-chip {

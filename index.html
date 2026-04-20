@@ -120,6 +120,24 @@
     </div>
   </div>
 
+  <div class="image-lightbox" id="imageLightbox" aria-hidden="true">
+    <div class="image-lightbox-panel" id="imageLightboxPanel" role="dialog" aria-modal="true" aria-label="Xem ảnh lớn">
+      <div class="image-lightbox-head">
+        <div class="image-lightbox-meta" id="imageLightboxMeta">Ảnh 1/1</div>
+        <button class="tool-btn image-lightbox-close" id="closeImageLightboxBtn" type="button">Đóng</button>
+      </div>
+      <div class="image-lightbox-stage">
+        <button class="image-lightbox-nav" id="prevImageLightboxBtn" type="button" aria-label="Ảnh trước">←</button>
+        <div class="image-lightbox-viewport" id="imageLightboxViewport">
+          <img class="image-lightbox-image" id="imageLightboxImage" alt="" />
+        </div>
+        <button class="image-lightbox-nav" id="nextImageLightboxBtn" type="button" aria-label="Ảnh tiếp theo">→</button>
+      </div>
+      <div class="image-lightbox-caption" id="imageLightboxCaption" hidden></div>
+      <div class="image-lightbox-hint" id="imageLightboxHint">Bấm ra ngoài ảnh hoặc nhấn Esc để đóng</div>
+    </div>
+  </div>
+
   <script src="javascript.js"></script>
 </body>
 </html>

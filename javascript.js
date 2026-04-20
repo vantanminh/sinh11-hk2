@@ -3,7 +3,10 @@
 const LESSON_DATA_ROOT = "21/data/";
 const AVAILABLE_LESSONS = [
   { id: "20", file: "bai20.json", label: "Bài 20" },
-  { id: "21", file: "bai21.json", label: "Bài 21" }
+  { id: "21", file: "bai21.json", label: "Bài 21" },
+  { id: "23", file: "bai23.json", label: "Bài 23" },
+  { id: "24", file: "bai24.json", label: "Bài 24" },
+  { id: "26", file: "bai26.json", label: "Bài 26" }
 ];
 const ACTIVE_LESSON_STORAGE_KEY = "sinh11_active_lesson_v1";
 const LEGACY_STORAGE_KEYS = {
@@ -141,6 +144,16 @@ const els = {
   toolsSheetShell: document.getElementById("toolsSheetShell"),
   toolsPanel: document.getElementById("toolsPanel"),
   overlay: document.getElementById("overlay"),
+  imageLightbox: document.getElementById("imageLightbox"),
+  imageLightboxPanel: document.getElementById("imageLightboxPanel"),
+  imageLightboxMeta: document.getElementById("imageLightboxMeta"),
+  imageLightboxViewport: document.getElementById("imageLightboxViewport"),
+  imageLightboxImage: document.getElementById("imageLightboxImage"),
+  imageLightboxCaption: document.getElementById("imageLightboxCaption"),
+  imageLightboxHint: document.getElementById("imageLightboxHint"),
+  closeImageLightboxBtn: document.getElementById("closeImageLightboxBtn"),
+  prevImageLightboxBtn: document.getElementById("prevImageLightboxBtn"),
+  nextImageLightboxBtn: document.getElementById("nextImageLightboxBtn"),
   qPosition: document.getElementById("qPosition"),
   qNumber: document.getElementById("qNumber"),
   qTypeBadge: document.getElementById("qTypeBadge"),
@@ -157,6 +170,11 @@ let data = null;
 let sourceQuestions = [];
 let questions = [];
 let questionIndexByNumber = new Map();
+const imageViewerState = {
+  images: [],
+  index: 0,
+  opener: null
+};
 
 const state = {
   current: 0,
@@ -1170,6 +1188,111 @@ function renderQuestionStem(question) {
   els.questionText.scrollTop = 0;
 }
 
+function imageLightboxOpen() {
+  return els.imageLightbox.classList.contains("open");
+}
+
+function imageLightboxCaptionText(image) {
+  const caption = String(image?.caption || "").trim();
+  const alt = String(image?.alt || "").trim();
+
+  if (caption && alt && alt !== caption) {
+    return `${caption}\n${alt}`;
+  }
+
+  return caption || alt;
+}
+
+function syncImageLightbox() {
+  const totalImages = imageViewerState.images.length;
+  const image = imageViewerState.images[imageViewerState.index];
+
+  if (!image || !totalImages) {
+    closeImageLightbox({ restoreFocus: false });
+    return;
+  }
+
+  const captionText = imageLightboxCaptionText(image);
+  const canGoPrev = imageViewerState.index > 0;
+  const canGoNext = imageViewerState.index < totalImages - 1;
+  const hasMultipleImages = totalImages > 1;
+
+  els.imageLightboxMeta.textContent = hasMultipleImages
+    ? `Ảnh ${imageViewerState.index + 1}/${totalImages}`
+    : "Ảnh minh họa";
+  els.imageLightboxHint.textContent = hasMultipleImages
+    ? "Vuốt ngang hoặc dùng ← → để chuyển ảnh. Nhấn Esc để đóng."
+    : "Bấm ra ngoài ảnh hoặc nhấn Esc để đóng.";
+  els.imageLightboxCaption.textContent = captionText;
+  els.imageLightboxCaption.hidden = !captionText;
+
+  els.prevImageLightboxBtn.hidden = !hasMultipleImages;
+  els.nextImageLightboxBtn.hidden = !hasMultipleImages;
+  els.prevImageLightboxBtn.disabled = !canGoPrev;
+  els.nextImageLightboxBtn.disabled = !canGoNext;
+
+  els.imageLightboxViewport.classList.add("loading");
+  els.imageLightboxImage.alt = image.alt || "Hình minh họa";
+  els.imageLightboxImage.onload = () => {
+    els.imageLightboxViewport.classList.remove("loading");
+  };
+  els.imageLightboxImage.onerror = () => {
+    els.imageLightboxViewport.classList.remove("loading");
+  };
+  els.imageLightboxImage.src = image.src;
+
+  if (els.imageLightboxImage.complete) {
+    els.imageLightboxViewport.classList.remove("loading");
+  }
+}
+
+function openImageLightbox(images, startIndex = 0, opener = null) {
+  const validImages = Array.isArray(images) ? images.filter((image) => image?.src) : [];
+  if (!validImages.length) return;
+
+  imageViewerState.images = validImages;
+  imageViewerState.index = Math.max(0, Math.min(startIndex, validImages.length - 1));
+  imageViewerState.opener = opener || null;
+
+  closeOverlay();
+  closeToolsMenu();
+  syncImageLightbox();
+  document.body.classList.add("image-view-open");
+  els.imageLightbox.classList.add("open");
+  els.imageLightbox.setAttribute("aria-hidden", "false");
+  els.closeImageLightboxBtn.focus({ preventScroll: true });
+}
+
+function closeImageLightbox({ restoreFocus = true } = {}) {
+  if (!imageLightboxOpen()) return;
+
+  const opener = imageViewerState.opener;
+
+  els.imageLightbox.classList.remove("open");
+  els.imageLightbox.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("image-view-open");
+  els.imageLightboxViewport.classList.remove("loading");
+  els.imageLightboxImage.onload = null;
+  els.imageLightboxImage.onerror = null;
+
+  imageViewerState.images = [];
+  imageViewerState.index = 0;
+  imageViewerState.opener = null;
+
+  if (restoreFocus && opener?.isConnected) {
+    opener.focus({ preventScroll: true });
+  }
+}
+
+function stepImageLightbox(direction) {
+  const nextIndex = imageViewerState.index + direction;
+
+  if (nextIndex < 0 || nextIndex >= imageViewerState.images.length) return;
+
+  imageViewerState.index = nextIndex;
+  syncImageLightbox();
+}
+
 function renderQuestionMedia(question) {
   els.questionMedia.innerHTML = "";
 
@@ -1181,9 +1304,19 @@ function renderQuestionMedia(question) {
 
   images.forEach((image, index) => {
     const figure = document.createElement("figure");
+    const trigger = document.createElement("button");
     const img = document.createElement("img");
+    const hint = document.createElement("span");
 
     figure.className = "question-figure";
+    trigger.type = "button";
+    trigger.className = "question-image-trigger";
+    trigger.setAttribute(
+      "aria-label",
+      image.caption
+        ? `Phóng lớn ảnh: ${image.caption}`
+        : `Phóng lớn hình minh họa câu ${question.number} (${index + 1})`
+    );
 
     img.className = "question-image";
     img.src = image.src;
@@ -1197,7 +1330,16 @@ function renderQuestionMedia(question) {
       }
     });
 
-    figure.appendChild(img);
+    hint.className = "question-image-hint";
+    hint.textContent = images.length > 1 ? `Xem lớn ${index + 1}/${images.length}` : "Bấm để phóng lớn";
+
+    trigger.addEventListener("click", () => {
+      openImageLightbox(images, index, trigger);
+    });
+
+    trigger.appendChild(img);
+    trigger.appendChild(hint);
+    figure.appendChild(trigger);
 
     if (image.caption) {
       const figcaption = document.createElement("figcaption");
@@ -1606,6 +1748,14 @@ function bindEvents() {
     button.addEventListener("click", openOverlay);
   });
   els.closePaletteBtn.addEventListener("click", closeOverlay);
+  els.closeImageLightboxBtn.addEventListener("click", () => closeImageLightbox());
+  els.prevImageLightboxBtn.addEventListener("click", () => stepImageLightbox(-1));
+  els.nextImageLightboxBtn.addEventListener("click", () => stepImageLightbox(1));
+  els.imageLightbox.addEventListener("click", (event) => {
+    if (event.target === els.imageLightbox) {
+      closeImageLightbox();
+    }
+  });
 
   els.openToolsBtn.addEventListener("click", toggleToolsMenu);
   els.closeToolsBtn.addEventListener("click", closeToolsMenu);
@@ -1666,7 +1816,52 @@ function bindEvents() {
     }, { passive: true });
   }
 
+  let imageSwipeStartX = 0;
+  let imageSwipeStartY = 0;
+
+  els.imageLightboxViewport.addEventListener("touchstart", (event) => {
+    const touch = event.changedTouches[0];
+    imageSwipeStartX = touch.clientX;
+    imageSwipeStartY = touch.clientY;
+  }, { passive: true });
+
+  els.imageLightboxViewport.addEventListener("touchend", (event) => {
+    if (imageViewerState.images.length < 2) return;
+
+    const touch = event.changedTouches[0];
+    const dx = touch.clientX - imageSwipeStartX;
+    const dy = touch.clientY - imageSwipeStartY;
+    const absDx = Math.abs(dx);
+    const absDy = Math.abs(dy);
+
+    if (absDx > 44 && absDx > absDy * 1.3) {
+      stepImageLightbox(dx > 0 ? -1 : 1);
+    }
+  }, { passive: true });
+
   document.addEventListener("keydown", (event) => {
+    if (imageLightboxOpen()) {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeImageLightbox();
+        return;
+      }
+
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        stepImageLightbox(-1);
+        return;
+      }
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        stepImageLightbox(1);
+        return;
+      }
+
+      return;
+    }
+
     if (event.key === "Escape") {
       if (els.overlay.classList.contains("open")) {
         closeOverlay();
