@@ -502,7 +502,7 @@
         {
           "key": "a",
           "text": "Sinh sản vô tính bằng hình thức phân đôi tạo thành hai cơ thể con có kích thước bằng nhau.",
-          "answer": true
+          "answer": false
         },
         {
           "key": "b",
