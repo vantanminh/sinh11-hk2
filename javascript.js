@@ -1,12 +1,61 @@
 "use strict";
 
-const DATA_URL = "21/data/bai20.json";
+const LESSON_DATA_ROOT = "21/data/";
+const AVAILABLE_LESSONS = [
+  { id: "20", file: "bai20.json", label: "Bài 20" },
+  { id: "21", file: "bai21.json", label: "Bài 21" }
+];
+const ACTIVE_LESSON_STORAGE_KEY = "sinh11_active_lesson_v1";
+const LEGACY_STORAGE_KEYS = {
+  20: "sinh11_bai20_quiz_v1"
+};
+
+function normalizeLessonId(value) {
+  const match = String(value || "").trim().match(/\d+/);
+  return match ? String(Number(match[0])) : "";
+}
+
+function findLessonById(value) {
+  const normalizedId = normalizeLessonId(value);
+  return AVAILABLE_LESSONS.find((lesson) => lesson.id === normalizedId) || null;
+}
+
+function readStoredActiveLessonId() {
+  try {
+    return localStorage.getItem(ACTIVE_LESSON_STORAGE_KEY) || "";
+  } catch (_) {
+    return "";
+  }
+}
+
+function persistActiveLessonSelection(lessonId) {
+  const normalizedId = normalizeLessonId(lessonId);
+  if (!normalizedId) return;
+
+  try {
+    localStorage.setItem(ACTIVE_LESSON_STORAGE_KEY, normalizedId);
+  } catch (_) {}
+}
+
+function resolveInitialLesson() {
+  const params = new URLSearchParams(window.location.search);
+  const requestedLessonId = normalizeLessonId(params.get("lesson") || params.get("bai"));
+
+  return (
+    findLessonById(requestedLessonId) ||
+    findLessonById(readStoredActiveLessonId()) ||
+    AVAILABLE_LESSONS[0]
+  );
+}
+
+const activeLesson = resolveInitialLesson();
+const DATA_URL = `${LESSON_DATA_ROOT}${activeLesson.file}`;
 const DATA_BASE_PATH = (() => {
   const normalized = DATA_URL.replace(/\\/g, "/");
   const lastSlashIndex = normalized.lastIndexOf("/");
   return lastSlashIndex >= 0 ? normalized.slice(0, lastSlashIndex + 1) : "";
 })();
-const STORAGE_KEY = "sinh11_bai20_quiz_v1";
+const STORAGE_KEY = `sinh11_bai${activeLesson.id}_quiz_v2`;
 const DISPLAY_KEYS = ["A", "B", "C", "D", "E", "F"];
 const STATEMENT_KEYS = ["a", "b", "c", "d", "e", "f"];
 const TRUE_FALSE_CHOICES = [
@@ -73,6 +122,7 @@ const els = {
   mobileExamTitle: document.getElementById("mobileExamTitle"),
   examSection: document.getElementById("examSection"),
   summary: document.getElementById("summary"),
+  lessonSelect: document.getElementById("lessonSelect"),
   revealModeSelect: document.getElementById("revealModeSelect"),
   submitBtn: document.getElementById("submitBtn"),
   shuffleQuestionsToggle: document.getElementById("shuffleQuestionsToggle"),
@@ -119,38 +169,58 @@ const state = {
   optionOrders: {}
 };
 
+persistActiveLessonSelection(activeLesson.id);
+
+function applySavedState(saved) {
+  if (!saved || typeof saved !== "object") return;
+
+  if (typeof saved.current === "number") state.current = saved.current;
+  if (saved.answers && typeof saved.answers === "object") {
+    state.answers = { ...saved.answers };
+  }
+  if (saved.revealMode === "submit" || saved.revealMode === "instant") {
+    state.revealMode = saved.revealMode;
+  }
+  if (typeof saved.submitted === "boolean") {
+    state.submitted = saved.submitted;
+  } else if (typeof saved.showAnswers === "boolean") {
+    state.submitted = saved.showAnswers;
+  }
+  if (typeof saved.shuffleQuestions === "boolean") {
+    state.shuffleQuestions = saved.shuffleQuestions;
+  }
+  if (typeof saved.shuffleOptions === "boolean") {
+    state.shuffleOptions = saved.shuffleOptions;
+  }
+  if (Array.isArray(saved.questionOrder)) {
+    state.questionOrder = [...saved.questionOrder];
+  }
+  if (saved.optionOrders && typeof saved.optionOrders === "object") {
+    state.optionOrders = { ...saved.optionOrders };
+  }
+}
+
 function loadState() {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return;
+  const storageKeys = [STORAGE_KEY];
+  const legacyStorageKey = LEGACY_STORAGE_KEYS[activeLesson.id];
 
-    const saved = JSON.parse(raw);
+  if (legacyStorageKey && legacyStorageKey !== STORAGE_KEY) {
+    storageKeys.push(legacyStorageKey);
+  }
 
-    if (typeof saved.current === "number") state.current = saved.current;
-    if (saved.answers && typeof saved.answers === "object") {
-      state.answers = { ...saved.answers };
-    }
-    if (saved.revealMode === "submit" || saved.revealMode === "instant") {
-      state.revealMode = saved.revealMode;
-    }
-    if (typeof saved.submitted === "boolean") {
-      state.submitted = saved.submitted;
-    } else if (typeof saved.showAnswers === "boolean") {
-      state.submitted = saved.showAnswers;
-    }
-    if (typeof saved.shuffleQuestions === "boolean") {
-      state.shuffleQuestions = saved.shuffleQuestions;
-    }
-    if (typeof saved.shuffleOptions === "boolean") {
-      state.shuffleOptions = saved.shuffleOptions;
-    }
-    if (Array.isArray(saved.questionOrder)) {
-      state.questionOrder = [...saved.questionOrder];
-    }
-    if (saved.optionOrders && typeof saved.optionOrders === "object") {
-      state.optionOrders = { ...saved.optionOrders };
-    }
-  } catch (_) {}
+  for (const storageKey of storageKeys) {
+    try {
+      const raw = localStorage.getItem(storageKey);
+      if (!raw) continue;
+
+      applySavedState(JSON.parse(raw));
+
+      if (storageKey !== STORAGE_KEY) {
+        saveState();
+      }
+      return;
+    } catch (_) {}
+  }
 }
 
 function saveState() {
@@ -657,23 +727,46 @@ function buildTypeBreakdown() {
 }
 
 function buildShortExamTitle() {
-  const filename = String(DATA_URL || "")
-    .replace(/\\/g, "/")
-    .split("/")
-    .pop()
-    ?.replace(/\.[^.]+$/, "") || "";
-  const lessonMatch = filename.match(/bai[\s_-]*(\d+)/i);
+  return activeLesson.label || data?.meta?.titleRaw || data?.meta?.subtitleRaw || "Ôn tập";
+}
 
-  if (lessonMatch) {
-    return `Bài ${Number(lessonMatch[1])}`;
+function renderLessonSelector() {
+  if (!els.lessonSelect) return;
+
+  if (!els.lessonSelect.options.length) {
+    AVAILABLE_LESSONS.forEach((lesson) => {
+      const option = document.createElement("option");
+      option.value = lesson.id;
+      option.textContent = lesson.label;
+      els.lessonSelect.appendChild(option);
+    });
   }
 
-  const fallback = filename
-    .replace(/[-_]+/g, " ")
-    .trim()
-    .replace(/\b\w/g, (char) => char.toUpperCase());
+  els.lessonSelect.value = activeLesson.id;
+}
 
-  return fallback || data?.meta?.titleRaw || data?.meta?.subtitleRaw || "Ôn tập";
+function buildLessonUrl(lessonId) {
+  const params = new URLSearchParams(window.location.search);
+
+  params.set("lesson", lessonId);
+  params.delete("bai");
+
+  const queryString = params.toString();
+  return `${window.location.pathname}${queryString ? `?${queryString}` : ""}${window.location.hash}`;
+}
+
+function changeLesson(lessonId) {
+  const nextLesson = findLessonById(lessonId);
+
+  if (!nextLesson) {
+    renderLessonSelector();
+    return;
+  }
+
+  if (nextLesson.id === activeLesson.id) return;
+
+  persistActiveLessonSelection(nextLesson.id);
+  window.location.assign(buildLessonUrl(nextLesson.id));
 }
 
 function summaryTextForCounts(counts, showScore) {
@@ -932,6 +1025,9 @@ function renderHeader() {
   els.summary.textContent = summaryText;
   els.summary.title = summaryTitle;
 
+  if (els.lessonSelect) {
+    els.lessonSelect.value = activeLesson.id;
+  }
   els.revealModeSelect.value = state.revealMode;
   els.shuffleQuestionsToggle.checked = state.shuffleQuestions;
   els.shuffleOptionsToggle.checked = state.shuffleOptions;
@@ -1487,6 +1583,9 @@ function handleTrueFalseHotkeys(question, key) {
 }
 
 function bindEvents() {
+  els.lessonSelect.addEventListener("change", (event) => {
+    changeLesson(event.target.value);
+  });
   els.revealModeSelect.addEventListener("change", (event) => {
     setRevealMode(event.target.value);
   });
@@ -1643,6 +1742,8 @@ function resetAll() {
 }
 
 async function init() {
+  renderLessonSelector();
+
   try {
     const questionRes = await fetch(DATA_URL, { cache: "no-store" });
 
