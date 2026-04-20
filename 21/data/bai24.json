@@ -363,7 +363,14 @@
         "C. 3.",
         "D. 4."
       ],
-      "answer": "C"
+      "answer": "C",
+      "images": [
+        {
+          "src": "images/bai24/q30.png",
+          "alt": "Hinh minh hoa cau 30 bai 24",
+          "caption": "Hinh minh hoa cho cau 30"
+        }
+      ]
     },
     {
       "number": 31,

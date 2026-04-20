@@ -387,7 +387,14 @@
         "C. 3.",
         "D. 4."
       ],
-      "answer": "B"
+      "answer": "B",
+      "images": [
+        {
+          "src": "images/bai26/q32.png",
+          "alt": "Hinh minh hoa cau 32 bai 26",
+          "caption": "Hinh minh hoa cho cau 32"
+        }
+      ]
     },
     {
       "number": 33,
@@ -399,7 +406,14 @@
         "C. 3.",
         "D. 4."
       ],
-      "answer": "A"
+      "answer": "A",
+      "images": [
+        {
+          "src": "images/bai26/q33.png",
+          "alt": "Hinh minh hoa cau 33 bai 26",
+          "caption": "Hinh minh hoa cho cau 33"
+        }
+      ]
     },
     {
       "number": 34,
@@ -411,7 +425,14 @@
         "C. 3.",
         "D. 4."
       ],
-      "answer": "A"
+      "answer": "A",
+      "images": [
+        {
+          "src": "images/bai26/q34.png",
+          "alt": "Hinh minh hoa cau 34 bai 26",
+          "caption": "Hinh minh hoa cho cau 34"
+        }
+      ]
     },
     {
       "number": 35,
